@@ -20,5 +20,4 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
 | [Spiritualized Sega Game Gear](https://github.com/spiritualized1997/openFPGA-GG) | [spiritualized1997](https://github.com/spiritualized1997) | [![Spiritualized Sega Game Gear](https://img.shields.io/github/v/release/spiritualized1997/openFPGA-GG)](https://github.com/spiritualized1997/openFPGA-GG/releases/latest) |
 | [Spiritualized Sega Master System](https://github.com/spiritualized1997/openFPGA-SMS) | [spiritualized1997](https://github.com/spiritualized1997) | [![Spiritualized Sega Master System](https://img.shields.io/github/v/release/spiritualized1997/openFPGA-SMS)](https://github.com/spiritualized1997/openFPGA-SMS/releases/latest) |
 | [Spiritualized Sega SG-1000](https://github.com/spiritualized1997/openFPGA-SG1000) | [spiritualized1997](https://github.com/spiritualized1997) | [![Spiritualized Sega SG-1000](https://img.shields.io/github/v/release/spiritualized1997/openFPGA-SG1000)](https://github.com/spiritualized1997/openFPGA-SG1000/releases/latest) |
-
-
+| [Tecmo](https://github.com/nullobject/openfpga-tecmo) | [nullobject](https://github.com/nullobject) | [![Tecmo](https://img.shields.io/github/v/release/nullobject/openfpga-tecmo?include_prereleases)](https://github.com/nullobject/openfpga-tecmo/releases/latest) |
