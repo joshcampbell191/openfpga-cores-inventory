@@ -12,6 +12,7 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
 
 | Name | Author | Release |
 | ---- | ------ | ------- |
+| [Arduboy for Analogue Pocket](https://github.com/agg23/analogue-arduboy) | [agg23](https://github.com/agg23) | [![Arduboy for Analogue Pocket](https://img.shields.io/github/v/release/agg23/analogue-arduboy)](https://github.com/agg23/analogue-arduboy/releases/latest) |
 | [Atari's 1972 Pong](https://github.com/agg23/analogue-pong) | [agg23](https://github.com/agg23) | [![Atari's 1972 Pong](https://img.shields.io/github/v/release/agg23/analogue-pong)](https://github.com/agg23/analogue-pong/releases/latest) |
 | [Neo Geo](https://github.com/Mazamars312/Analogue_Pocket_Neogeo) | [Mazamars312](https://github.com/Mazamars312) | [![Neo Geo](https://img.shields.io/github/v/release/Mazamars312/Analogue_Pocket_Neogeo?include_prereleases)](https://github.com/Mazamars312/Analogue_Pocket_Neogeo/releases/latest) |
 | [PDP-1](https://github.com/spacemen3/PDP-1) | [spacemen3](https://github.com/spacemen3) | [![PDP-1](https://img.shields.io/github/v/release/spacemen3/PDP-1)](https://github.com/spacemen3/PDP-1/releases/latest) |
