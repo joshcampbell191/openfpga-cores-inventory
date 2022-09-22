@@ -2,6 +2,7 @@
 - repo:
     user: agg23
     project: analogue-arduboy
+  display_name: Arduboy for Analogue Pocket
   name: agg23.Arduboy
   platform: Arduboy
 
@@ -9,11 +10,13 @@
     user: agg23
     project: analogue-pong
   name: agg23.Pong
+  display_name: Atari's 1972 Pong
   platform: Pong
 
 - repo:
     user: agg23
     project: openfpga-SNES
+  display_name: SNES for Analogue Pocket
   name: agg23.SNES
   platform: SNES
 
@@ -21,6 +24,7 @@
     user: ericlewis
     project: openfpga-asteroids
   name: ericlewis.Asteroids
+  display_name: Asteroids for Analogue Pocket
   platform: Asteroids
   assets:
     location: Assets/asteroids/ericlewis.Asteroids/
@@ -32,6 +36,7 @@
     user: ericlewis
     project: openfpga-dominos
   name: ericlewis.Dominos
+  display_name: Dominos for Analogue Pocket
   platform: Dominos
   assets:
     location: Assets/dominos/common/
@@ -43,6 +48,7 @@
     user: ericlewis
     project: openfpga-lunarlander
   name: ericlewis.LunarLander
+  display_name: Lunar Lander for Analogue Pocket
   platform: LunarLander
   assets:
     location: Assets/lunarlander/ericlewis.LunarLander/
@@ -54,12 +60,14 @@
     user: ericlewis
     project: openfpga-spacerace
   name: ericlewis.SpaceRace
+  display_name: Space Race for Analogue Pocket
   platform: SpaceRace
 
 - repo:
     user: ericlewis
     project: openfpga-superbreakout
   name: ericlewis.SuperBreakout
+  display_name: Super Breakout for Analogue Pocket
   platform: Super Breakout
   assets:
     location: Assets/superbreakout/common/
@@ -71,6 +79,7 @@
     user: Mazamars312
     project: Analogue_Pocket_Neogeo
   name: Mazamars312.NeoGeo
+  display_name: Neo Geo
   platform: Neo Geo
   assets:
     location: Assets/ng/common
@@ -88,6 +97,7 @@
     user: nullobject
     project: openfpga-tecmo
   name: nullobject.tecmo
+  display_name: Tecmo
   platform: Tecmo
   assets:
     location: Assets/tecmo/common
@@ -111,6 +121,7 @@
     user: opengateware
     project: arcade-digdug
   name: boogermann.digdug
+  display_name: Dig Dug
   platform: Dig Dug
   allowPrerelease: true
   assets:
@@ -131,6 +142,7 @@
     user: opengateware
     project: arcade-galaga
   name: boogermann.galaga
+  display_name: Galaga
   platform: Galaga
   assets:
     location: Assets/galaga/common/
@@ -170,12 +182,14 @@
     user: spacemen3
     project: PDP-1
   name: Spacemen3.PDP1
+  display_name: Space Race for Analogue Pocket
   platform: PDP-1
 
 - repo:
     user: spiritualized1997
     project: openFPGA-GBA
   name: Spiritualized.GBA
+  display_name: Spiritualized GBA
   platform: Gameboy Advance
   assets:
     location: Assets/gba/common/
@@ -187,6 +201,7 @@
     user: spiritualized1997
     project: openFPGA-GB-GBC
   name: Spiritualized.GBC
+  display_name: Spiritualized GB & GBC
   platform: Gameboy/Gameboy Color
   assets:
     location: Assets/gbc/common/
@@ -201,16 +216,19 @@
     user: spiritualized1997
     project: openFPGA-GG
   name: Spiritualized.GG
+  display_name: Spiritualized Sega Game Gear
   platform: Game Gear
 
 - repo:
     user: spiritualized1997
     project: openFPGA-SG1000
   name: Spiritualized.SG-1000
+  display_name: Spiritualized Sega SG-1000
   platform: SG-1000
 
 - repo:
     user: spiritualized1997
     project: openFPGA-SMS
   name: Spiritualized.SMS
+  display_name: Spiritualized Sega Master System
   platform: Master System
