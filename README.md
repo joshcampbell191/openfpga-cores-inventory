@@ -20,13 +20,13 @@ Then navigate to `http://localhost:4000/`
 ## API Usage
 openFPGA Cores Inventory provides a read-only API for developers.
 
-## Get list of cores
-### Request
+### Get list of cores
+#### Request
 `GET /api/v0/analogue-pocket/repos.json`
 
     curl -i -H 'Accept: application/json' https://joshcampbell191.github.io/openfpga-cores-inventory/api/v0/analogue-pocket/repos.json
 
-### Response
+#### Response
 
     HTTP/1.1 200 OK
     Etag: 170e0e5-1877-632ceaa7
