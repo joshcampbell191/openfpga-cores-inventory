@@ -1,0 +1,16 @@
+---
+layout: none
+---
+[
+  {%- for repo in site.data.repos %}
+  {
+    "repo": {
+      "user": {{- repo.repo.user | jsonify -}},
+      "project": {{- repo.repo.project | jsonify -}}
+    },
+    "name": {{- repo.name | jsonify -}},
+    "platform": {{- repo.platform | jsonify -}}
+  }
+  {% unless forloop.last %},{% endunless %}
+  {% endfor -%}
+]
