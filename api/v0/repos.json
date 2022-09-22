@@ -3,23 +3,26 @@ layout: none
 ---
 [
   {%- for repo in site.data.repos %}
+  {%- for core in repo.cores %}
   {
     "repo": {
       "user": {{ repo.user | jsonify }},
-      "project": {{ repo.project | jsonify }}
+      "project": {{ core.project | jsonify }}
     },
-    "name": {{ repo.name | jsonify }},
-    "platform": {{ repo.platform | jsonify }}
-    {%- if repo.allow_prerelease -%},{%- endif -%}
-    {% if repo.allow_prerelease %}
-    "allow_prerelease": {{ repo.allow_prerelease | jsonify }}
-    {%- unless repo.assets %},{% endunless %}
+    "name": {{ core.name | jsonify }},
+    "platform": {{ core.platform | jsonify }}
+    {%- if core.allow_prerelease -%},{%- endif -%}
+    {% if core.allow_prerelease %}
+    "allow_prerelease": {{ core.allow_prerelease | jsonify }}
+    {%- unless core.assets %},{% endunless %}
     {%- endif %}
-    {%- if repo.assets %}
+    {%- if core.assets %}
     {{- "," }}
-    "assets": {{ repo.assets | jsonify }}
+    "assets": {{ core.assets | jsonify }}
     {%- endif %}
   }
+  {%- unless forloop.last %},{% endunless %}
+  {%- endfor %}
   {%- unless forloop.last %},{% endunless %}
   {%- endfor %}
 ]
