@@ -112,7 +112,7 @@
   name: boogermann.digdug
   display_name: Dig Dug
   platform: Dig Dug
-  allowPrerelease: true
+  allow_prerelease: true
   assets:
     location: Assets/digdug/common/
     files:
