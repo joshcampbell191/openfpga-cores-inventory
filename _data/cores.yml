@@ -1,17 +1,17 @@
 ---
 - user: agg23
   cores:
-    - project: analogue-arduboy
+    - repo: analogue-arduboy
       display_name: Arduboy for Analogue Pocket
       name: agg23.Arduboy
       platform: Arduboy
       assets:
         location: Assets/arduboy/common/
-    - project: analogue-pong
+    - repo: analogue-pong
       name: agg23.Pong
       display_name: Atari's 1972 Pong
       platform: Pong
-    - project: openfpga-SNES
+    - repo: openfpga-SNES
       display_name: SNES for Analogue Pocket
       name: agg23.SNES
       platform: SNES
@@ -19,7 +19,7 @@
         location: Assets/snes/common/
 - user: ericlewis
   cores:
-    - project: openfpga-asteroids
+    - repo: openfpga-asteroids
       name: ericlewis.Asteroids
       display_name: Asteroids for Analogue Pocket
       platform: Asteroids
@@ -28,7 +28,7 @@
         files:
         - file_name: asteroid.rom
           url: https://archive.org/download/pocket-roms/Asteroids/asteroid.rom
-    - project: openfpga-dominos
+    - repo: openfpga-dominos
       name: ericlewis.Dominos
       display_name: Dominos for Analogue Pocket
       platform: Dominos
@@ -37,7 +37,7 @@
         files:
         - file_name: dominos.rom
           url: https://archive.org/download/pocket-roms/Dominos/dominos.rom
-    - project: openfpga-lunarlander
+    - repo: openfpga-lunarlander
       name: ericlewis.LunarLander
       display_name: Lunar Lander for Analogue Pocket
       platform: LunarLander
@@ -46,11 +46,11 @@
         files:
         - file_name: llander.rom
           url: https://archive.org/download/pocket-roms/Lunar_Lander/llander.rom
-    - project: openfpga-spacerace
+    - repo: openfpga-spacerace
       name: ericlewis.SpaceRace
       display_name: Space Race for Analogue Pocket
       platform: SpaceRace
-    - project: openfpga-superbreakout
+    - repo: openfpga-superbreakout
       name: ericlewis.SuperBreakout
       display_name: Super Breakout for Analogue Pocket
       platform: Super Breakout
@@ -61,7 +61,7 @@
           url: https://archive.org/download/pocket-roms/Super_Breakout/sbrkout.rom
 - user: Mazamars312
   cores:
-    - project: Analogue_Pocket_Neogeo
+    - repo: Analogue_Pocket_Neogeo
       name: Mazamars312.NeoGeo
       display_name: Neo Geo
       platform: Neo Geo
@@ -76,7 +76,7 @@
           url: https://archive.org/download/mister-console-bios-pack_theypsilon/NeoGeo.zip/sfix.sfix
 - user: nullobject
   cores:
-    - project: openfpga-tecmo
+    - repo: openfpga-tecmo
       name: nullobject.tecmo
       display_name: Tecmo
       platform: Tecmo
@@ -99,7 +99,7 @@
           url: https://archive.org/download/pocket-roms/Tecmo/silkwrmj.rom
 - user: opengateware
   cores:
-    - project: arcade-digdug
+    - repo: arcade-digdug
       name: boogermann.digdug
       display_name: Dig Dug
       platform: Dig Dug
@@ -116,7 +116,7 @@
           url: https://archive.org/download/pocket-roms/DigDug/digdugat.rom
         - file_name: digsid.rom
           url: https://archive.org/download/pocket-roms/DigDug/digsid.rom
-    - project: arcade-galaga
+    - repo: arcade-galaga
       name: boogermann.galaga
       display_name: Galaga
       platform: Galaga
@@ -155,13 +155,13 @@
           url: https://archive.org/download/pocket-roms/Galaga/vgalagam.rom
 - user: spacemen3
   cores:
-    - project: PDP-1
+    - repo: PDP-1
       name: Spacemen3.PDP1
       display_name: Space Race for Analogue Pocket
       platform: PDP-1
 - user: spiritualized1997
   cores:
-    - project: openFPGA-GBA
+    - repo: openFPGA-GBA
       name: Spiritualized.GBA
       display_name: Spiritualized GBA
       platform: Gameboy Advance
@@ -170,7 +170,7 @@
         files:
         - file_name: gba_bios.bin
           url: https://archive.org/download/mister-console-bios-pack_theypsilon/GBA.zip/gba_bios.bin
-    - project: openFPGA-GB-GBC
+    - repo: openFPGA-GB-GBC
       name: Spiritualized.GBC
       display_name: Spiritualized GB & GBC
       platform: Gameboy/Gameboy Color
@@ -182,19 +182,19 @@
         - override_location: Assets/gb/common/
           file_name: dmg_bios.bin
           url: https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb
-    - project: openFPGA-GG
+    - repo: openFPGA-GG
       name: Spiritualized.GG
       display_name: Spiritualized Sega Game Gear
       platform: Game Gear
       assets:
         location: Assets/gg/common/
-    - project: openFPGA-SG1000
+    - repo: openFPGA-SG1000
       name: Spiritualized.SG-1000
       display_name: Spiritualized Sega SG-1000
       platform: SG-1000
       assets:
         location: Assets/sg1000/common/
-    - project: openFPGA-SMS
+    - repo: openFPGA-SMS
       name: Spiritualized.SMS
       display_name: Spiritualized Sega Master System
       platform: Master System

@@ -7,7 +7,7 @@ layout: none
   {
     "repo": {
       "user": {{ repo.user | jsonify }},
-      "project": {{ core.project | jsonify }}
+      "project": {{ core.repo | jsonify }}
     },
     "name": {{ core.name | jsonify }},
     "platform": {{ core.platform | jsonify }}
