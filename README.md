@@ -17,7 +17,7 @@ $ bundle exec jekyll serve
 
 Then navigate to `http://localhost:4000/`
 
-## API Usage
+## API usage
 openFPGA Cores Inventory provides a read-only API for developers.
 
 ### Cores
@@ -73,34 +73,34 @@ Content-Type: application/json; charset=utf-8
 
 Where a core object is:
 
-| Field             | Type         | Description                                                                                                         |
-| ------------------|--------------|---------------------------------------------------------------------------------------------------------------------|
-| repo              | object       | An object containing the developer and repo name.                                                                   |
-| identifier        | string       | The core's unique identifier.                                                                                       |
-| platform          | string       | The name of the core's game platform.                                                                               |
-| assets            | object       | An object containing a description of additional asset files for the core.                                          |
+| Field             | Type   | Description                                                                |
+| ------------------|--------|----------------------------------------------------------------------------|
+| repo              | object | An object containing the developer and repo name.                          |
+| identifier        | string | The core's unique identifier.                                              |
+| platform          | string | The name of the core's game platform.                                      |
+| assets            | object | An object containing a description of additional asset files for the core. |
 
 Where a repo object is:
 
-| Field             | Type         | Description                                                                                                         |
-| ------------------|--------------|---------------------------------------------------------------------------------------------------------------------|
-| user              | string       | The core developer's GitHub username.                                                                               |
-| project           | string       | The core's GitHub repository name.                                                                                  |
+| Field             | Type   | Description                           |
+| ------------------|--------|---------------------------------------|
+| user              | string | The core developer's GitHub username. |
+| project           | string | The core's GitHub repository name.    |
 
 Where an asset object is:
 
-| Field             | Type         | Description                                                                                                         |
-| ------------------|--------------|---------------------------------------------------------------------------------------------------------------------|
-| location          | string       | The path on the SD card where the core's assets must be placed.                                                     |
-| files             | object array | A list of file objects.                                                                                             |
+| Field             | Type         | Description                                                     |
+| ------------------|--------------|-----------------------------------------------------------------|
+| location          | string       | The path on the SD card where the core's assets must be placed. |
+| files             | object array | A list of file objects.                                         |
 
 Where a file object is:
 
-| Field             | Type         | Description                                                                                                         |
-| ------------------|--------------|---------------------------------------------------------------------------------------------------------------------|
-| file_name         | string       | The name the file must use in the core's Assets directory.                                                          |
-| url               | string       | The URL where the file is located.                                                                                  |
-| override_location | string       | The path on the SD card where this file should be placed. This overrides the `location` stored in the asset object. |
+| Field             | Type   | Description                                                                                                         |
+| ------------------|--------|---------------------------------------------------------------------------------------------------------------------|
+| file_name         | string | The name the file must use in the core's Assets directory.                                                          |
+| url               | string | The URL where the file is located.                                                                                  |
+| override_location | string | The path on the SD card where this file should be placed. This overrides the `location` stored in the asset object. |
 
 Possible errors:
 
@@ -109,18 +109,26 @@ Possible errors:
 | 403 Forbidden | The GitHub API rate limit has been exceeded. |
 
 ## Adding a new core
-To add a new core, you will need to edit the `_data/cores.yml` file. At a minimum, you must add:
+To add a new core, you will need to edit the `_data/cores.yml` file. At a minimum, you must add the fields marked `<required>`:
 
 ```yaml
-- username: agg23
-  cores:
-    - repo: analogue-arduboy
-      display_name: Arduboy for Analogue Pocket
+- username: spiritualized1997 #<required>
+  cores: #<required>
+    - repo: openFPGA-GB-GBC #<required>
+      display_name: Spiritualized GB & GBC #<required>
+      identifier: Spiritualized.GBC #<required>
+      platform: Gameboy/Gameboy Color #<required>
+      assets:
+        location: Assets/gbc/common/
+        files:
+        - file_name: gbc_bios.bin
+          url: https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GBC_boot_ROM.gb
+        - file_name: dmg_bios.bin
+          url: https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb
+          override_location: Assets/gb/common/
 ```
 
-The top level `username` key is the developer's GitHub username and `cores` is a list of cores by that developer. `repo` is the GitHub repository name of the core and `display_name` is the name that will be used to list the core in the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
-
-There are many other optional keys that are needed by some specific cores for application developers. More documentation will be added at a later date.
+Information on what these fields mean can be found in the [API description](#getting-the-list-of-cores). There is one additional field `display_name` that is used in the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
