@@ -156,7 +156,7 @@
 - username: spacemen3
   cores:
     - repo: PDP-1
-      display_name: Space Race for Analogue Pocket
+      display_name: PDP-1
       identifier: Spacemen3.PDP1
       platform: PDP-1
 - username: spiritualized1997
