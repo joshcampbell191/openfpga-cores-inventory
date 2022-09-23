@@ -22,8 +22,8 @@
       assets:
         location: Assets/asteroids/ericlewis.Asteroids/
         files:
-        - url: https://archive.org/download/pocket-roms/Asteroids/asteroid.rom
-          file_name: asteroid.rom
+        - file_name: asteroid.rom
+          url: https://archive.org/download/pocket-roms/Asteroids/asteroid.rom
     - project: openfpga-dominos
       name: ericlewis.Dominos
       display_name: Dominos for Analogue Pocket
@@ -31,8 +31,8 @@
       assets:
         location: Assets/dominos/common/
         files:
-        - url: https://archive.org/download/pocket-roms/Dominos/dominos.rom
-          file_name: dominos.rom
+        - file_name: dominos.rom
+          url: https://archive.org/download/pocket-roms/Dominos/dominos.rom
     - project: openfpga-lunarlander
       name: ericlewis.LunarLander
       display_name: Lunar Lander for Analogue Pocket
@@ -40,8 +40,8 @@
       assets:
         location: Assets/lunarlander/ericlewis.LunarLander/
         files:
-        - url: https://archive.org/download/pocket-roms/Lunar_Lander/llander.rom
-          file_name: llander.rom
+        - file_name: llander.rom
+          url: https://archive.org/download/pocket-roms/Lunar_Lander/llander.rom
     - project: openfpga-spacerace
       name: ericlewis.SpaceRace
       display_name: Space Race for Analogue Pocket
@@ -53,8 +53,8 @@
       assets:
         location: Assets/superbreakout/common/
         files:
-        - url: https://archive.org/download/pocket-roms/Super_Breakout/sbrkout.rom
-          file_name: sbrkout.rom
+        - file_name: sbrkout.rom
+          url: https://archive.org/download/pocket-roms/Super_Breakout/sbrkout.rom
 - user: Mazamars312
   cores:
     - project: Analogue_Pocket_Neogeo
@@ -64,12 +64,12 @@
       assets:
         location: Assets/ng/common
         files:
-        - url: https://archive.org/download/MAME_2003-Plus_Reference_Set_2018/roms/bakatono.zip/uni-bios_1_0.rom
-          file_name: uni-bios_1_0.rom
-        - url: https://archive.org/download/mister-console-bios-pack_theypsilon/NeoGeo.zip/000-lo.lo
-          file_name: 000-lo.lo
-        - url: https://archive.org/download/mister-console-bios-pack_theypsilon/NeoGeo.zip/sfix.sfix
-          file_name: sfix.sfix
+        - file_name: uni-bios_1_0.rom
+          url: https://archive.org/download/MAME_2003-Plus_Reference_Set_2018/roms/bakatono.zip/uni-bios_1_0.rom
+        - file_name: 000-lo.lo
+          url: https://archive.org/download/mister-console-bios-pack_theypsilon/NeoGeo.zip/000-lo.lo
+        - file_name: sfix.sfix
+          url: https://archive.org/download/mister-console-bios-pack_theypsilon/NeoGeo.zip/sfix.sfix
 - user: nullobject
   cores:
     - project: openfpga-tecmo
@@ -79,20 +79,20 @@
       assets:
         location: Assets/tecmo/common
         files:
-        - url: https://archive.org/download/pocket-roms/Tecmo/gemini.rom
-          file_name: gemini.rom
-        - url: https://archive.org/download/pocket-roms/Tecmo/geminij.rom
-          file_name: geminij.rom
-        - url: https://archive.org/download/pocket-roms/Tecmo/rygar.rom
-          file_name: rygar.rom
-        - url: https://archive.org/download/pocket-roms/Tecmo/rygarj.rom
-          file_name: rygarj.rom
-        - url: https://archive.org/download/pocket-roms/Tecmo/rygar2.rom
-          file_name: rygar2.rom
-        - url: https://archive.org/download/pocket-roms/Tecmo/silkworm.rom
-          file_name: silkworm.rom
-        - url: https://archive.org/download/pocket-roms/Tecmo/silkwrmj.rom
-          file_name: silkwrmj.rom
+        - file_name: gemini.rom
+          url: https://archive.org/download/pocket-roms/Tecmo/gemini.rom
+        - file_name: geminij.rom
+          url: https://archive.org/download/pocket-roms/Tecmo/geminij.rom
+        - file_name: rygar.rom
+          url: https://archive.org/download/pocket-roms/Tecmo/rygar.rom
+        - file_name: rygarj.rom
+          url: https://archive.org/download/pocket-roms/Tecmo/rygarj.rom
+        - file_name: rygar2.rom
+          url: https://archive.org/download/pocket-roms/Tecmo/rygar2.rom
+        - file_name: silkworm.rom
+          url: https://archive.org/download/pocket-roms/Tecmo/silkworm.rom
+        - file_name: silkwrmj.rom
+          url: https://archive.org/download/pocket-roms/Tecmo/silkwrmj.rom
 - user: opengateware
   cores:
     - project: arcade-digdug
@@ -103,16 +103,16 @@
       assets:
         location: Assets/digdug/common/
         files:
-        - url: https://archive.org/download/pocket-roms/DigDug/digdug.rom
-          file_name: digdug.rom
-        - url: https://archive.org/download/pocket-roms/DigDug/digduat1.rom
-          file_name: digduat1.rom
-        - url: https://archive.org/download/pocket-roms/DigDug/digdug1.rom
-          file_name: digdug1.rom
-        - url: https://archive.org/download/pocket-roms/DigDug/digdugat.rom
-          file_name: digdugat.rom
-        - url: https://archive.org/download/pocket-roms/DigDug/digsid.rom
-          file_name: digsid.rom
+        - file_name: digdug.rom
+          url: https://archive.org/download/pocket-roms/DigDug/digdug.rom
+        - file_name: digduat1.rom
+          url: https://archive.org/download/pocket-roms/DigDug/digduat1.rom
+        - file_name: digdug1.rom
+          url: https://archive.org/download/pocket-roms/DigDug/digdug1.rom
+        - file_name: digdugat.rom
+          url: https://archive.org/download/pocket-roms/DigDug/digdugat.rom
+        - file_name: digsid.rom
+          url: https://archive.org/download/pocket-roms/DigDug/digsid.rom
     - project: arcade-galaga
       name: boogermann.galaga
       display_name: Galaga
@@ -120,36 +120,36 @@
       assets:
         location: Assets/galaga/common/
         files:
-        - url: https://archive.org/download/pocket-roms/Galaga/galaga.rom
-          file_name: galaga.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/galagads.rom
-          file_name: galagads.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/galagaef.rom
-          file_name: galagaef.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/galagamf.rom
-          file_name: galagamf.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/galagamw.rom
-          file_name: galagamw.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/galagao.rom
-          file_name: galagao.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/galagosb.rom
-          file_name: galagosb.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/galagost.rom
-          file_name: galagost.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/galaped.rom
-          file_name: galaped.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/galgaxin.rom
-          file_name: galgaxin.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/gatsbee.rom
-          file_name: gatsbee.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/nebulbee.rom
-          file_name: nebulbee.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/vgalaga.rom
-          file_name: vgalaga.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/vgalagaf.rom
-          file_name: vgalagaf.rom
-        - url: https://archive.org/download/pocket-roms/Galaga/vgalagam.rom
-          file_name: vgalagam.rom
+        - file_name: galaga.rom
+          url: https://archive.org/download/pocket-roms/Galaga/galaga.rom
+        - file_name: galagads.rom
+          url: https://archive.org/download/pocket-roms/Galaga/galagads.rom
+        - file_name: galagaef.rom
+          url: https://archive.org/download/pocket-roms/Galaga/galagaef.rom
+        - file_name: galagamf.rom
+          url: https://archive.org/download/pocket-roms/Galaga/galagamf.rom
+        - file_name: galagamw.rom
+          url: https://archive.org/download/pocket-roms/Galaga/galagamw.rom
+        - file_name: galagao.rom
+          url: https://archive.org/download/pocket-roms/Galaga/galagao.rom
+        - file_name: galagosb.rom
+          url: https://archive.org/download/pocket-roms/Galaga/galagosb.rom
+        - file_name: galagost.rom
+          url: https://archive.org/download/pocket-roms/Galaga/galagost.rom
+        - file_name: galaped.rom
+          url: https://archive.org/download/pocket-roms/Galaga/galaped.rom
+        - file_name: galgaxin.rom
+          url: https://archive.org/download/pocket-roms/Galaga/galgaxin.rom
+        - file_name: gatsbee.rom
+          url: https://archive.org/download/pocket-roms/Galaga/gatsbee.rom
+        - file_name: nebulbee.rom
+          url: https://archive.org/download/pocket-roms/Galaga/nebulbee.rom
+        - file_name: vgalaga.rom
+          url: https://archive.org/download/pocket-roms/Galaga/vgalaga.rom
+        - file_name: vgalagaf.rom
+          url: https://archive.org/download/pocket-roms/Galaga/vgalagaf.rom
+        - file_name: vgalagam.rom
+          url: https://archive.org/download/pocket-roms/Galaga/vgalagam.rom
 - user: spacemen3
   cores:
     - project: PDP-1
