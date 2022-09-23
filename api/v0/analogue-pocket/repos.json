@@ -11,11 +11,6 @@ layout: none
     },
     "name": {{ core.name | jsonify }},
     "platform": {{ core.platform | jsonify }}
-    {%- if core.allow_prerelease -%},{%- endif -%}
-    {% if core.allow_prerelease %}
-    "allow_prerelease": {{ core.allow_prerelease | jsonify }}
-    {%- unless core.assets %},{% endunless %}
-    {%- endif %}
     {%- if core.assets %}
     {{- "," }}
     "assets": {{ core.assets | jsonify }}

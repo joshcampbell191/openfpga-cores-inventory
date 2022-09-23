@@ -99,7 +99,6 @@
       name: boogermann.digdug
       display_name: Dig Dug
       platform: Dig Dug
-      allow_prerelease: true
       assets:
         location: Assets/digdug/common/
         files:
