@@ -40,6 +40,10 @@ openFPGA Cores Inventory provides a read-only API for developers.
 
     [
         {
+            "repo": {
+                "user": "Mazamars312",
+                "project": "Analogue_Pocket_Neogeo"
+            },
             "name": "Mazamars312.NeoGeo",
             "platform": "Neo Geo",
             "assets": {
