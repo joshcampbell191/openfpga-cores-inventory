@@ -22,9 +22,9 @@ openFPGA Cores Inventory provides a read-only API for developers.
 
 ### Get list of cores
 #### Request
-`GET /api/v0/analogue-pocket/repos.json`
+`GET /api/v0/analogue-pocket/cores.json`
 
-    curl -i -H 'Accept: application/json' https://joshcampbell191.github.io/openfpga-cores-inventory/api/v0/analogue-pocket/repos.json
+    curl -i -H 'Accept: application/json' https://joshcampbell191.github.io/openfpga-cores-inventory/api/v0/analogue-pocket/cores.json
 
 #### Response
 
@@ -59,7 +59,7 @@ openFPGA Cores Inventory provides a read-only API for developers.
     ]
 
 ## Adding a new core
-To add a new core, you will need to edit the `_data/repos.yml` file. At a minimum, you must add:
+To add a new core, you will need to edit the `_data/cores.yml` file. At a minimum, you must add:
 
 ```yaml
 - user: agg23

@@ -2,7 +2,7 @@
 layout: none
 ---
 [
-  {%- for repo in site.data.repos %}
+  {%- for repo in site.data.cores %}
   {%- for core in repo.cores %}
   {
     "repo": {
