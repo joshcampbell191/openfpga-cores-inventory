@@ -179,9 +179,9 @@
         files:
         - file_name: gbc_bios.bin
           url: https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GBC_boot_ROM.gb
-        - override_location: Assets/gb/common/
-          file_name: dmg_bios.bin
+        - file_name: dmg_bios.bin
           url: https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb
+          override_location: Assets/gb/common/
     - repo: openFPGA-GG
       display_name: Spiritualized Sega Game Gear
       identifier: Spiritualized.GG
