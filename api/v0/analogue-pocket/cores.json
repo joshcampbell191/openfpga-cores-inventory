@@ -9,11 +9,12 @@ layout: none
       "user": {{ developer.username | jsonify }},
       "project": {{ core.repo | jsonify }}
     },
-    "name": {{ core.name | jsonify }},
-    "platform": {{ core.platform | jsonify }}
+    "identifier": {{ core.identifier | jsonify }},
+    "platform": {{ core.platform | jsonify }},
     {%- if core.assets %}
-    {{- "," }}
     "assets": {{ core.assets | jsonify }}
+    {%- else %}
+    "assets": {}
     {%- endif %}
   }
   {%- unless forloop.last %},{% endunless %}
