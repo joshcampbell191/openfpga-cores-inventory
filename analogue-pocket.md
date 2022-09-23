@@ -6,13 +6,14 @@ layout: page
 title: Analogue Pocket
 ---
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  function sortTable() {
     const tableBody = document.querySelector("tbody");
     const tableRows = tableBody.querySelectorAll("tr");
     [...tableRows]
-      .sort((a, b) => (a.innerText > b.innerText ? 1 : -1))
-      .forEach(node => tableBody.appendChild(node))
-  })
+      .sort((a, b) => a.innerText > b.innerText ? 1 : -1)
+      .forEach(row => tableBody.appendChild(row))
+  }
+  document.addEventListener("DOMContentLoaded", sortTable)
 </script>
 
 The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-system portable handheld designed and built by [Analogue](https://www.analogue.co).
