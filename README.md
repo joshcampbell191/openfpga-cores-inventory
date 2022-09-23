@@ -73,34 +73,34 @@ Content-Type: application/json; charset=utf-8
 
 Where a core object is:
 
-| Field      | Type   | Description                                                                |
-| -----------|--------|----------------------------------------------------------------------------|
-| repo       | object | An object containing the developer and repo name.                          |
-| identifier | string | The core's unique identifier.                                              |
-| platform   | string | The name of the core's game platform.                                      |
-| assets     | object | An object containing a description of additional asset files for the core. |
+| Field             | Type         | Description                                                                                                         |
+| ------------------|--------------|---------------------------------------------------------------------------------------------------------------------|
+| repo              | object       | An object containing the developer and repo name.                                                                   |
+| identifier        | string       | The core's unique identifier.                                                                                       |
+| platform          | string       | The name of the core's game platform.                                                                               |
+| assets            | object       | An object containing a description of additional asset files for the core.                                          |
 
 Where a repo object is:
 
-| Field      | Type   | Description                           |
-| -----------|--------|---------------------------------------|
-| user       | string | The core developer's GitHub username. |
-| project    | string | The core's GitHub repository name.    |
+| Field             | Type         | Description                                                                                                         |
+| ------------------|--------------|---------------------------------------------------------------------------------------------------------------------|
+| user              | string       | The core developer's GitHub username.                                                                               |
+| project           | string       | The core's GitHub repository name.                                                                                  |
 
 Where an asset object is:
 
-| Field      | Type         | Description                                                     |
-| -----------|--------------|-----------------------------------------------------------------|
-| location   | string       | The path on the SD card where the core's assets must be placed. |
-| files      | object array | A list of file objects.                                         |
+| Field             | Type         | Description                                                                                                         |
+| ------------------|--------------|---------------------------------------------------------------------------------------------------------------------|
+| location          | string       | The path on the SD card where the core's assets must be placed.                                                     |
+| files             | object array | A list of file objects.                                                                                             |
 
 Where a file object is:
 
-| Field             | Type   | Description                                                                                                         |
-| ------------------|--------|---------------------------------------------------------------------------------------------------------------------|
-| file_name         | string | The name the file must use in the core's Assets directory.                                                          |
-| url               | string | The URL where the file is located.                                                                                  |
-| override_location | string | The path on the SD card where this file should be placed. This overrides the `location` stored in the asset object. |
+| Field             | Type         | Description                                                                                                         |
+| ------------------|--------------|---------------------------------------------------------------------------------------------------------------------|
+| file_name         | string       | The name the file must use in the core's Assets directory.                                                          |
+| url               | string       | The URL where the file is located.                                                                                  |
+| override_location | string       | The path on the SD card where this file should be placed. This overrides the `location` stored in the asset object. |
 
 Possible errors:
 
