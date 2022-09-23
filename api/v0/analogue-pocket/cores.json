@@ -2,11 +2,11 @@
 layout: none
 ---
 [
-  {%- for repo in site.data.cores %}
-  {%- for core in repo.cores %}
+  {%- for developer in site.data.cores %}
+  {%- for core in devloper.cores %}
   {
     "repo": {
-      "user": {{ repo.user | jsonify }},
+      "user": {{ devloper.username | jsonify }},
       "project": {{ core.repo | jsonify }}
     },
     "name": {{ core.name | jsonify }},

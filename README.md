@@ -62,13 +62,13 @@ openFPGA Cores Inventory provides a read-only API for developers.
 To add a new core, you will need to edit the `_data/cores.yml` file. At a minimum, you must add:
 
 ```yaml
-- user: agg23
+- username: agg23
   cores:
     - repo: analogue-arduboy
       display_name: Arduboy for Analogue Pocket
 ```
 
-The top level `user` key is the developer's GitHub username and `cores` is a list of cores by that developer. `repo` is the GitHub repository name of the core and `display_name` is the name that will be used to list the core in the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
+The top level `username` key is the developer's GitHub username and `cores` is a list of cores by that developer. `repo` is the GitHub repository name of the core and `display_name` is the name that will be used to list the core in the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
 
 There are many other optional keys that are needed by some specific cores for application developers. More documentation will be added at a later date.
 

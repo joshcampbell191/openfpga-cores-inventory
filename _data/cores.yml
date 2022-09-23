@@ -1,5 +1,5 @@
 ---
-- user: agg23
+- username: agg23
   cores:
     - repo: analogue-arduboy
       display_name: Arduboy for Analogue Pocket
@@ -17,7 +17,7 @@
       platform: SNES
       assets:
         location: Assets/snes/common/
-- user: ericlewis
+- username: ericlewis
   cores:
     - repo: openfpga-asteroids
       name: ericlewis.Asteroids
@@ -59,7 +59,7 @@
         files:
         - file_name: sbrkout.rom
           url: https://archive.org/download/pocket-roms/Super_Breakout/sbrkout.rom
-- user: Mazamars312
+- username: Mazamars312
   cores:
     - repo: Analogue_Pocket_Neogeo
       name: Mazamars312.NeoGeo
@@ -74,7 +74,7 @@
           url: https://archive.org/download/mister-console-bios-pack_theypsilon/NeoGeo.zip/000-lo.lo
         - file_name: sfix.sfix
           url: https://archive.org/download/mister-console-bios-pack_theypsilon/NeoGeo.zip/sfix.sfix
-- user: nullobject
+- username: nullobject
   cores:
     - repo: openfpga-tecmo
       name: nullobject.tecmo
@@ -97,7 +97,7 @@
           url: https://archive.org/download/pocket-roms/Tecmo/silkworm.rom
         - file_name: silkwrmj.rom
           url: https://archive.org/download/pocket-roms/Tecmo/silkwrmj.rom
-- user: opengateware
+- username: opengateware
   cores:
     - repo: arcade-digdug
       name: boogermann.digdug
@@ -153,13 +153,13 @@
           url: https://archive.org/download/pocket-roms/Galaga/vgalagaf.rom
         - file_name: vgalagam.rom
           url: https://archive.org/download/pocket-roms/Galaga/vgalagam.rom
-- user: spacemen3
+- username: spacemen3
   cores:
     - repo: PDP-1
       name: Spacemen3.PDP1
       display_name: Space Race for Analogue Pocket
       platform: PDP-1
-- user: spiritualized1997
+- username: spiritualized1997
   cores:
     - repo: openFPGA-GBA
       name: Spiritualized.GBA
