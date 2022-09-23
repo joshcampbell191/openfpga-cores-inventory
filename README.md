@@ -1,5 +1,5 @@
 # openFPGA Cores Inventory
-openFPGA Cores Inventory is the premier destination for keeping track of cores built with [openFPGA](https://www.analogue.co/developer). 
+openFPGA Cores Inventory is the premier destination for keeping track of cores built with [openFPGA](https://www.analogue.co/developer).
 
 ## Installation
 You will need to install [Ruby](https://www.ruby-lang.org/en/documentation/installation/), then run the following command in the root of the project:
@@ -50,7 +50,7 @@ openFPGA Cores Inventory provides a read-only API for developers.
                         "file_name": "uni-bios_1_0.rom",
                         "zip": true,
                         "zip_file": "uni-bios.rom"
-                    }           
+                    }
                 ]
             }
         }
@@ -66,7 +66,7 @@ To add a new core, you will need to edit the `_data/repos.yml` file. At a minimu
       display_name: Arduboy for Analogue Pocket
 ```
 
-The top level `user` key is the developer's GitHub username, and `cores` is a list of cores by that developer. `project` is the GitHub repository name of the core and `display_name` is the name that will be used to list the core in the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
+The top level `user` key is the developer's GitHub username and `cores` is a list of cores by that developer. `project` is the GitHub repository name of the core and `display_name` is the name that will be used to list the core in the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
 
 There are many other optional keys that are needed by some specific cores for application developers. More documentation will be added at a later date.
 

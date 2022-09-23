@@ -6,7 +6,7 @@ layout: page
 title: Analogue Pocket
 ---
 <script>
-  document.addEventListener("DOMContentLoaded", ()=> {
+  document.addEventListener("DOMContentLoaded", () => {
     const tableBody = document.querySelector("tbody");
     const tableRows = tableBody.querySelectorAll("tr");
     [...tableRows]
