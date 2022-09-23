@@ -22,8 +22,8 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
 
 | Name | Author | Release | Release Date |
 | ---- | ------ | ------- | ------------ |
-{% for devloper in site.data.cores -%}
-{% for core in devloper.cores -%}
-| [{{ core.display_name }}](https://github.com/{{ devloper.username }}/{{ core.repo }}) | [{{ devloper.username }}](https://github.com/{{ devloper.username }}) | [![release](https://img.shields.io/github/v/release/{{ devloper.username }}/{{ core.repo }}?include_prereleases)](https://github.com/{{ devloper.username }}/{{ core.project }}/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date-pre/{{ devloper.username }}/{{ core.repo }}) |
+{% for developer in site.data.cores -%}
+{% for core in developer.cores -%}
+| [{{ core.display_name }}](https://github.com/{{ developer.username }}/{{ core.repo }}) | [{{ developer.username }}](https://github.com/{{ developer.username }}) | [![release](https://img.shields.io/github/v/release/{{ developer.username }}/{{ core.repo }}?include_prereleases)](https://github.com/{{ developer.username }}/{{ core.project }}/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date-pre/{{ developer.username }}/{{ core.repo }}) |
 {% endfor -%}
 {% endfor -%}
