@@ -64,10 +64,8 @@
       assets:
         location: Assets/ng/common
         files:
-        - url: http://unibios.free.fr/download/uni-bios-40.zip
+        - url: https://archive.org/download/MAME_2003-Plus_Reference_Set_2018/roms/bakatono.zip/uni-bios_1_0.rom
           file_name: uni-bios_1_0.rom
-          zip: true
-          zip_file: uni-bios.rom
         - url: https://archive.org/download/mister-console-bios-pack_theypsilon/NeoGeo.zip/000-lo.lo
           file_name: 000-lo.lo
         - url: https://archive.org/download/mister-console-bios-pack_theypsilon/NeoGeo.zip/sfix.sfix
