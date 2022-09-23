@@ -5,6 +5,8 @@
       display_name: Arduboy for Analogue Pocket
       name: agg23.Arduboy
       platform: Arduboy
+      assets:
+        location: Assets/arduboy/common/
     - project: analogue-pong
       name: agg23.Pong
       display_name: Atari's 1972 Pong
@@ -13,6 +15,8 @@
       display_name: SNES for Analogue Pocket
       name: agg23.SNES
       platform: SNES
+      assets:
+        location: Assets/snes/common/
 - user: ericlewis
   cores:
     - project: openfpga-asteroids
@@ -62,7 +66,7 @@
       display_name: Neo Geo
       platform: Neo Geo
       assets:
-        location: Assets/ng/common
+        location: Assets/ng/common/
         files:
         - file_name: uni-bios_1_0.rom
           url: https://archive.org/download/MAME_2003-Plus_Reference_Set_2018/roms/bakatono.zip/uni-bios_1_0.rom
@@ -77,7 +81,7 @@
       display_name: Tecmo
       platform: Tecmo
       assets:
-        location: Assets/tecmo/common
+        location: Assets/tecmo/common/
         files:
         - file_name: gemini.rom
           url: https://archive.org/download/pocket-roms/Tecmo/gemini.rom
@@ -182,11 +186,17 @@
       name: Spiritualized.GG
       display_name: Spiritualized Sega Game Gear
       platform: Game Gear
+      assets:
+        location: Assets/gg/common/
     - project: openFPGA-SG1000
       name: Spiritualized.SG-1000
       display_name: Spiritualized Sega SG-1000
       platform: SG-1000
+      assets:
+        location: Assets/sg1000/common/
     - project: openFPGA-SMS
       name: Spiritualized.SMS
       display_name: Spiritualized Sega Master System
       platform: Master System
+      assets:
+        location: Assets/sms/common/
