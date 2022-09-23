@@ -20,43 +20,93 @@ Then navigate to `http://localhost:4000/`
 ## API Usage
 openFPGA Cores Inventory provides a read-only API for developers.
 
-### Get list of cores
-#### Request
-`GET /api/v0/analogue-pocket/cores.json`
+### Cores
 
-    curl -i -H 'Accept: application/json' https://joshcampbell191.github.io/openfpga-cores-inventory/api/v0/analogue-pocket/cores.json
+#### Getting the list of cores
+Returns a list of all available cores for the Analogue Pocket.
 
-#### Response
+```
+GET https://joshcampbell191.github.io/openfpga-cores-inventory/api/v0/analogue-pocket/cores.json
+```
 
-    HTTP/1.1 200 OK
-    Etag: 170e0e5-1877-632ceaa7
-    Content-Type: application/json; charset=utf-8
-    Content-Length: 6263
-    Last-Modified: Thu, 22 Sep 2022 23:07:19 GMT
-    Cache-Control: private, max-age=0, proxy-revalidate, no-store, no-cache, must-revalidate
-    Server: WEBrick/1.7.0 (Ruby/3.0.2/2021-07-07)
-    Date: Thu, 22 Sep 2022 23:09:25 GMT
-    Connection: close
+Example request:
 
-    [
+```
+GET /api/v0/analogue-pocket/cores.json HTTP/1.1
+Host: https://joshcampbell191.github.io
+Content-Type: application/json
+Accept: application/json
+Accept-Charset: utf-8
+```
+
+The response is a list of core objects.
+
+Example response:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+
+[
+  {
+    "repo": {
+      "user": "spiritualized1997",
+      "project": "openFPGA-GB-GBC"
+    },
+    "identifier": "Spiritualized.GBC",
+    "platform": "Gameboy/Gameboy Color",
+    "assets": {
+      "location": "Assets/gbc/common/",
+      "files": [
         {
-            "repo": {
-                "user": "Mazamars312",
-                "project": "Analogue_Pocket_Neogeo"
-            },
-            "identifier": "Mazamars312.NeoGeo",
-            "platform": "Neo Geo",
-            "assets": {
-                "location": "Assets/ng/common",
-                "files": [
-                    {
-                        "file_name": "uni-bios_1_0.rom",
-                        "url": "https://archive.org/download/MAME_2003-Plus_Reference_Set_2018/roms/bakatono.zip/uni-bios_1_0.rom"
-                    }
-                ]
-            }
-        }
-    ]
+          "file_name": "dmg_bios.bin",
+          "url": "https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb",
+          "override_location: "Assets/gb/common/"
+        },
+        ...
+      ]
+    }
+  },
+  ...
+]
+```
+
+Where a core object is:
+
+| Field      | Type   | Description                                                                |
+| -----------|--------|----------------------------------------------------------------------------|
+| repo       | object | An object containing the developer and repo name.                          |
+| identifier | string | The core's unique identifier.                                              |
+| platform   | string | The name of the core's game platform.                                      |
+| assets     | object | An object containing a description of additional asset files for the core. |
+
+Where a repo object is:
+
+| Field      | Type   | Description                           |
+| -----------|--------|---------------------------------------|
+| user       | string | The core developer's GitHub username. |
+| project    | string | The core's GitHub repository name.    |
+
+Where an asset object is:
+
+| Field      | Type         | Description                                                     |
+| -----------|--------------|-----------------------------------------------------------------|
+| location   | string       | The path on the SD card where the core's assets must be placed. |
+| files      | object array | A list of file objects.                                         |
+
+Where a file object is:
+
+| Field             | Type   | Description                                                                                                         |
+| ------------------|--------|---------------------------------------------------------------------------------------------------------------------|
+| file_name         | string | The name the file must use in the core's Assets directory.                                                          |
+| url               | string | The URL where the file is located.                                                                                  |
+| override_location | string | The path on the SD card where this file should be placed. This overrides the `location` stored in the asset object. |
+
+Possible errors:
+
+| Error code    | Description                                  |
+| --------------|----------------------------------------------|
+| 403 Forbidden | The GitHub API rate limit has been exceeded. |
 
 ## Adding a new core
 To add a new core, you will need to edit the `_data/cores.yml` file. At a minimum, you must add:
