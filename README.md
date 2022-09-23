@@ -50,10 +50,8 @@ openFPGA Cores Inventory provides a read-only API for developers.
                 "location": "Assets/ng/common",
                 "files": [
                     {
-                        "url": "http://unibios.free.fr/download/uni-bios-40.zip",
+                        "url": "https://archive.org/download/MAME_2003-Plus_Reference_Set_2018/roms/bakatono.zip/uni-bios_1_0.rom",
                         "file_name": "uni-bios_1_0.rom",
-                        "zip": true,
-                        "zip_file": "uni-bios.rom"
                     }
                 ]
             }
