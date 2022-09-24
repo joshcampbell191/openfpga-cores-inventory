@@ -54,7 +54,7 @@
         files:
         - roms:
           - file_name: llander.rom
-            checksum: ""
+            checksum: 5b2971c7a10d7b454892374ea3f48515
     - repo: openfpga-spacerace
       display_name: Space Race for Analogue Pocket
       identifier: ericlewis.SpaceRace
@@ -68,7 +68,7 @@
         files:
         - roms:
           - file_name: sbrkout.rom
-            checksum: ""
+            checksum: b80592e3c65a8c88bd48960d56c3e985
 - username: Mazamars312
   cores:
     - repo: Analogue_Pocket_Neogeo
