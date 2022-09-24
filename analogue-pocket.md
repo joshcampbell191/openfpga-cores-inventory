@@ -5,28 +5,25 @@
 layout: page
 title: Analogue Pocket
 ---
+<script>
+  function sortTable() {
+    const tableBody = document.querySelector("tbody");
+    const tableRows = tableBody.querySelectorAll("tr");
+    [...tableRows]
+      .sort((a, b) => a.innerText > b.innerText ? 1 : -1)
+      .forEach(row => tableBody.appendChild(row))
+  }
+  document.addEventListener("DOMContentLoaded", sortTable)
+</script>
 
 The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-system portable handheld designed and built by [Analogue](https://www.analogue.co).
 
 ## Cores
 
-| Name | Author | Release | Release Date |
-| ---- | ------ | ------- | ------------ |
-| [Arduboy for Analogue Pocket](https://github.com/agg23/analogue-arduboy) | [agg23](https://github.com/agg23) | [![release](https://img.shields.io/github/v/release/agg23/analogue-arduboy)](https://github.com/agg23/analogue-arduboy/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/agg23/analogue-arduboy) |
-| [Asteroids for Analogue Pocket](https://github.com/ericlewis/openfpga-asteroids) | [ericlewis](https://github.com/ericlewis) | [![release](https://img.shields.io/github/v/release/ericlewis/openfpga-asteroids?include_prereleases)](https://github.com/ericlewis/openfpga-asteroids/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date-pre/ericlewis/openfpga-asteroids) |
-| [Atari's 1972 Pong](https://github.com/agg23/analogue-pong) | [agg23](https://github.com/agg23) | [![release](https://img.shields.io/github/v/release/agg23/analogue-pong)](https://github.com/agg23/analogue-pong/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/agg23/analogue-pong) |
-| [Dominos for Analogue Pocket](https://github.com/ericlewis/openfpga-dominos) | [ericlewis](https://github.com/ericlewis) | [![release](https://img.shields.io/github/v/release/ericlewis/openfpga-dominos?include_prereleases)](https://github.com/ericlewis/openfpga-dominos/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date-pre/ericlewis/openfpga-dominos) |
-| [Dig Dug](https://github.com/opengateware/arcade-digdug) | [opengateware](https://github.com/opengateware) | [![release](https://img.shields.io/github/v/release/opengateware/arcade-digdug)](https://github.com/opengateware/arcade-digdug/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/opengateware/arcade-digdug) |
-| [Galaga](https://github.com/opengateware/arcade-galaga) | [opengateware](https://github.com/opengateware) | [![release](https://img.shields.io/github/v/release/opengateware/arcade-galaga)](https://github.com/opengateware/arcade-galaga/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/opengateware/arcade-galaga) |
-| [Lunar Lander for Analogue Pocket](https://github.com/ericlewis/openfpga-lunarlander) | [ericlewis](https://github.com/ericlewis) | [![release](https://img.shields.io/github/v/release/ericlewis/openfpga-lunarlander?include_prereleases)](https://github.com/ericlewis/openfpga-lunarlander/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date-pre/ericlewis/openfpga-lunarlander) |
-| [Neo Geo](https://github.com/Mazamars312/Analogue_Pocket_Neogeo) | [Mazamars312](https://github.com/Mazamars312) | [![release](https://img.shields.io/github/v/release/Mazamars312/Analogue_Pocket_Neogeo?include_prereleases)](https://github.com/Mazamars312/Analogue_Pocket_Neogeo/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/Mazamars312/Analogue_Pocket_Neogeo) |
-| [PDP-1](https://github.com/spacemen3/PDP-1) | [spacemen3](https://github.com/spacemen3) | [![release](https://img.shields.io/github/v/release/spacemen3/PDP-1)](https://github.com/spacemen3/PDP-1/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/spacemen3/PDP-1) |
-| [SNES for Analogue Pocket](https://github.com/agg23/openfpga-SNES) | [agg23](https://github.com/agg23) | [![release](https://img.shields.io/github/v/release/agg23/openfpga-SNES)](https://github.com/agg23/openfpga-SNES/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/agg23/openfpga-SNES) |
-| [Space Race for Analogue Pocket](https://github.com/ericlewis/openfpga-spacerace) | [ericlewis](https://github.com/ericlewis) | [![release](https://img.shields.io/github/v/release/ericlewis/openfpga-spacerace?include_prereleases)](https://github.com/ericlewis/openfpga-spacerace/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/ericlewis/openfpga-spacerace) |
-| [Spiritualized GB & GBC](https://github.com/spiritualized1997/openFPGA-GB-GBC) | [spiritualized1997](https://github.com/spiritualized1997) | [![release](https://img.shields.io/github/v/release/spiritualized1997/openFPGA-GB-GBC)](https://github.com/spiritualized1997/openFPGA-GB-GBC/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/spiritualized1997/openFPGA-GB-GBC) |
-| [Spiritualized GBA](https://github.com/spiritualized1997/openFPGA-GBA) | [spiritualized1997](https://github.com/spiritualized1997) | [![release](https://img.shields.io/github/v/release/spiritualized1997/openFPGA-GBA)](https://github.com/spiritualized1997/openFPGA-GBA/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/spiritualized1997/openFPGA-GBA) |
-| [Spiritualized Sega Game Gear](https://github.com/spiritualized1997/openFPGA-GG) | [spiritualized1997](https://github.com/spiritualized1997) | [![release](https://img.shields.io/github/v/release/spiritualized1997/openFPGA-GG)](https://github.com/spiritualized1997/openFPGA-GG/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/spiritualized1997/openFPGA-GG) |
-| [Spiritualized Sega Master System](https://github.com/spiritualized1997/openFPGA-SMS) | [spiritualized1997](https://github.com/spiritualized1997) | [![release](https://img.shields.io/github/v/release/spiritualized1997/openFPGA-SMS)](https://github.com/spiritualized1997/openFPGA-SMS/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/spiritualized1997/openFPGA-SMS) |
-| [Spiritualized Sega SG-1000](https://github.com/spiritualized1997/openFPGA-SG1000) | [spiritualized1997](https://github.com/spiritualized1997) | [![release](https://img.shields.io/github/v/release/spiritualized1997/openFPGA-SG1000)](https://github.com/spiritualized1997/openFPGA-SG1000/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/spiritualized1997/openFPGA-SG1000) |
-| [Super Breakout for Analogue Pocket](https://github.com/ericlewis/openfpga-superbreakout) | [ericlewis](https://github.com/ericlewis) | [![release](https://img.shields.io/github/v/release/ericlewis/openfpga-superbreakout?include_prereleases)](https://github.com/ericlewis/openfpga-superbreakout/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date-pre/ericlewis/openfpga-superbreakout) |
-| [Tecmo](https://github.com/nullobject/openfpga-tecmo) | [nullobject](https://github.com/nullobject) | [![release](https://img.shields.io/github/v/release/nullobject/openfpga-tecmo?include_prereleases)](https://github.com/nullobject/openfpga-tecmo/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date/nullobject/openfpga-tecmo) |
+| Name | Platform | Author | Release | Release Date |
+| ---- | -------- | ------ | ------- | ------------ |
+{% for developer in site.data.cores -%}
+{% for core in developer.cores -%}
+| [{{ core.display_name }}](https://github.com/{{ developer.username }}/{{ core.repo }}) | {{ core.platform }} | [{{ developer.username }}](https://github.com/{{ developer.username }}) | [![release](https://img.shields.io/github/v/release/{{ developer.username }}/{{ core.repo }}?include_prereleases)](https://github.com/{{ developer.username }}/{{ core.repo }}/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date-pre/{{ developer.username }}/{{ core.repo }}) |
+{% endfor -%}
+{% endfor -%}
