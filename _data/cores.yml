@@ -26,7 +26,9 @@
       assets:
         location: Assets/asteroids/ericlewis.Asteroids/
         files:
-        - file_name: asteroid.rom
+        - roms:
+          - file_name: asteroid.rom
+            checksum: 1bcd2899e3f92d2824a2ac9def2d3286
     - repo: openfpga-dominos
       display_name: Dominos for Analogue Pocket
       identifier: ericlewis.Dominos
@@ -34,7 +36,9 @@
       assets:
         location: Assets/dominos/common/
         files:
-        - file_name: dominos.rom
+        - roms:
+          - file_name: dominos.rom
+            checksum: ""
     - repo: openfpga-genesis
       display_name: Genesis for Analogue Pocket
       identifier: ericlewis.Genesis
@@ -48,7 +52,9 @@
       assets:
         location: Assets/lunarlander/ericlewis.LunarLander/
         files:
-        - file_name: llander.rom
+        - roms:
+          - file_name: llander.rom
+            checksum: ""
     - repo: openfpga-spacerace
       display_name: Space Race for Analogue Pocket
       identifier: ericlewis.SpaceRace
@@ -60,7 +66,9 @@
       assets:
         location: Assets/superbreakout/common/
         files:
-        - file_name: sbrkout.rom
+        - roms:
+          - file_name: sbrkout.rom
+            checksum: ""
 - username: Mazamars312
   cores:
     - repo: Analogue_Pocket_Neogeo
@@ -70,9 +78,13 @@
       assets:
         location: Assets/ng/common/
         files:
-        - file_name: uni-bios_1_0.rom
-        - file_name: 000-lo.lo
-        - file_name: sfix.sfix
+        - bios:
+          - file_name: uni-bios_1_0.rom
+            checksum: 6293999bbc32e594aa0ae1da2113dc4d
+          - file_name: 000-lo.lo
+            checksum: fc7599f3f871578fe9a0453662d1c966
+          - file_name: sfix.sfix
+            checksum: aa2b5d0eae4158ffc0d7d63481c7830b
 - username: nullobject
   cores:
     - repo: openfpga-tecmo
@@ -110,7 +122,9 @@
       assets:
         location: Assets/gba/common/
         files:
-        - file_name: gba_bios.bin
+        - bios:
+          - file_name: gba_bios.bin
+            checksum: a860e8c0b6d573d191e4ec7db1b1e4f6
     - repo: openFPGA-GB-GBC
       display_name: Spiritualized GB & GBC
       identifier: Spiritualized.GBC
@@ -118,9 +132,12 @@
       assets:
         location: Assets/gbc/common/
         files:
-        - file_name: gbc_bios.bin
-        - file_name: dmg_bios.bin
-          override_location: Assets/gb/common/
+        - bios:
+          - file_name: gbc_bios.bin
+            checksum: dbfce9db9deaa2567f6a84fde55f9680
+          - file_name: dmg_bios.bin
+            checksum: 32fbbd84168d3482956eb3c5051637f5
+            override_location: Assets/gb/common/
     - repo: openFPGA-GG
       display_name: Spiritualized Sega Game Gear
       identifier: Spiritualized.GG
