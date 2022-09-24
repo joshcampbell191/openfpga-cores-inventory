@@ -37,6 +37,12 @@
         files:
         - file_name: dominos.rom
           url: https://archive.org/download/pocket-roms/Dominos/dominos.rom
+    - repo: openfpga-genesis
+      display_name: Genesis for Analogue Pocket
+      identifier: ericlewis.Genesis
+      platform: Genesis
+      assets:
+        location: Assets/genesis/common/
     - repo: openfpga-lunarlander
       display_name: Lunar Lander for Analogue Pocket
       identifier: ericlewis.LunarLander
