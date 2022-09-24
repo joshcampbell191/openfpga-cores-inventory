@@ -23,7 +23,7 @@ openFPGA Cores Inventory provides a read-only API for developers.
 ### Cores
 
 #### Getting the list of cores
-Returns a list of all available cores for the Analogue Pocket.
+Returns a list of all available cores for the Analogue Pocket. 
 
 ```
 GET https://joshcampbell191.github.io/openfpga-cores-inventory/api/v0/analogue-pocket/cores.json
@@ -39,7 +39,7 @@ Accept: application/json
 Accept-Charset: utf-8
 ```
 
-The response is a list of core objects.
+The response is a list of core objects. The response array is wrapped in a data envelope.
 
 Example response:
 
@@ -47,28 +47,30 @@ Example response:
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 
-[
-  {
-    "repo": {
-      "user": "spiritualized1997",
-      "project": "openFPGA-GB-GBC"
+{
+  "data": [
+    {
+      "repo": {
+        "user": "spiritualized1997",
+        "project": "openFPGA-GB-GBC"
+      },
+      "identifier": "Spiritualized.GBC",
+      "platform": "Gameboy/Gameboy Color",
+      "assets": {
+        "location": "Assets/gbc/common/",
+        "files": [
+          {
+            "file_name": "dmg_bios.bin",
+            "url": "https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb",
+            "override_location: "Assets/gb/common/"
+          },
+          ...
+        ]
+      }
     },
-    "identifier": "Spiritualized.GBC",
-    "platform": "Gameboy/Gameboy Color",
-    "assets": {
-      "location": "Assets/gbc/common/",
-      "files": [
-        {
-          "file_name": "dmg_bios.bin",
-          "url": "https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb",
-          "override_location: "Assets/gb/common/"
-        },
-        ...
-      ]
-    }
-  },
-  ...
-]
+    ...
+  ]
+}
 ```
 
 Where a core object is:

@@ -1,24 +1,26 @@
 ---
 layout: none
 ---
-[
-  {%- for developer in site.data.cores %}
-  {%- for core in developer.cores %}
-  {
-    "repo": {
-      "user": {{ developer.username | jsonify }},
-      "project": {{ core.repo | jsonify }}
-    },
-    "identifier": {{ core.identifier | jsonify }},
-    "platform": {{ core.platform | jsonify }},
-    {%- if core.assets %}
-    "assets": {{ core.assets | jsonify }}
-    {%- else %}
-    "assets": {}
-    {%- endif %}
-  }
-  {%- unless forloop.last %},{% endunless %}
-  {%- endfor %}
-  {%- unless forloop.last %},{% endunless %}
-  {%- endfor %}
-]
+{
+  "data": [
+    {%- for developer in site.data.cores %}
+    {%- for core in developer.cores %}
+    {
+      "repo": {
+        "user": {{ developer.username | jsonify }},
+        "project": {{ core.repo | jsonify }}
+      },
+      "identifier": {{ core.identifier | jsonify }},
+      "platform": {{ core.platform | jsonify }},
+      {%- if core.assets %}
+      "assets": {{ core.assets | jsonify }}
+      {%- else %}
+      "assets": {}
+      {%- endif %}
+    }
+    {%- unless forloop.last %},{% endunless %}
+    {%- endfor %}
+    {%- unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
