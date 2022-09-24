@@ -114,12 +114,12 @@ Possible errors:
 To add a new core, you will need to edit the `_data/cores.yml` file. At a minimum, you must add the fields marked `<required>`:
 
 ```yaml
-- username: spiritualized1997 #<required>
-  cores: #<required>
-    - repo: openFPGA-GB-GBC #<required>
+- username: spiritualized1997              #<required>
+  cores:                                   #<required>
+    - repo: openFPGA-GB-GBC                #<required>
       display_name: Spiritualized GB & GBC #<required>
-      identifier: Spiritualized.GBC #<required>
-      platform: Gameboy/Gameboy Color #<required>
+      identifier: Spiritualized.GBC        #<required>
+      platform: Gameboy/Gameboy Color      #<required>
       assets:
         location: Assets/gbc/common/
         files:
