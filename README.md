@@ -84,10 +84,11 @@ Where a core object is:
 
 Where a repo object is:
 
-| Field             | Type   | Description                           |
-| ------------------|--------|---------------------------------------|
-| user              | string | The core developer's GitHub username. |
-| project           | string | The core's GitHub repository name.    |
+| Field             | Type   | Description                                                               |
+| ------------------|--------|---------------------------------------------------------------------------|
+| host              | enum   | The website that hosts the repo. Currently, this always returns "github". |
+| user              | string | The core developer's GitHub username.                                     |
+| project           | string | The core's GitHub repository name.                                        |
 
 Where an asset object is:
 
