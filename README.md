@@ -23,7 +23,7 @@ openFPGA Cores Inventory provides a read-only API for developers.
 ### Cores
 
 #### Getting the list of cores
-Returns a list of all available cores for the Analogue Pocket. 
+Returns a list of all available cores for the Analogue Pocket.
 
 ```
 GET https://joshcampbell191.github.io/openfpga-cores-inventory/api/v0/analogue-pocket/cores.json
@@ -51,6 +51,7 @@ Content-Type: application/json; charset=utf-8
   "data": [
     {
       "repo": {
+        "platform": "github",
         "user": "spiritualized1997",
         "project": "openFPGA-GB-GBC"
       },
@@ -62,7 +63,7 @@ Content-Type: application/json; charset=utf-8
           {
             "file_name": "dmg_bios.bin",
             "url": "https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb",
-            "override_location: "Assets/gb/common/"
+            "override_location": "Assets/gb/common/"
           },
           ...
         ]
@@ -84,10 +85,11 @@ Where a core object is:
 
 Where a repo object is:
 
-| Field             | Type   | Description                           |
-| ------------------|--------|---------------------------------------|
-| user              | string | The core developer's GitHub username. |
-| project           | string | The core's GitHub repository name.    |
+| Field             | Type   | Description                                                                     |
+| ------------------|--------|---------------------------------------------------------------------------------|
+| platform          | enum   | The website where the repo is located. Currently, this always returns `github`. |
+| user              | string | The core developer's GitHub username.                                           |
+| project           | string | The core's GitHub repository name.                                              |
 
 Where an asset object is:
 
