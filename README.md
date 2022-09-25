@@ -51,6 +51,7 @@ Content-Type: application/json; charset=utf-8
   "data": [
     {
       "repo": {
+        "platform": "github",
         "user": "spiritualized1997",
         "project": "openFPGA-GB-GBC"
       },
@@ -62,7 +63,7 @@ Content-Type: application/json; charset=utf-8
           {
             "file_name": "dmg_bios.bin",
             "url": "https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb",
-            "override_location: "Assets/gb/common/"
+            "override_location": "Assets/gb/common/"
           },
           ...
         ]
