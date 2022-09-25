@@ -7,7 +7,7 @@ layout: none
     {%- for core in developer.cores %}
     {
       "repo": {
-        "host": "github",
+        "platform": "github",
         "user": {{ developer.username | jsonify }},
         "project": {{ core.repo | jsonify }}
       },
