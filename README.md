@@ -87,7 +87,7 @@ Where a repo object is:
 
 | Field             | Type   | Description                                                                     |
 | ------------------|--------|---------------------------------------------------------------------------------|
-| platform          | enum   | The website where the repo is located. Currently, this always returns "github". |
+| platform          | enum   | The website where the repo is located. Currently, this always returns `github`. |
 | user              | string | The core developer's GitHub username.                                           |
 | project           | string | The core's GitHub repository name.                                              |
 
