@@ -78,7 +78,7 @@ Where a core object is:
 
 | Field             | Type   | Description                                                                |
 | ------------------|--------|----------------------------------------------------------------------------|
-| repo              | object | An object containing the developer and repo name.                          |
+| repo              | object | An object describing where the core is hosted.                             |
 | identifier        | string | The core's unique identifier.                                              |
 | platform          | string | The name of the core's game platform.                                      |
 | assets            | object | An object containing a description of additional asset files for the core. |
