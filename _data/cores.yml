@@ -159,6 +159,12 @@
           url: https://archive.org/download/pocket-roms/Galaga/vgalagaf.rom
         - file_name: vgalagam.rom
           url: https://archive.org/download/pocket-roms/Galaga/vgalagam.rom
+    - repo: arcade-xevious
+      display_name: Xevious
+      identifier: boogermann.xevious
+      platform: Xevious
+      assets:
+        location: Assets/xevious/common/
 - username: spacemen3
   cores:
     - repo: PDP-1
