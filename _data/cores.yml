@@ -11,6 +11,12 @@
       display_name: Atari's 1972 Pong
       identifier: agg23.Pong
       platform: Pong
+    - repo: openfpga-NES
+      display_name: NES for Analogue Pocket
+      identifier: agg23.NES
+      platform: NES
+      assets:
+        location: Assets/nes/common/
     - repo: openfpga-SNES
       display_name: SNES for Analogue Pocket
       identifier: agg23.SNES
