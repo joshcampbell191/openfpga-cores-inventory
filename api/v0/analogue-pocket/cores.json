@@ -6,13 +6,13 @@ layout: none
     {%- for developer in site.data.cores %}
     {%- for core in developer.cores %}
     {
-      "repo": {
-        "platform": "github",
-        "user": {{ developer.username | jsonify }},
-        "project": {{ core.repo | jsonify }}
-      },
       "identifier": {{ core.identifier | jsonify }},
       "platform": {{ core.platform | jsonify }},
+      "repository": {
+        "platform": "github",
+        "owner": {{ developer.username | jsonify }},
+        "name": {{ core.repo | jsonify }}
+      },
       {%- if core.assets %}
       "assets": {{ core.assets | jsonify }}
       {%- else %}

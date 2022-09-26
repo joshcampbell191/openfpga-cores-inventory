@@ -1,158 +1,168 @@
 ---
 - username: agg23
   cores:
-    - repo: analogue-arduboy
+    - repository: analogue-arduboy
       display_name: Arduboy for Analogue Pocket
       identifier: agg23.Arduboy
       platform: Arduboy
       assets:
-      - location: Assets/arduboy/common/
-    - repo: analogue-pong
+      - platform: arduboy
+        common:
+    - repository: analogue-pong
       display_name: Atari's 1972 Pong
       identifier: agg23.Pong
       platform: Pong
-    - repo: openfpga-SNES
+    - repository: openfpga-SNES
       display_name: SNES for Analogue Pocket
       identifier: agg23.SNES
       platform: SNES
       assets:
-      - location: Assets/snes/common/
+      - platform: snes
+        common:
 - username: ericlewis
   cores:
-    - repo: openfpga-asteroids
+    - repository: openfpga-asteroids
       display_name: Asteroids for Analogue Pocket
       identifier: ericlewis.Asteroids
       platform: Asteroids
       assets:
-      - location: Assets/asteroids/ericlewis.Asteroids/
-        files:
-        - file_name: asteroid.rom
+      - platform: asteroids
+        ericlewis.Asteroids:
+        - name: asteroid.rom
           checksum: 1bcd2899e3f92d2824a2ac9def2d3286
-    - repo: openfpga-dominos
+    - repository: openfpga-dominos
       display_name: Dominos for Analogue Pocket
       identifier: ericlewis.Dominos
       platform: Dominos
       assets:
-      - location: Assets/dominos/common/
-        files:
-        - file_name: dominos.rom
+      - platform: dominos
+        common:
+        - name: dominos.rom
           checksum: ""
-    - repo: openfpga-genesis
+    - repository: openfpga-genesis
       display_name: Genesis for Analogue Pocket
       identifier: ericlewis.Genesis
       platform: Genesis
       assets:
-      - location: Assets/genesis/common/
-    - repo: openfpga-lunarlander
+      - platform: genesis
+        common:
+    - repository: openfpga-lunarlander
       display_name: Lunar Lander for Analogue Pocket
       identifier: ericlewis.LunarLander
       platform: LunarLander
       assets:
-      - location: Assets/lunarlander/ericlewis.LunarLander/
-        files:
-        - file_name: llander.rom
+      - platform: lunarlander
+        ericlewis.LunarLander:
+        - name: llander.rom
           checksum: 5b2971c7a10d7b454892374ea3f48515
-    - repo: openfpga-spacerace
+    - repository: openfpga-spacerace
       display_name: Space Race for Analogue Pocket
       identifier: ericlewis.SpaceRace
       platform: SpaceRace
-    - repo: openfpga-superbreakout
+    - repository: openfpga-superbreakout
       display_name: Super Breakout for Analogue Pocket
       identifier: ericlewis.SuperBreakout
       platform: Super Breakout
       assets:
-      - location: Assets/superbreakout/common/
-        files:
-        - file_name: sbrkout.rom
+      - platform: superbreakout
+        common:
+        - name: sbrkout.rom
           checksum: b80592e3c65a8c88bd48960d56c3e985
 - username: Mazamars312
   cores:
-    - repo: Analogue_Pocket_Neogeo
+    - repository: Analogue_Pocket_Neogeo
       display_name: Neo Geo
       identifier: Mazamars312.NeoGeo
       platform: Neo Geo
       assets:
-      - location: Assets/ng/common/
-        files:
-        - file_name: uni-bios_1_0.rom
+      - platform: ng
+        common:
+        - name: uni-bios_1_0.rom
           checksum: 6293999bbc32e594aa0ae1da2113dc4d
-        - file_name: 000-lo.lo
+        - name: 000-lo.lo
           checksum: fc7599f3f871578fe9a0453662d1c966
-        - file_name: sfix.sfix
+        - name: sfix.sfix
           checksum: aa2b5d0eae4158ffc0d7d63481c7830b
 - username: nullobject
   cores:
-    - repo: openfpga-tecmo
+    - repository: openfpga-tecmo
       display_name: Tecmo
       identifier: nullobject.tecmo
       platform: Tecmo
       assets:
-      - location: Assets/tecmo/common/
+      - platform: tecmo
+        common:
 - username: opengateware
   cores:
-    - repo: arcade-digdug
+    - repository: arcade-digdug
       display_name: Dig Dug
       identifier: boogermann.digdug
       platform: Dig Dug
       assets:
-      - location: Assets/digdug/common/
-    - repo: arcade-galaga
+      - platform: digdug
+        common:
+    - repository: arcade-galaga
       display_name: Galaga
       identifier: boogermann.galaga
       platform: Galaga
       assets:
-      - location: Assets/galaga/common/
-    - repo: arcade-xevious
+      - platform: galaga
+        common:
+    - repository: arcade-xevious
       display_name: Xevious
       identifier: boogermann.xevious
       platform: Xevious
       assets:
-      - location: Assets/xevious/common/
+      - platform: xevious
+        common:
 - username: spacemen3
   cores:
-    - repo: PDP-1
+    - repository: PDP-1
       display_name: PDP-1
       identifier: Spacemen3.PDP1
       platform: PDP-1
 - username: spiritualized1997
   cores:
-    - repo: openFPGA-GBA
+    - repository: openFPGA-GBA
       display_name: Spiritualized GBA
       identifier: Spiritualized.GBA
       platform: Gameboy Advance
       assets:
-      - location: Assets/gba/common/
-        files:
-        - file_name: gba_bios.bin
-          checksum: a860e8c0b6d573d191e4ec7db1b1e4f6
-    - repo: openFPGA-GB-GBC
+      - platform: gba
+        common:
+          - name: gba_bios.bin
+            checksum: a860e8c0b6d573d191e4ec7db1b1e4f6
+    - repository: openFPGA-GB-GBC
       display_name: Spiritualized GB & GBC
       identifier: Spiritualized.GBC
       platform: Gameboy/Gameboy Color
       assets:
-      - location: Assets/gb/common/
-        files:
-        - file_name: dmg_bios.bin
+      - platform: gb
+        common:
+        - name: dmg_bios.bin
           checksum: 32fbbd84168d3482956eb3c5051637f5
-      - location: Assets/gbc/common/
-        files:
-        - file_name: gbc_bios.bin
+      - platform: gbc
+        common:
+        - name: gbc_bios.bin
           checksum: dbfce9db9deaa2567f6a84fde55f9680
-    - repo: openFPGA-GG
+    - repository: openFPGA-GG
       display_name: Spiritualized Sega Game Gear
       identifier: Spiritualized.GG
       platform: Game Gear
       assets:
-      - location: Assets/gg/common/
-    - repo: openFPGA-SG1000
+      - platform: gg
+        common:
+    - repository: openFPGA-SG1000
       display_name: Spiritualized Sega SG-1000
       identifier: Spiritualized.SG-1000
       platform: SG-1000
       assets:
-      - location: Assets/sg1000/common/
-    - repo: openFPGA-SMS
+      - platform: sg1000
+        common:
+    - repository: openFPGA-SMS
       display_name: Spiritualized Sega Master System
       identifier: Spiritualized.SMS
       platform: Master System
       assets:
-      - location: Assets/sms/common/
+      - platform: sms
+        common:
