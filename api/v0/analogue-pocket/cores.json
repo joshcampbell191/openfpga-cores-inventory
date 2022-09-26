@@ -11,7 +11,7 @@ layout: none
       "repository": {
         "platform": "github",
         "owner": {{ developer.username | jsonify }},
-        "name": {{ core.repo | jsonify }}
+        "name": {{ core.repository | jsonify }}
       },
       {%- if core.assets %}
       "assets": {{ core.assets | jsonify }}
