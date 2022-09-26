@@ -85,40 +85,39 @@ Content-Type: application/json; charset=utf-8
 
 Where a core object is:
 
-| Field             | Type         | Description                                                                |
-| ------------------|--------------|----------------------------------------------------------------------------|
-| identifier        | string       | The core's unique identifier.                                              |
-| platform          | string       | The name of the core's game platform.                                      |
-| repository        | object       | An object describing where the core is hosted.                             |
-| assets            | object array | TODO                                                                       |
+| Field      | Type         | Description                                    |
+| ---------- | ------------ | ---------------------------------------------- |
+| identifier | string       | The core's unique identifier.                  |
+| platform   | string       | The name of the core's game platform.          |
+| repository | object       | An object describing where the core is hosted. |
+| assets     | object array | A list asset objects.                          |
 
-Where a repo object is:
+Where a repository object is:
 
-| Field             | Type   | Description                                                                     |
-| ------------------|--------|---------------------------------------------------------------------------------|
-| platform          | enum   | The website where the repo is located. Currently, this always returns `github`. |
-| owner             | string | The core developer's GitHub username.                                           |
-| name              | string | The core's GitHub repository name.                                              |
+| Field    | Type   | Description                                                                     |
+| -------- | ------ | ------------------------------------------------------------------------------- |
+| platform | enum   | The website where the repo is located. Currently, this always returns `github`. |
+| owner    | string | The core developer's GitHub username.                                           |
+| name     | string | The core's GitHub repository name.                                              |
 
 Where an asset object is:
 
-| Field             | Type         | Description                                                     |
-| ------------------|--------------|-----------------------------------------------------------------|
-| platform          | string       | TODO                                                            |
-| common            | object array | TODO                                                            |
+| Field             | Type         | Description                                                                                                                       |
+| ----------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| platform          | string       | The core's platform, specified by its platform JSON file.                                                                         |
+| common (variable) | object array | A list of file objects. This key name is variable and specifies the asset directory where the files underneath it must be placed. |
 
 Where a file object is:
 
-| Field    | Type   | Description                                              |
-|----------|--------|----------------------------------------------------------|
-| name     | string | TODO                                                     |
-| checksum | string | The URL where the file is located.                       |
-
+| Field    | Type   | Description                   |
+| -------- | ------ | ----------------------------- |
+| name     | string | The name the file must use.   |
+| checksum | string | The MD5 checksum of the file. |
 
 Possible errors:
 
 | Error code    | Description                                  |
-| --------------|----------------------------------------------|
+| ------------- | -------------------------------------------- |
 | 403 Forbidden | The GitHub API rate limit has been exceeded. |
 
 ## Adding a new core
