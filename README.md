@@ -125,20 +125,21 @@ Possible errors:
 To add a new core, you will need to edit the `_data/cores.yml` file. At a minimum, you must add the fields marked `<required>`:
 
 ```yaml
-- username: spiritualized1997              #<required>
-  cores:                                   #<required>
-    - repo: openFPGA-GB-GBC                #<required>
-      display_name: Spiritualized GB & GBC #<required>
-      identifier: Spiritualized.GBC        #<required>
-      platform: Gameboy/Gameboy Color      #<required>
+- username: spiritualized1997              # <required>
+  cores:                                   # <required>
+    - repository: openFPGA-GB-GBC          # <required>
+      display_name: Spiritualized GB & GBC # <required>
+      identifier: Spiritualized.GBC        # <required>
+      platform: Gameboy/Gameboy Color      # <required>
       assets:
-        location: Assets/gbc/common/
-        files:
-        - file_name: gbc_bios.bin
-          url: https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GBC_boot_ROM.gb
-        - file_name: dmg_bios.bin
-          url: https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb
-          override_location: Assets/gb/common/
+      - platform: gb
+        common:
+        - name: dmg_bios.bin
+          checksum: 32fbbd84168d3482956eb3c5051637f5
+      - platform: gbc
+        common:
+        - name: gbc_bios.bin
+          checksum: dbfce9db9deaa2567f6a84fde55f9680
 ```
 
 Information on what these fields mean can be found in the [API description](#getting-the-list-of-cores). There is one additional field `display_name` that is used in the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
