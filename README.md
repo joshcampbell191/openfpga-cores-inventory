@@ -50,24 +50,33 @@ Content-Type: application/json; charset=utf-8
 {
   "data": [
     {
-      "repo": {
-        "platform": "github",
-        "user": "spiritualized1997",
-        "project": "openFPGA-GB-GBC"
-      },
       "identifier": "Spiritualized.GBC",
       "platform": "Gameboy/Gameboy Color",
-      "assets": {
-        "location": "Assets/gbc/common/",
-        "files": [
-          {
-            "file_name": "dmg_bios.bin",
-            "url": "https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb",
-            "override_location": "Assets/gb/common/"
-          },
-          ...
-        ]
-      }
+      "repository": {
+        "platform": "github",
+        "owner": "spiritualized1997",
+        "name": "openFPGA-GB-GBC"
+      },
+      "assets": [
+        {
+          "platform": "gb",
+          "common": [
+            {
+              "name": "dmg_bios.bin",
+              "checksum": "32fbbd84168d3482956eb3c5051637f5"
+            }
+          ]
+        },
+        {
+          "platform": "gbc",
+          "common": [
+            {
+              "name": "gbc_bios.bin",
+              "checksum": "dbfce9db9deaa2567f6a84fde55f9680"
+            }
+          ]
+        }
+      ]
     },
     ...
   ]
@@ -76,35 +85,35 @@ Content-Type: application/json; charset=utf-8
 
 Where a core object is:
 
-| Field             | Type   | Description                                                                |
-| ------------------|--------|----------------------------------------------------------------------------|
-| repo              | object | An object containing the developer and repo name.                          |
-| identifier        | string | The core's unique identifier.                                              |
-| platform          | string | The name of the core's game platform.                                      |
-| assets            | object | An object containing a description of additional asset files for the core. |
+| Field             | Type         | Description                                                                |
+| ------------------|--------------|----------------------------------------------------------------------------|
+| identifier        | string       | The core's unique identifier.                                              |
+| platform          | string       | The name of the core's game platform.                                      |
+| repository        | object       | An object describing where the core is hosted.                             |
+| assets            | object array | TODO                                                                       |
 
 Where a repo object is:
 
 | Field             | Type   | Description                                                                     |
 | ------------------|--------|---------------------------------------------------------------------------------|
 | platform          | enum   | The website where the repo is located. Currently, this always returns `github`. |
-| user              | string | The core developer's GitHub username.                                           |
-| project           | string | The core's GitHub repository name.                                              |
+| owner             | string | The core developer's GitHub username.                                           |
+| name              | string | The core's GitHub repository name.                                              |
 
 Where an asset object is:
 
 | Field             | Type         | Description                                                     |
 | ------------------|--------------|-----------------------------------------------------------------|
-| location          | string       | The path on the SD card where the core's assets must be placed. |
-| files             | object array | A list of file objects.                                         |
+| platform          | string       | TODO                                                            |
+| common            | object array | TODO                                                            |
 
 Where a file object is:
 
-| Field             | Type   | Description                                                                                                         |
-| ------------------|--------|---------------------------------------------------------------------------------------------------------------------|
-| file_name         | string | The name the file must use in the core's Assets directory.                                                          |
-| url               | string | The URL where the file is located.                                                                                  |
-| override_location | string | The path on the SD card where this file should be placed. This overrides the `location` stored in the asset object. |
+| Field    | Type   | Description                                              |
+|----------|--------|----------------------------------------------------------|
+| name     | string | TODO                                                     |
+| checksum | string | The URL where the file is located.                       |
+
 
 Possible errors:
 
