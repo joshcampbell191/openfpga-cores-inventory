@@ -7,7 +7,6 @@
       platform: Arduboy
       assets:
       - platform: arduboy
-        common:
     - repository: analogue-pong
       display_name: Atari's 1972 Pong
       identifier: agg23.Pong
@@ -18,7 +17,6 @@
       platform: SNES
       assets:
       - platform: snes
-        common:
 - username: ericlewis
   cores:
     - repository: openfpga-asteroids
@@ -45,7 +43,6 @@
       platform: Genesis
       assets:
       - platform: genesis
-        common:
     - repository: openfpga-lunarlander
       display_name: Lunar Lander for Analogue Pocket
       identifier: ericlewis.LunarLander
@@ -91,7 +88,6 @@
       platform: Tecmo
       assets:
       - platform: tecmo
-        common:
 - username: opengateware
   cores:
     - repository: arcade-digdug
@@ -100,21 +96,18 @@
       platform: Dig Dug
       assets:
       - platform: digdug
-        common:
     - repository: arcade-galaga
       display_name: Galaga
       identifier: boogermann.galaga
       platform: Galaga
       assets:
       - platform: galaga
-        common:
     - repository: arcade-xevious
       display_name: Xevious
       identifier: boogermann.xevious
       platform: Xevious
       assets:
       - platform: xevious
-        common:
 - username: spacemen3
   cores:
     - repository: PDP-1
@@ -151,18 +144,15 @@
       platform: Game Gear
       assets:
       - platform: gg
-        common:
     - repository: openFPGA-SG1000
       display_name: Spiritualized Sega SG-1000
       identifier: Spiritualized.SG-1000
       platform: SG-1000
       assets:
       - platform: sg1000
-        common:
     - repository: openFPGA-SMS
       display_name: Spiritualized Sega Master System
       identifier: Spiritualized.SMS
       platform: Master System
       assets:
       - platform: sms
-        common:
