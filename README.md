@@ -131,8 +131,8 @@ To add a new core, you will need to edit the `_data/cores.yml` file. At a minimu
       display_name: Spiritualized GB & GBC # <required>
       identifier: Spiritualized.GBC        # <required>
       platform: Gameboy/Gameboy Color      # <required>
-      assets:
-      - platform: gb
+      assets:                              # <required>
+      - platform: gb                       # <required>
         common:
         - name: dmg_bios.bin
           checksum: 32fbbd84168d3482956eb3c5051637f5
