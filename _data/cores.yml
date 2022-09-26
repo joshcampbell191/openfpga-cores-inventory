@@ -13,6 +13,12 @@
       platform: Pong
       assets:
       - platform: pong
+    - repository: openfpga-NES
+      display_name: NES for Analogue Pocket
+      identifier: agg23.NES
+      platform: NES
+      assets:
+      - platform: nes
     - repository: openfpga-SNES
       display_name: SNES for Analogue Pocket
       identifier: agg23.SNES
