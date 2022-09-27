@@ -42,9 +42,6 @@
       platform: Dominos
       assets:
       - platform: dominos
-        common:
-        - name: dominos.rom
-          checksum: ""
     - repository: openfpga-genesis
       display_name: Genesis for Analogue Pocket
       identifier: ericlewis.Genesis
@@ -72,9 +69,6 @@
       platform: Super Breakout
       assets:
       - platform: superbreakout
-        common:
-        - name: sbrkout.rom
-          checksum: b80592e3c65a8c88bd48960d56c3e985
 - username: Mazamars312
   cores:
     - repository: Analogue_Pocket_Neogeo
