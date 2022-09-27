@@ -30,11 +30,14 @@ github_username: joshcampbell191
 # GitHub settings
 markdown: kramdown
 
-# Build settings
-theme: minima
+sass:
+  style: compressed
 
 header_pages:
-  - about.md
+ - analogue-pocket.html
+
+# Build settings
+theme: minima
 
 # Exclude from processing.
 # The following items will not be processed, by default.
