@@ -9,7 +9,7 @@ title: Analogue Pocket
 
 <h2 id="cores">Cores</h2>
 
-<table>
+<table class="datatable">
   <thead>
     <tr>
       <th>Name</th>
@@ -38,13 +38,6 @@ title: Analogue Pocket
   </tbody>
 </table>
 
-<script>
-  function sortTable() {
-    const tableBody = document.querySelector("tbody");
-    const tableRows = tableBody.querySelectorAll("tr");
-    [...tableRows]
-      .sort((a, b) => a.innerText > b.innerText ? 1 : -1)
-      .forEach(row => tableBody.appendChild(row));
-  }
-  document.addEventListener("DOMContentLoaded", sortTable);
-</script>
+<script src="{{ base.url | prepend: site.url }}/openfpga-cores-inventory/assets/js/vendor/jquery-3.6.0.js"></script>
+<script src="{{ base.url | prepend: site.url }}/openfpga-cores-inventory/assets/js/vendor/datatables.js"></script>
+<script src="{{ base.url | prepend: site.url }}/openfpga-cores-inventory/assets/js/script.js"></script>
