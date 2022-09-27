@@ -102,11 +102,11 @@ Where a repository object is:
 
 Where an asset object is:
 
-| Field             | Type         | Description                                                                                                                       |
-| ----------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| platform          | string       | The core's platform, specified by its platform JSON file.                                                                         |
-| common (optional) | object array | A list of file objects. TODO |
-| core (optional)   | object array | A list of file objects. TODO |
+| Field             | Type         | Description                                                                                                                |
+| ----------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------|
+| platform          | string       | The core's platform, specified by its `platform.json` file.                                                                |
+| common (optional) | object array | A list of file objects. These files are required by the core and placed in the `Assets/<platform>/common` directory.       |
+| core (optional)   | object array | A list of file objects. These files are required by the core and placed in the `Assets/<platform>/<identifier>` directory. |
 
 Where a file object is:
 
