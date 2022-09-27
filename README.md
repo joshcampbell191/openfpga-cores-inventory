@@ -105,7 +105,8 @@ Where an asset object is:
 | Field             | Type         | Description                                                                                                                       |
 | ----------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | platform          | string       | The core's platform, specified by its platform JSON file.                                                                         |
-| common (variable) | object array | A list of file objects. This key name is variable and specifies the asset directory where the files underneath it must be placed. |
+| common (optional) | object array | A list of file objects. TODO |
+| core (optional)   | object array | A list of file objects. TODO |
 
 Where a file object is:
 
