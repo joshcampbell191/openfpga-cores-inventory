@@ -2,6 +2,7 @@
 layout: page
 title: Analogue Pocket
 ---
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.12.1/fh-3.2.4/datatables.min.css"/>
 
 <p>
   The <a href="https://www.analogue.co/pocket">Analogue Pocket</a> is a multi-video-game-system portable handheld designed and built by <a href="https://www.analogue.co">Analogue</a>.
@@ -15,8 +16,8 @@ title: Analogue Pocket
       <th>Name</th>
       <th>Platform</th>
       <th>Author</th>
-      <th>Release</th>
-      <th>Release Date</th>
+      <th class="no-sort">Release</th>
+      <th class="no-sort">Release Date</th>
     </tr>
   </thead>
   <tbody>
@@ -38,6 +39,5 @@ title: Analogue Pocket
   </tbody>
 </table>
 
-<script src="{{ base.url | prepend: site.url }}/openfpga-cores-inventory/assets/js/vendor/jquery-3.6.0.js"></script>
-<script src="{{ base.url | prepend: site.url }}/openfpga-cores-inventory/assets/js/vendor/datatables.js"></script>
-<script src="{{ base.url | prepend: site.url }}/openfpga-cores-inventory/assets/js/script.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.12.1/fh-3.2.4/datatables.min.js"></script>
+<script type="text/javascript" src="{{ "/assets/js/script.js" | relative_url }}"></script>
