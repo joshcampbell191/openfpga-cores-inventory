@@ -33,9 +33,6 @@
       platform: Asteroids
       assets:
       - platform: asteroids
-        core:
-        - name: asteroid.rom
-          checksum: 1bcd2899e3f92d2824a2ac9def2d3286
     - repository: openfpga-dominos
       display_name: Dominos for Analogue Pocket
       identifier: ericlewis.Dominos
@@ -54,9 +51,6 @@
       platform: LunarLander
       assets:
       - platform: lunarlander
-        core:
-        - name: llander.rom
-          checksum: 5b2971c7a10d7b454892374ea3f48515
     - repository: openfpga-spacerace
       display_name: Space Race for Analogue Pocket
       identifier: ericlewis.SpaceRace
