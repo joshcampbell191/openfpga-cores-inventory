@@ -52,7 +52,7 @@
     - repo: openfpga-lunarlander
       display_name: Lunar Lander for Analogue Pocket
       identifier: ericlewis.LunarLander
-      platform: LunarLander
+      platform: Lunar Lander
       assets:
         location: Assets/lunarlander/ericlewis.LunarLander/
         files:
@@ -61,7 +61,7 @@
     - repo: openfpga-spacerace
       display_name: Space Race for Analogue Pocket
       identifier: ericlewis.SpaceRace
-      platform: SpaceRace
+      platform: Space Race
     - repo: openfpga-superbreakout
       display_name: Super Breakout for Analogue Pocket
       identifier: ericlewis.SuperBreakout
@@ -182,7 +182,7 @@
     - repo: openFPGA-GBA
       display_name: Spiritualized GBA
       identifier: Spiritualized.GBA
-      platform: Gameboy Advance
+      platform: Game Boy Advance
       assets:
         location: Assets/gba/common/
         files:
@@ -191,7 +191,7 @@
     - repo: openFPGA-GB-GBC
       display_name: Spiritualized GB & GBC
       identifier: Spiritualized.GBC
-      platform: Gameboy/Gameboy Color
+      platform: Game Boy / Game Boy Color
       assets:
         location: Assets/gbc/common/
         files:
