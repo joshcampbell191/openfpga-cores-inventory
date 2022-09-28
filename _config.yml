@@ -34,7 +34,7 @@ markdown: kramdown
 theme: minima
 
 header_pages:
-  - about.md
+  - analogue-pocket.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.
