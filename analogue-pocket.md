@@ -5,25 +5,35 @@
 layout: page
 title: Analogue Pocket
 ---
-<script>
-  function sortTable() {
-    const tableBody = document.querySelector("tbody");
-    const tableRows = tableBody.querySelectorAll("tr");
-    [...tableRows]
-      .sort((a, b) => a.innerText > b.innerText ? 1 : -1)
-      .forEach(row => tableBody.appendChild(row))
-  }
-  document.addEventListener("DOMContentLoaded", sortTable)
-</script>
-
 The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-system portable handheld designed and built by [Analogue](https://www.analogue.co).
 
 ## Cores
 
-| Name | Platform | Author | Release | Release Date |
-| ---- | -------- | ------ | ------- | ------------ |
-{% for developer in site.data.cores -%}
-{% for core in developer.cores -%}
-| [{{ core.display_name }}](https://github.com/{{ developer.username }}/{{ core.repo }}) | {{ core.platform }} | [{{ developer.username }}](https://github.com/{{ developer.username }}) | [![release](https://img.shields.io/github/v/release/{{ developer.username }}/{{ core.repo }}?include_prereleases)](https://github.com/{{ developer.username }}/{{ core.repo }}/releases/latest) | ![GitHub Release Date](https://img.shields.io/github/release-date-pre/{{ developer.username }}/{{ core.repo }}) |
-{% endfor -%}
-{% endfor -%}
+<table class="datatable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Platform</th>
+      <th>Author</th>
+      <th class="no-sort">Version</th>
+      <th class="no-sort">Release Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for developer in site.data.cores -%}
+      {% for core in developer.cores -%}
+        <tr>
+          <td><a href="https://github.com/{{ developer.username }}/{{ core.repo }}">{{ core.display_name }}</a></td>
+          <td>{{ core.platform }}</td>
+          <td><a href="https://github.com/{{ developer.username }}">{{ developer.username }}</a></td>
+          <td>
+            <a href="https://github.com/{{ developer.username }}/{{ core.repo }}/releases/latest">
+              <img src="https://img.shields.io/github/v/release/{{ developer.username }}/{{ core.repo }}?include_prereleases&label=" alt="release">
+            </a>
+          </td>
+          <td><img src="https://img.shields.io/github/release-date-pre/{{ developer.username }}/{{ core.repo }}?label=" alt="GitHub Release Date"></td>
+        </tr>
+      {% endfor -%}
+    {% endfor -%}
+  </tbody>
+</table>
