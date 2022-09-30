@@ -13,14 +13,13 @@
       display_name: Atari's 1972 Pong
       identifier: agg23.Pong
       platform: Pong
+      # Do we need assets at all if no additional files are required?
     - repository: openfpga-NES
       display_name: NES for Analogue Pocket
       identifier: agg23.NES
       platform: NES
       assets:
       - platform: nes
-        # Do we want to keep track of save files here?
-        # https://github.com/agg23/openfpga-NES/blob/master/dist/Cores/agg23.NES/data.json#L12-L21
         extensions:
         - nes
     - repository: openfpga-SNES
@@ -29,8 +28,6 @@
       platform: SNES
       assets:
       - platform: snes
-        # Do we want to keep track of save files here?
-        # https://github.com/agg23/openfpga-SNES/blob/master/dist/Cores/agg23.SNES/data.json#L13-L22
         extensions:
         - smc
         - sfc
@@ -43,18 +40,15 @@
       assets:
       - platform: asteroids
         filename: asteroid.rom
-        # This does not exist in the data.json file. Should we not include file extensions
-        # if there is no extensions array?
-        # https://github.com/ericlewis/openfpga-asteroids/blob/main/dist/Cores/ericlewis.Asteroids/data.json
-        extensions:
-        - rom
+        # TODO: Look into the different values for bitmask.
+        #       Maybe we want an enum.
+        core_specific: true
     - repository: openfpga-dominos
       display_name: Dominos for Analogue Pocket
       identifier: ericlewis.Dominos
       platform: Dominos
       assets:
       - platform: dominos
-        # No extensions here either
         filename: dominos.rom
     - repository: openfpga-genesis
       display_name: Genesis for Analogue Pocket
@@ -74,11 +68,11 @@
       assets:
       - platform: lunarlander
         filename: llander.rom
+        core_specific: true
     - repository: openfpga-spacerace
       display_name: Space Race for Analogue Pocket
       identifier: ericlewis.SpaceRace
       platform: Space Race
-      # Do we need assets at all when a core doesn't require any additional files?
     - repository: openfpga-superbreakout
       display_name: Super Breakout for Analogue Pocket
       identifier: ericlewis.SuperBreakout
@@ -92,10 +86,46 @@
       display_name: Neo Geo
       identifier: Mazamars312.NeoGeo
       platform: Neo Geo
+      # I just grabbed every entry from data_slots marked required: true.
+      # I'm not sure if we actually want all of these.
       assets:
       - platform: ng
-        # This one is pretty crazy. 12 entries in data_slots.
-        # https://github.com/Mazamars312/Analogue_Pocket_Neogeo/blob/main/dist/Cores/Mazamars312.NeoGeo/data.json
+        extensions:
+        - json
+      - platform: ng
+        filename: uni-bios_1_0.rom
+        extensions:
+        - rom
+        - sp1
+        - bin
+      - platform: ng
+        filename: 000-lo.lo
+        extensions:
+        - lo
+      - platform: ng
+        filename: sfix.sfix
+        extensions:
+        - sfix
+      - platform: ng
+        extensions:
+        - srom
+      - platform: ng
+        extensions:
+        - bin
+        - pbin
+        - prom
+      - platform: ng
+        extensions:
+        - cbin
+        - crom0
+      - platform: ng
+        extensions:
+        - mbin
+        - m1rom
+      - platform: ng
+        extensions:
+        - vbin
+        - vroma0
 - username: nullobject
   cores:
     - repository: openfpga-tecmo
@@ -117,6 +147,7 @@
       platform: Dig Dug
       assets:
       - platform: digdug
+        # Need to investigate these JSON entries
         extensions:
         - json
       - platform: digdug
@@ -151,7 +182,8 @@
       identifier: Spacemen3.PDP1
       platform: PDP-1
       assets:
-      # These are probably not needed?
+      # These are already provided in the release.
+      # Do we want to handle these differently?
       - platform: pdp1
         filename: spacewar3.1.bin
       - platform: pdp1
