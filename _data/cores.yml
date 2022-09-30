@@ -7,24 +7,33 @@
       platform: Arduboy
       assets:
       - platform: arduboy
+        extensions:
+        - hex
     - repository: analogue-pong
       display_name: Atari's 1972 Pong
       identifier: agg23.Pong
       platform: Pong
-      assets:
-      - platform: pong
     - repository: openfpga-NES
       display_name: NES for Analogue Pocket
       identifier: agg23.NES
       platform: NES
       assets:
       - platform: nes
+        # Do we want to keep track of save files here?
+        # https://github.com/agg23/openfpga-NES/blob/master/dist/Cores/agg23.NES/data.json#L12-L21
+        extensions:
+        - nes
     - repository: openfpga-SNES
       display_name: SNES for Analogue Pocket
       identifier: agg23.SNES
       platform: SNES
       assets:
       - platform: snes
+        # Do we want to keep track of save files here?
+        # https://github.com/agg23/openfpga-SNES/blob/master/dist/Cores/agg23.SNES/data.json#L13-L22
+        extensions:
+        - smc
+        - sfc
 - username: ericlewis
   cores:
     - repository: openfpga-asteroids
@@ -33,36 +42,50 @@
       platform: Asteroids
       assets:
       - platform: asteroids
+        filename: asteroid.rom
+        # This does not exist in the data.json file. Should we not include file extensions
+        # if there is no extensions array?
+        # https://github.com/ericlewis/openfpga-asteroids/blob/main/dist/Cores/ericlewis.Asteroids/data.json
+        extensions:
+        - rom
     - repository: openfpga-dominos
       display_name: Dominos for Analogue Pocket
       identifier: ericlewis.Dominos
       platform: Dominos
       assets:
       - platform: dominos
+        # No extensions here either
+        filename: dominos.rom
     - repository: openfpga-genesis
       display_name: Genesis for Analogue Pocket
       identifier: ericlewis.Genesis
       platform: Genesis
       assets:
       - platform: genesis
+        extensions:
+        - md
+        - bin
+        - gen
+        - smd
     - repository: openfpga-lunarlander
       display_name: Lunar Lander for Analogue Pocket
       identifier: ericlewis.LunarLander
       platform: Lunar Lander
       assets:
       - platform: lunarlander
+        filename: llander.rom
     - repository: openfpga-spacerace
       display_name: Space Race for Analogue Pocket
       identifier: ericlewis.SpaceRace
       platform: Space Race
-      assets:
-      - platform: spacerace
+      # Do we need assets at all when a core doesn't require any additional files?
     - repository: openfpga-superbreakout
       display_name: Super Breakout for Analogue Pocket
       identifier: ericlewis.SuperBreakout
       platform: Super Breakout
       assets:
       - platform: superbreakout
+        filename: sbrkout.rom
 - username: Mazamars312
   cores:
     - repository: Analogue_Pocket_Neogeo
@@ -71,13 +94,8 @@
       platform: Neo Geo
       assets:
       - platform: ng
-        common:
-        - name: uni-bios_1_0.rom
-          checksum: 6293999bbc32e594aa0ae1da2113dc4d
-        - name: 000-lo.lo
-          checksum: fc7599f3f871578fe9a0453662d1c966
-        - name: sfix.sfix
-          checksum: aa2b5d0eae4158ffc0d7d63481c7830b
+        # This one is pretty crazy. 12 entries in data_slots.
+        # https://github.com/Mazamars312/Analogue_Pocket_Neogeo/blob/main/dist/Cores/Mazamars312.NeoGeo/data.json
 - username: nullobject
   cores:
     - repository: openfpga-tecmo
@@ -86,6 +104,11 @@
       platform: Tecmo
       assets:
       - platform: tecmo
+        extensions:
+        - json
+      - platform: tecmo
+        extensions:
+        - rom
 - username: opengateware
   cores:
     - repository: arcade-digdug
@@ -94,18 +117,33 @@
       platform: Dig Dug
       assets:
       - platform: digdug
+        extensions:
+        - json
+      - platform: digdug
+        extensions:
+        - rom
     - repository: arcade-galaga
       display_name: Galaga
       identifier: boogermann.galaga
       platform: Galaga
       assets:
       - platform: galaga
+        extensions:
+        - json
+      - platform: galaga
+        extensions:
+        - rom
     - repository: arcade-xevious
       display_name: Xevious
       identifier: boogermann.xevious
       platform: Xevious
       assets:
       - platform: xevious
+        extensions:
+        - json
+      - platform: xevious
+        extensions:
+        - rom
 - username: spacemen3
   cores:
     - repository: PDP-1
@@ -113,46 +151,72 @@
       identifier: Spacemen3.PDP1
       platform: PDP-1
       assets:
+      # These are probably not needed?
       - platform: pdp1
+        filename: spacewar3.1.bin
+      - platform: pdp1
+        filename: Default_LUT.clut
+        extensions:
+        - clut
 - username: spiritualized1997
   cores:
-    - repository: openFPGA-GBA
-      display_name: Spiritualized GBA
-      identifier: Spiritualized.GBA
-      platform: Game Boy Advance
-      assets:
-      - platform: gba
-        common:
-          - name: gba_bios.bin
-            checksum: a860e8c0b6d573d191e4ec7db1b1e4f6
     - repository: openFPGA-GB-GBC
       display_name: Spiritualized GB & GBC
       identifier: Spiritualized.GBC
       platform: Game Boy / Game Boy Color
       assets:
       - platform: gb
-        common:
-        - name: dmg_bios.bin
-          checksum: 32fbbd84168d3482956eb3c5051637f5
+        extensions:
+        - gb
+      - platform: gb
+        filename: dmg_bios.bin
+        extensions:
+        - bin
       - platform: gbc
-        common:
-        - name: gbc_bios.bin
-          checksum: dbfce9db9deaa2567f6a84fde55f9680
+        extensions:
+        - gb
+        - gbc
+      - platform: gbc
+        filename: gbc_bios.bin
+        extensions:
+        - bin
+    - repository: openFPGA-GBA
+      display_name: Spiritualized GBA
+      identifier: Spiritualized.GBA
+      platform: Game Boy Advance
+      assets:
+      - platform: gba
+        extensions:
+        - gba
+        - rom
+      - platform: gba
+        extensions:
+        - sav
+      - platform: gba
+        filename: gba_bios.bin
+        extensions:
+        - bin
     - repository: openFPGA-GG
       display_name: Spiritualized Sega Game Gear
       identifier: Spiritualized.GG
       platform: Game Gear
       assets:
       - platform: gg
+        extensions:
+        - gg
     - repository: openFPGA-SG1000
       display_name: Spiritualized Sega SG-1000
       identifier: Spiritualized.SG-1000
       platform: SG-1000
       assets:
       - platform: sg1000
+        extensions:
+        - sg
     - repository: openFPGA-SMS
       display_name: Spiritualized Sega Master System
       identifier: Spiritualized.SMS
       platform: Master System
       assets:
       - platform: sms
+        extensions:
+        - sms
