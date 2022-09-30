@@ -222,9 +222,6 @@
         - gba
         - rom
       - platform: gba
-        extensions:
-        - sav
-      - platform: gba
         filename: gba_bios.bin
         extensions:
         - bin
