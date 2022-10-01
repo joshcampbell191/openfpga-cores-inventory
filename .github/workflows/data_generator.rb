@@ -90,6 +90,7 @@ class DataGenerator
 
   def build_asset_json(platform)
     data_slots = parse_json_file(DATA_FILE).dig("data", "data_slots")
+
     data_slots.select { |slot| slot["required"] }.map do |slot|
       { "platform" => platform }.tap do |hash|
         hash["extensions"] = slot["extensions"] if slot["extensions"]
