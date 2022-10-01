@@ -36,7 +36,7 @@ class DataGenerator
 
   def call
     download_url = fetch_download_url
-    @directory = download_repo(download_url)
+    @directory   = download_repo(download_url)
     build_json
   end
 
@@ -50,8 +50,8 @@ class DataGenerator
   end
 
   def download_repo(download_url)
-    file_name    = URI.parse(download_url).path.split("/").last
-    dir_name     = File.basename(file_name, ".zip")
+    file_name = URI.parse(download_url).path.split("/").last
+    dir_name  = File.basename(file_name, ".zip")
 
     open(file_name, "wb") do |file|
       file << URI.open(download_url).read
