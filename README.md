@@ -63,7 +63,7 @@ Content-Type: application/json; charset=utf-8
           "filename": "asteroid.rom",
           "extensions": [
             "rom"
-          ]
+          ],
           "core_specific": true
         }
       ]
