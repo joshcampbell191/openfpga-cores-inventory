@@ -148,6 +148,14 @@
       - platform: galaga
         extensions:
         - rom
+    - repository: arcade-gberet
+      display_name: Green Beret
+      identifier: boogermann.gberet
+      platform: Green Beret
+      assets:
+      - platform: gberet
+        extensions:
+        - rom
     - repository: arcade-xevious
       display_name: Xevious
       identifier: boogermann.xevious
