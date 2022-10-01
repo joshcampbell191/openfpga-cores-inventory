@@ -50,35 +50,24 @@ Content-Type: application/json; charset=utf-8
 {
   "data": [
     {
-      "identifier": "Spiritualized.GBC",
-      "platform": "Gameboy/Gameboy Color",
+      "identifier": "ericlewis.Asteroids",
+      "platform": "Asteroids",
       "repository": {
         "platform": "github",
-        "owner": "spiritualized1997",
-        "name": "openFPGA-GB-GBC"
+        "owner": "ericlewis",
+        "name": "openfpga-asteroids"
       },
       "assets": [
         {
-          "platform": "gb",
-          "common": [
-            {
-              "name": "dmg_bios.bin",
-              "checksum": "32fbbd84168d3482956eb3c5051637f5"
-            }
+          "platform": "asteroids",
+          "filename": "asteroid.rom",
+          "extensions": [
+            "rom"
           ]
-        },
-        {
-          "platform": "gbc",
-          "common": [
-            {
-              "name": "gbc_bios.bin",
-              "checksum": "dbfce9db9deaa2567f6a84fde55f9680"
-            }
-          ]
+          "core_specific": true
         }
       ]
-    },
-    ...
+    }
   ]
 }
 ```
@@ -102,18 +91,12 @@ Where a repository object is:
 
 Where an asset object is:
 
-| Field             | Type         | Description                                                                                                                |
-| ----------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------|
-| platform          | string       | The core's platform, specified by its `platform.json` file.                                                                |
-| common (optional) | object array | A list of file objects. These files are required by the core and placed in the `Assets/<platform>/common` directory.       |
-| core (optional)   | object array | A list of file objects. These files are required by the core and placed in the `Assets/<platform>/<identifier>` directory. |
-
-Where a file object is:
-
-| Field    | Type   | Description                   |
-| -------- | ------ | ----------------------------- |
-| name     | string | The name the file must use.   |
-| checksum | string | The MD5 checksum of the file. |
+| Field         | Type    | Description                                                                                                                                                                               |
+| ------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| platform      | string  | The core's platform, specified by its `platform.json` file.                                                                                                                               |
+| filename      | string  | The name of the asset file.                                                                                                                                                               |
+| extensions    | array   | A list of valid file extensions for the asset.                                                                                                                                            |
+| core_specific | boolean | Indicates if an asset is specific to this core only. If so, it should be placed in `Assets/<platform>/<identifier>`. Otherwise, the asset should be placed in `Assets/<platform>/common`. |
 
 Possible errors:
 
@@ -125,21 +108,18 @@ Possible errors:
 To add a new core, you will need to edit the `_data/cores.yml` file. At a minimum, you must add the fields marked `<required>`:
 
 ```yaml
-- username: spiritualized1997              # <required>
-  cores:                                   # <required>
-    - repository: openFPGA-GB-GBC          # <required>
-      display_name: Spiritualized GB & GBC # <required>
-      identifier: Spiritualized.GBC        # <required>
-      platform: Gameboy/Gameboy Color      # <required>
-      assets:                              # <required>
-      - platform: gb                       # <required>
-        common:
-        - name: dmg_bios.bin
-          checksum: 32fbbd84168d3482956eb3c5051637f5
-      - platform: gbc
-        common:
-        - name: gbc_bios.bin
-          checksum: dbfce9db9deaa2567f6a84fde55f9680
+- username: ericlewis
+  cores:
+    - repository: openfpga-asteroids              # <required>
+      display_name: Asteroids for Analogue Pocket # <required>
+      identifier: ericlewis.Asteroids             # <required>
+      platform: Asteroids                         # <required>
+      assets:                                     # <required>
+      - platform: asteroids
+        filename: asteroid.rom
+        extensions:
+        - rom
+        core_specific: true
 ```
 
 Information on what these fields mean can be found in the [API description](#getting-the-list-of-cores). There is one additional field `display_name` that is used in the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
