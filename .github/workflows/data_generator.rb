@@ -105,5 +105,5 @@ class DataGenerator
 end
 
 url = "https://github.com/spiritualized1997/openFPGA-GBA"
-g = ConfigGenerator.new(url)
+g = DataGenerator.new(url)
 pp g.call
