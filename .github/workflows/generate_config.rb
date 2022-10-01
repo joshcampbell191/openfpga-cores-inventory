@@ -7,6 +7,7 @@ require "uri"
 require "open-uri"
 
 class ConfigGenerator
+  # https://www.analogue.co/developer/docs/core-definition-files/data-json#parameters-bitmap
   BIT_MASK = {
     user_reloadable:    0b000000001,
     core_specific:      0b000000010,
