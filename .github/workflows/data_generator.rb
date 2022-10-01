@@ -14,7 +14,7 @@ class DataGenerator
     "core_specific"     => 0b000000010,
     # "nonvolatile"       => 0b000000100,
     # "read_only"         => 0b000001000,
-    # "instance_json"     => 0b000010000,
+    "instance_json"     => 0b000010000,
     # "init_on_load"      => 0b000100000,
     # "reset_while_load"  => 0b001000000,
     # "reset_around_load" => 0b010000000,
@@ -96,6 +96,7 @@ class DataGenerator
         hash["extensions"] = slot["extensions"] if slot["extensions"]
         hash["filename"]   = slot["filename"]   if slot["filename"]
       end.merge(extract_parameters(slot["parameters"]))
+         .reject { |asset| asset["instance_json"] }
     end
   end
 
