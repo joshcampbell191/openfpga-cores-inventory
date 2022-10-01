@@ -13,7 +13,7 @@
       display_name: Atari's 1972 Pong
       identifier: agg23.Pong
       platform: Pong
-      # Do we need assets at all if no additional files are required?
+      assets: []
     - repository: openfpga-NES
       display_name: NES for Analogue Pocket
       identifier: agg23.NES
@@ -71,6 +71,7 @@
       display_name: Space Race for Analogue Pocket
       identifier: ericlewis.SpaceRace
       platform: Space Race
+      assets: []
     - repository: openfpga-superbreakout
       display_name: Super Breakout for Analogue Pocket
       identifier: ericlewis.SuperBreakout
@@ -84,16 +85,7 @@
       display_name: Neo Geo
       identifier: Mazamars312.NeoGeo
       platform: Neo Geo
-      # I just grabbed every entry from data_slots marked required: true.
-      # I'm not sure if we actually want all of these.
       assets:
-      # I'm not sure if we need/want these JSON entries.
-      # I applied the bit mask, and the "Instance JSON" bit is on.
-      # I'm not actually sure what these are used for, but if we don't need these,
-      # we can check that bit and ignore them.
-      - platform: ng
-        extensions:
-        - json
       - platform: ng
         filename: uni-bios_1_0.rom
         extensions:
@@ -137,9 +129,6 @@
       assets:
       - platform: tecmo
         extensions:
-        - json
-      - platform: tecmo
-        extensions:
         - rom
 - username: opengateware
   cores:
@@ -150,18 +139,12 @@
       assets:
       - platform: digdug
         extensions:
-        - json
-      - platform: digdug
-        extensions:
         - rom
     - repository: arcade-galaga
       display_name: Galaga
       identifier: boogermann.galaga
       platform: Galaga
       assets:
-      - platform: galaga
-        extensions:
-        - json
       - platform: galaga
         extensions:
         - rom
@@ -172,9 +155,6 @@
       assets:
       - platform: xevious
         extensions:
-        - json
-      - platform: xevious
-        extensions:
         - rom
 - username: spacemen3
   cores:
@@ -183,8 +163,6 @@
       identifier: Spacemen3.PDP1
       platform: PDP-1
       assets:
-      # These are already provided in the release.
-      # Do we want to handle these differently?
       - platform: pdp1
         filename: spacewar3.1.bin
       - platform: pdp1
