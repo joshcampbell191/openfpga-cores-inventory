@@ -99,7 +99,7 @@ class ConfigGenerator
 
   def extract_parameters(int)
     int = int.to_i(16) if int.is_a?(String)
-    { core_specific: (int & BIT_MASK[:core_specific] != 0) }
+    { "core_specific" => (int & BIT_MASK[:core_specific] != 0) }
   end
 end
 
