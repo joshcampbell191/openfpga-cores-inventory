@@ -28,10 +28,8 @@ class DataGenerator
   attr_accessor :directory
 
   def initialize(url)
-    path_parts = URI.parse(url).path.split("/")
-    @url       = url
-    @author    = path_parts[1]
-    @repo      = path_parts[2]
+    @url = url
+    @author, @repo = URI.parse(url).path.split("/").drop(1)
   end
 
   def call
