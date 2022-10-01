@@ -87,6 +87,10 @@
       # I just grabbed every entry from data_slots marked required: true.
       # I'm not sure if we actually want all of these.
       assets:
+      # I'm not sure if we need/want these JSON entries.
+      # I applied the bit mask, and the "Instance JSON" bit is on.
+      # I'm not actually sure what these are used for, but if we don't need these,
+      # we can check that bit and ignore them.
       - platform: ng
         extensions:
         - json
@@ -145,7 +149,6 @@
       platform: Dig Dug
       assets:
       - platform: digdug
-        # Need to investigate these JSON entries
         extensions:
         - json
       - platform: digdug
