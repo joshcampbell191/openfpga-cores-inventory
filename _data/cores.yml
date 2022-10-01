@@ -40,8 +40,6 @@
       assets:
       - platform: asteroids
         filename: asteroid.rom
-        # TODO: Look into the different values for bitmask.
-        #       Maybe we want an enum.
         core_specific: true
     - repository: openfpga-dominos
       display_name: Dominos for Analogue Pocket
