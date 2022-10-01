@@ -91,12 +91,12 @@ Where a repository object is:
 
 Where an asset object is:
 
-| Field         | Type    | Description                                                                                                                                                                               |
-| ------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| platform      | string  | The core's platform, specified by its `platform.json` file.                                                                                                                               |
-| filename      | string  | The name of the asset file.                                                                                                                                                               |
-| extensions    | array   | A list of valid file extensions for the asset.                                                                                                                                            |
-| core_specific | boolean | Indicates if an asset is specific to this core only. If so, it should be placed in `Assets/<platform>/<identifier>`. Otherwise, the asset should be placed in `Assets/<platform>/common`. |
+| Field         | Type    | Required | Description                                                                                                                                                                               |
+| ------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| platform      | string  | true     | The core's platform, specified by its `platform.json` file.                                                                                                                               |
+| filename      | string  | false    | The name of the asset file.                                                                                                                                                               |
+| extensions    | array   | false    | A list of valid file extensions for the asset.                                                                                                                                            |
+| core_specific | boolean | false    | Indicates if an asset is specific to this core only. If so, it should be placed in `Assets/<platform>/<identifier>`. Otherwise, the asset should be placed in `Assets/<platform>/common`. |
 
 Possible errors:
 
