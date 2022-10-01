@@ -63,11 +63,11 @@ class ConfigGenerator
   end
 
   def build_config
-    core_json     = parse_json_file(CORE_FILE)
-    author_name   = core_json.dig("core", "metadata", "author")
-    core_name     = core_json.dig("core", "metadata", "shortname")
+    core_metadata = parse_json_file(CORE_FILE).dig("core", "metadata")
+    author_name   = core_metadata["author"]
+    core_name     = core_metadata["shortname"]
     # There can probably be multiple platform_ids
-    platform_id   = core_json.dig("core", "metadata", "platform_ids").first
+    platform_id   = core_metadata["platform_ids"].first
     platform_json = parse_json_file("#{platform_id}.json")
 
     {
@@ -83,8 +83,8 @@ class ConfigGenerator
   end
 
   def build_asset_json(platform)
-    json = parse_json_file(DATA_FILE)
-    json.dig("data", "data_slots").select { |slot| slot["required"] }.map do |slot|
+    data_slots = parse_json_file(DATA_FILE).dig("data", "data_slots")
+    data_slots.select { |slot| slot["required"] }.map do |slot|
       { "platform" => platform }.tap do |hash|
         hash["extensions"] = slot["extensions"] if slot["extensions"]
         hash["filename"]   = slot["filename"]   if slot["filename"]
