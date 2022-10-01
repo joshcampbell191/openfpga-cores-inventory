@@ -9,15 +9,15 @@ require "open-uri"
 class DataGenerator
   # https://www.analogue.co/developer/docs/core-definition-files/data-json#parameters-bitmap
   BITMAP = {
-    user_reloadable:    0b000000001,
-    core_specific:      0b000000010,
-    nonvolatile:        0b000000100,
-    read_only:          0b000001000,
-    instance_json:      0b000010000,
-    init_on_load:       0b000100000,
-    reset_while_load:   0b001000000,
-    reset_around_load:  0b010000000,
-    full_reload:        0b100000000
+    "user_reloadable"   => 0b000000001,
+    "core_specific"     => 0b000000010,
+    "nonvolatile"       => 0b000000100,
+    "read_only"         => 0b000001000,
+    "instance_json"     => 0b000010000,
+    "init_on_load"      => 0b000100000,
+    "reset_while_load"  => 0b001000000,
+    "reset_around_load" => 0b010000000,
+    "full_reload"       => 0b100000000
   }.freeze
 
   CORE_FILE = "core.json".freeze
@@ -92,9 +92,9 @@ class DataGenerator
     end
   end
 
-  def parse_json_file(file)
-    path = Dir["#{directory}/**/#{file}"].first
-    file = File.read(path)
+  def parse_json_file(file_name)
+    file_path = Dir["#{directory}/**/#{file_name}"].first
+    file = File.read(file_path)
     JSON.parse(file)
   end
 
