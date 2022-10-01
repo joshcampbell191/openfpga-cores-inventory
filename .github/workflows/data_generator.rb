@@ -24,25 +24,31 @@ class DataGenerator
   CORE_FILE = "core.json".freeze
   DATA_FILE = "data.json".freeze
 
-  attr_reader :url, :author, :repo
+  attr_reader :url, :username, :repo, :json
   attr_accessor :directory
 
   def initialize(url)
     @url = url
-    @author, @repo = URI.parse(url).path.split("/").drop(1)
+    @username, @repo = URI.parse(url).path.split("/").drop(1)
+    @json = {
+      "username" => username,
+      "cores"    => []
+    }
   end
 
   def call
     fetch_download_urls.each do |download_url|
       @directory = download_repo(download_url)
-      # build_json
+      build_json
     end
+
+    json
   end
 
   private
 
   def fetch_download_urls
-    api_uri  = URI.parse("https://api.github.com/repos/#{author}/#{repo}/releases/latest")
+    api_uri  = URI.parse("https://api.github.com/repos/#{username}/#{repo}/releases/latest")
     response = Net::HTTP.get_response(api_uri)
     JSON.parse(response.body)["assets"].map { |asset| asset["browser_download_url"] }
   end
@@ -61,31 +67,28 @@ class DataGenerator
   end
 
   def build_json
-    metadata = parse_json_file(CORE_FILE).dig("core", "metadata")
-    # There can probably be multiple platform_ids
-    platform_id   = metadata["platform_ids"].first
-    platform_json = parse_json_file("#{platform_id}.json")
+    metadata      = parse_json_file(CORE_FILE).dig("core", "metadata")
+    platform_id   = metadata["platform_ids"].first # TODO: There can probably be multiple platform_ids
+    platform_json = parse_json_file("#{platform_id}.json")["platform"]
 
-    base_json # TODO: Fill out assets for each core
+    core_json = core_json_template(
+      metadata["author"],
+      metadata["shortname"],
+      platform_json["name"],
+      platform_id
+    )
+
+    json["cores"] << core_json
   end
 
-  def base_json
+  def core_json_template(author, shortname, platform_name, platform_id)
     {
-      username: author,
-      # How do we want to handle identifier for a repo with multiple cores?
-      # Same for platform
-      cores: []
+      "repository"   => repo,
+      "display_name" => "TODO",
+      "identifier"   => "#{author}.#{shortname}",
+      "platform"     => platform_name,
+      "assets"       => build_asset_json(platform_id)
     }
-    # {
-    #   username: author,
-    #   cores: [{
-    #     "repository"   => repo,
-    #     "display_name" => "TODO",
-    #     "identifier"   => "#{metadata["author"]}.#{metadata["shortname"]}",
-    #     "platform"     => platform_json.dig("platform", "name"),
-    #     "assets"       => build_asset_json(platform_id)
-    #   }]
-    # }
   end
 
   def build_asset_json(platform)
@@ -118,4 +121,4 @@ end
 # url = "https://github.com/spiritualized1997/openFPGA-GBA"
 url = "https://github.com/spiritualized1997/openFPGA-GB-GBC"
 g = DataGenerator.new(url)
-g.call
+pp g.call
