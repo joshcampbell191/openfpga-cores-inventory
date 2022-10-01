@@ -63,9 +63,9 @@ class DataGenerator
   end
 
   def build_json
-    core_metadata = parse_json_file(CORE_FILE).dig("core", "metadata")
+    metadata = parse_json_file(CORE_FILE).dig("core", "metadata")
     # There can probably be multiple platform_ids
-    platform_id   = core_metadata["platform_ids"].first
+    platform_id   = metadata["platform_ids"].first
     platform_json = parse_json_file("#{platform_id}.json")
 
     {
@@ -73,7 +73,7 @@ class DataGenerator
       cores: [{
         "repository"   => repo,
         "display_name" => "TODO",
-        "identifier"   => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
+        "identifier"   => "#{metadata["author"]}.#{metadata["shortname"]}",
         "platform"     => platform_json.dig("platform", "name"),
         "assets"       => build_asset_json(platform_id)
       }]
