@@ -8,7 +8,7 @@ require "open-uri"
 
 class ConfigGenerator
   # https://www.analogue.co/developer/docs/core-definition-files/data-json#parameters-bitmap
-  BIT_MASK = {
+  BITMAP = {
     user_reloadable:    0b000000001,
     core_specific:      0b000000010,
     nonvolatile:        0b000000100,
@@ -100,7 +100,7 @@ class ConfigGenerator
 
   def extract_parameters(int)
     int = int.to_i(16) if int.is_a?(String)
-    { "core_specific" => (int & BIT_MASK[:core_specific] != 0) }
+    { "core_specific" => (int & BITMAP[:core_specific] != 0) }
   end
 end
 
