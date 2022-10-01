@@ -6,11 +6,6 @@ require "net/http"
 require "uri"
 require "open-uri"
 
-def unzip(file_name)
-  cmd = "uzip #{file_name}"
-  system(cmd)
-end
-
 class ConfigGenerator
   BIT_MASK = {
     user_reloadable:    0b000000001,
@@ -50,6 +45,7 @@ class ConfigGenerator
     open(file_name, "wb") do |file|
       file << URI.open(download_url).read
     end
+    # TODO: Implement unzip
     # unzip(file_name)
     # File.delete(file_name)
   end
