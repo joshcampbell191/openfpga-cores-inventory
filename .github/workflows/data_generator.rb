@@ -8,16 +8,17 @@ require "open-uri"
 
 class DataGenerator
   # https://www.analogue.co/developer/docs/core-definition-files/data-json#parameters-bitmap
+  # Uncomment a line to add the parameter to the core's API entry.
   BITMAP = {
-    "user_reloadable"   => 0b000000001,
+    # "user_reloadable"   => 0b000000001,
     "core_specific"     => 0b000000010,
-    "nonvolatile"       => 0b000000100,
-    "read_only"         => 0b000001000,
-    "instance_json"     => 0b000010000,
-    "init_on_load"      => 0b000100000,
-    "reset_while_load"  => 0b001000000,
-    "reset_around_load" => 0b010000000,
-    "full_reload"       => 0b100000000
+    # "nonvolatile"       => 0b000000100,
+    # "read_only"         => 0b000001000,
+    # "instance_json"     => 0b000010000,
+    # "init_on_load"      => 0b000100000,
+    # "reset_while_load"  => 0b001000000,
+    # "reset_around_load" => 0b010000000,
+    # "full_reload"       => 0b100000000
   }.freeze
 
   CORE_FILE = "core.json".freeze
@@ -98,9 +99,10 @@ class DataGenerator
 
   def extract_parameters(int)
     int = int.to_i(16) if int.is_a?(String)
-    {
-      "core_specific" => (int & BITMAP["core_specific"] != 0)
-    }.select { |_, val| val }
+
+    BITMAP.map.with_object({}) do |(key, val), hash|
+      hash[key] = (int & val != 0)
+    end.select { |_, val| val }
   end
 end
 
