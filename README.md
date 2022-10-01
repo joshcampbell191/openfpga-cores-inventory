@@ -50,86 +50,76 @@ Content-Type: application/json; charset=utf-8
 {
   "data": [
     {
-      "repo": {
+      "identifier": "ericlewis.Asteroids",
+      "platform": "Asteroids",
+      "repository": {
         "platform": "github",
-        "user": "spiritualized1997",
-        "project": "openFPGA-GB-GBC"
+        "owner": "ericlewis",
+        "name": "openfpga-asteroids"
       },
-      "identifier": "Spiritualized.GBC",
-      "platform": "Gameboy/Gameboy Color",
-      "assets": {
-        "location": "Assets/gbc/common/",
-        "files": [
-          {
-            "file_name": "dmg_bios.bin",
-            "url": "https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb",
-            "override_location": "Assets/gb/common/"
-          },
-          ...
-        ]
-      }
-    },
-    ...
+      "assets": [
+        {
+          "platform": "asteroids",
+          "filename": "asteroid.rom",
+          "extensions": [
+            "rom"
+          ],
+          "core_specific": true
+        }
+      ]
+    }
   ]
 }
 ```
 
 Where a core object is:
 
-| Field             | Type   | Description                                                                |
-| ------------------|--------|----------------------------------------------------------------------------|
-| repo              | object | An object describing where the core is hosted.                             |
-| identifier        | string | The core's unique identifier.                                              |
-| platform          | string | The name of the core's game platform.                                      |
-| assets            | object | An object containing a description of additional asset files for the core. |
+| Field      | Type         | Description                                    |
+| ---------- | ------------ | ---------------------------------------------- |
+| identifier | string       | The core's unique identifier.                  |
+| platform   | string       | The name of the core's game platform.          |
+| repository | object       | An object describing where the core is hosted. |
+| assets     | object array | A list asset objects.                          |
 
-Where a repo object is:
+Where a repository object is:
 
-| Field             | Type   | Description                                                                     |
-| ------------------|--------|---------------------------------------------------------------------------------|
-| platform          | enum   | The website where the repo is located. Currently, this always returns `github`. |
-| user              | string | The core developer's GitHub username.                                           |
-| project           | string | The core's GitHub repository name.                                              |
+| Field    | Type   | Description                                                                     |
+| -------- | ------ | ------------------------------------------------------------------------------- |
+| platform | enum   | The website where the repo is located. Currently, this always returns `github`. |
+| owner    | string | The core developer's GitHub username.                                           |
+| name     | string | The core's GitHub repository name.                                              |
 
 Where an asset object is:
 
-| Field             | Type         | Description                                                     |
-| ------------------|--------------|-----------------------------------------------------------------|
-| location          | string       | The path on the SD card where the core's assets must be placed. |
-| files             | object array | A list of file objects.                                         |
-
-Where a file object is:
-
-| Field             | Type   | Description                                                                                                         |
-| ------------------|--------|---------------------------------------------------------------------------------------------------------------------|
-| file_name         | string | The name the file must use in the core's Assets directory.                                                          |
-| url               | string | The URL where the file is located.                                                                                  |
-| override_location | string | The path on the SD card where this file should be placed. This overrides the `location` stored in the asset object. |
+| Field         | Type    | Required | Description                                                                                                                                                                               |
+| ------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| platform      | string  | true     | The core's platform, specified by its `platform.json` file.                                                                                                                               |
+| filename      | string  | false    | The name of the asset file.                                                                                                                                                               |
+| extensions    | array   | false    | A list of valid file extensions for the asset.                                                                                                                                            |
+| core_specific | boolean | false    | Indicates if an asset is specific to this core only. If so, it should be placed in `Assets/<platform>/<identifier>`. Otherwise, the asset should be placed in `Assets/<platform>/common`. |
 
 Possible errors:
 
 | Error code    | Description                                  |
-| --------------|----------------------------------------------|
+| ------------- | -------------------------------------------- |
 | 403 Forbidden | The GitHub API rate limit has been exceeded. |
 
 ## Adding a new core
 To add a new core, you will need to edit the `_data/cores.yml` file. At a minimum, you must add the fields marked `<required>`:
 
 ```yaml
-- username: spiritualized1997              #<required>
-  cores:                                   #<required>
-    - repo: openFPGA-GB-GBC                #<required>
-      display_name: Spiritualized GB & GBC #<required>
-      identifier: Spiritualized.GBC        #<required>
-      platform: Gameboy/Gameboy Color      #<required>
-      assets:
-        location: Assets/gbc/common/
-        files:
-        - file_name: gbc_bios.bin
-          url: https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GBC_boot_ROM.gb
-        - file_name: dmg_bios.bin
-          url: https://archive.org/download/mister-console-bios-pack_theypsilon/Gameboy.zip/GB_boot_ROM.gb
-          override_location: Assets/gb/common/
+- username: ericlewis
+  cores:
+    - repository: openfpga-asteroids              # <required>
+      display_name: Asteroids for Analogue Pocket # <required>
+      identifier: ericlewis.Asteroids             # <required>
+      platform: Asteroids                         # <required>
+      assets:                                     # <required>
+      - platform: asteroids
+        filename: asteroid.rom
+        extensions:
+        - rom
+        core_specific: true
 ```
 
 Information on what these fields mean can be found in the [API description](#getting-the-list-of-cores). There is one additional field `display_name` that is used in the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
