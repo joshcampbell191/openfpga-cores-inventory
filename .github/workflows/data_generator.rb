@@ -6,7 +6,7 @@ require "net/http"
 require "uri"
 require "open-uri"
 
-class ConfigGenerator
+class DataGenerator
   # https://www.analogue.co/developer/docs/core-definition-files/data-json#parameters-bitmap
   BITMAP = {
     user_reloadable:    0b000000001,
@@ -35,14 +35,21 @@ class ConfigGenerator
   end
 
   def call
-    @directory = download_repo
-    build_config
+    download_url = fetch_download_url
+    @directory = download_repo(download_url)
+    build_json
   end
 
   private
 
-  def download_repo
-    download_url = fetch_download_url
+  def fetch_download_url
+    api_uri  = URI.parse("https://api.github.com/repos/#{author}/#{repo}/releases/latest")
+    response = Net::HTTP.get_response(api_uri)
+    # There can probably be multiple assets here.
+    JSON.parse(response.body).dig("assets", 0, "browser_download_url")
+  end
+
+  def download_repo(download_url)
     file_name    = URI.parse(download_url).path.split("/").last
     dir_name     = File.basename(file_name, ".zip")
 
@@ -55,14 +62,7 @@ class ConfigGenerator
     dir_name
   end
 
-  def fetch_download_url
-    api_uri  = URI.parse("https://api.github.com/repos/#{author}/#{repo}/releases/latest")
-    response = Net::HTTP.get_response(api_uri)
-    # There can probably be multiple assets here.
-    JSON.parse(response.body).dig("assets", 0, "browser_download_url")
-  end
-
-  def build_config
+  def build_json
     core_metadata = parse_json_file(CORE_FILE).dig("core", "metadata")
     author_name   = core_metadata["author"]
     core_name     = core_metadata["shortname"]
