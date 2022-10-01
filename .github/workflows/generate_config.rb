@@ -13,31 +13,16 @@ BIT_MASK = {
   read_only:          0b000001000,
   instance_json:      0b000010000,
   init_on_load:       0b000100000,
-  reset_while_loaD:   0b001000000,
-  reset_around_loAD:  0b010000000,
+  reset_while_load:   0b001000000,
+  reset_around_load:  0b010000000,
   full_reload:        0b100000000
 }.freeze
 
 CORE_FILE = "core.json".freeze
 DATA_FILE = "data.json".freeze
 
-def download_repo(url)
-  repo_uri        = URI.parse(url)
-  api_uri         = URI.parse("https://api.github.com/repos#{repo_uri.path}/releases/latest")
-  response        = Net::HTTP.get_response(api_uri)
-  # There can probably be multiple assets here.
-  zip_browser_url = JSON.parse(response.body).dig("assets", 0, "browser_download_url")
-  zip_uri         = URI.parse(zip_browser_url)
-  file_name       = zip_uri.path.split("/").last
-  open(file_name, "wb") do |file|
-    file << URI.open(zip_browser_url).read
-  end
-  unzip(file_name)
-  # File.delete(file_name)
-end
-
 def unzip(file_name)
-  cmd = "unar #{file_name}"
+  cmd = "uzip #{file_name}"
   system(cmd)
 end
 
@@ -82,8 +67,76 @@ def parse_json(directory, file)
 end
 
 def apply_mask(int)
+  # TODO: Account for hex strings
   { core_specific: (int & BIT_MASK[:core_specific] != 0) }
 end
 
-url = ARGV[0]
-pp download_repo(url)
+
+class ConfigGenerator
+  attr_reader :url, :author, :repo
+
+  def initialize(url)
+    uri        = URI.parse(url)
+    path_parts = uri.path.split("/")
+    @url       = url
+    @author    = path_parts[1]
+    @repo      = path_parts[2]
+  end
+
+  def call
+    download_repo
+  end
+
+  private
+
+  def download_repo
+    download_url = fetch_download_url
+    file_name    = URI.parse(download_url).path.split("/").last
+    open(file_name, "wb") do |file|
+      file << URI.open(download_url).read
+    end
+    # unzip(file_name)
+    # File.delete(file_name)
+  end
+
+  def fetch_download_url
+    api_uri         = URI.parse("https://api.github.com/repos/#{author}/#{repo}/releases/latest")
+    response        = Net::HTTP.get_response(api_uri)
+    # There can probably be multiple assets here.
+    JSON.parse(response.body).dig("assets", 0, "browser_download_url")
+  end
+end
+
+url = "https://github.com/spiritualized1997/openFPGA-GBA"
+g = ConfigGenerator.new(url)
+g.call
+
+# [
+#   {
+#     "username": "spiritualized1997",
+#     "cores": [
+#       {
+#         "repository": "openFPGA-GBA",
+#         "display_name": "Spiritualized GBA",
+#         "identifier": "Spiritualized.GBA",
+#         "platform": "Game Boy Advance",
+#         "assets": [
+#           {
+#             "platform": "gba",
+#             "extensions": [
+#               "gba",
+#               "rom"
+#             ]
+#           },
+#           {
+#             "platform": "gba",
+#             "filename": "gba_bios.bin",
+#             "extensions": [
+#               "bin"
+#             ]
+#           }
+#         ]
+#       }
+#     ]
+#   }
+# ]
