@@ -172,9 +172,9 @@
 - username: spiritualized1997
   cores:
     - repository: openFPGA-GB-GBC
-      display_name: Spiritualized GB & GBC
-      identifier: Spiritualized.GBC
-      platform: Game Boy / Game Boy Color
+      display_name: Spiritualized GB
+      identifier: Spiritualized.GB
+      platform: Game Boy
       assets:
       - platform: gb
         extensions:
@@ -183,6 +183,11 @@
         filename: dmg_bios.bin
         extensions:
         - bin
+    - repository: openFPGA-GB-GBC
+      display_name: Spiritualized GBC
+      identifier: Spiritualized.GBC
+      platform: Game Boy Color
+      assets:
       - platform: gbc
         extensions:
         - gb
