@@ -98,7 +98,7 @@ class ConfigGenerator
   end
 
   def extract_parameters(int)
-    # TODO: Account for hex strings
+    int = int.to_i(16) if int.is_a?(String)
     { core_specific: (int & BIT_MASK[:core_specific] != 0) }
   end
 end
