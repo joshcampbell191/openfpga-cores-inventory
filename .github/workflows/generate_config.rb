@@ -23,6 +23,7 @@ class ConfigGenerator
   DATA_FILE = "data.json".freeze
 
   attr_reader :url, :author, :repo
+  attr_accessor :directory
 
   def initialize(url)
     uri        = URI.parse(url)
@@ -33,7 +34,7 @@ class ConfigGenerator
   end
 
   def call
-    download_repo
+    @directory = download_repo
     build_config
   end
 
@@ -42,12 +43,15 @@ class ConfigGenerator
   def download_repo
     download_url = fetch_download_url
     file_name    = URI.parse(download_url).path.split("/").last
+    dir_name     = File.basename(file_name, ".zip")
+
     open(file_name, "wb") do |file|
       file << URI.open(download_url).read
     end
-    # TODO: Implement unzip
-    # unzip(file_name)
-    # File.delete(file_name)
+    system("unzip -q #{file_name} -d #{dir_name}")
+    File.delete(file_name)
+
+    dir_name
   end
 
   def fetch_download_url
@@ -58,12 +62,12 @@ class ConfigGenerator
   end
 
   def build_config
-    core_json     = parse_json_file(directory, CORE_FILE)
+    core_json     = parse_json_file(CORE_FILE)
     author_name   = core_json.dig("core", "metadata", "author")
     core_name     = core_json.dig("core", "metadata", "shortname")
     # There can probably be multiple platform_ids
     platform_id   = core_json.dig("core", "metadata", "platform_ids").first
-    platform_json = parse_json_file(directory, "#{platform_id}.json")
+    platform_json = parse_json_file("#{platform_id}.json")
 
     {
       username: author,
@@ -78,7 +82,7 @@ class ConfigGenerator
   end
 
   def build_asset_json(platform)
-    json = parse_json_file(directory, DATA_FILE)
+    json = parse_json_file(DATA_FILE)
     json.dig("data", "data_slots").select { |slot| slot["required"] }.map do |slot|
       { "platform" => platform }.tap do |hash|
         hash["extensions"] = slot["extensions"] if slot["extensions"]
@@ -87,7 +91,7 @@ class ConfigGenerator
     end
   end
 
-  def parse_json_file(directory, file)
+  def parse_json_file(file)
     path = Dir["#{directory}/**/#{file}"].first
     file = File.read(path)
     JSON.parse(file)
@@ -101,7 +105,7 @@ end
 
 url = "https://github.com/spiritualized1997/openFPGA-GBA"
 g = ConfigGenerator.new(url)
-g.call
+pp g.call
 
 # [
 #   {
@@ -132,3 +136,33 @@ g.call
 #     ]
 #   }
 # ]
+#
+# {
+#   "username": "spiritualized1997",
+#   "cores": [
+#     {
+#       "repository": "openFPGA-GBA",
+#       "display_name": "TODO",
+#       "identifier": "Spiritualized.GBA",
+#       "platform": "Game Boy Advance",
+#       "assets": [
+#         {
+#           "platform": "gba",
+#           "extensions": [
+#             "gba",
+#             "rom"
+#           ],
+#           "core_specific": false
+#         },
+#         {
+#           "platform": "gba",
+#           "extensions": [
+#             "bin"
+#           ],
+#           "filename": "gba_bios.bin",
+#           "core_specific": false
+#         }
+#       ]
+#     }
+#   ]
+# }
