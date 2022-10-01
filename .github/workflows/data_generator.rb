@@ -35,9 +35,10 @@ class DataGenerator
   end
 
   def call
-    download_url = fetch_download_urls
-    # @directory   = download_repo(download_url)
-    # build_json
+    fetch_download_urls.each do |download_url|
+      @directory = download_repo(download_url)
+      # build_json
+    end
   end
 
   private
@@ -45,7 +46,6 @@ class DataGenerator
   def fetch_download_urls
     api_uri  = URI.parse("https://api.github.com/repos/#{author}/#{repo}/releases/latest")
     response = Net::HTTP.get_response(api_uri)
-    # pp JSON.parse(response.body)
     JSON.parse(response.body)["assets"].map { |asset| asset["browser_download_url"] }
   end
 
@@ -105,4 +105,4 @@ end
 # url = "https://github.com/spiritualized1997/openFPGA-GBA"
 url = "https://github.com/spiritualized1997/openFPGA-GB-GBC"
 g = DataGenerator.new(url)
-pp g.call
+g.call
