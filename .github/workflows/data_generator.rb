@@ -28,8 +28,7 @@ class DataGenerator
   attr_accessor :directory
 
   def initialize(url)
-    uri        = URI.parse(url)
-    path_parts = uri.path.split("/")
+    path_parts = URI.parse(url).path.split("/")
     @url       = url
     @author    = path_parts[1]
     @repo      = path_parts[2]
@@ -69,16 +68,26 @@ class DataGenerator
     platform_id   = metadata["platform_ids"].first
     platform_json = parse_json_file("#{platform_id}.json")
 
+    base_json # TODO: Fill out assets for each core
+  end
+
+  def base_json
     {
       username: author,
-      cores: [{
-        "repository"   => repo,
-        "display_name" => "TODO",
-        "identifier"   => "#{metadata["author"]}.#{metadata["shortname"]}",
-        "platform"     => platform_json.dig("platform", "name"),
-        "assets"       => build_asset_json(platform_id)
-      }]
-    }#.to_yaml
+      # How do we want to handle identifier for a repo with multiple cores?
+      # Same for platform
+      cores: []
+    }
+    # {
+    #   username: author,
+    #   cores: [{
+    #     "repository"   => repo,
+    #     "display_name" => "TODO",
+    #     "identifier"   => "#{metadata["author"]}.#{metadata["shortname"]}",
+    #     "platform"     => platform_json.dig("platform", "name"),
+    #     "assets"       => build_asset_json(platform_id)
+    #   }]
+    # }
   end
 
   def build_asset_json(platform)
