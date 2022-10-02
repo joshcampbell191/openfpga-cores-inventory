@@ -47,8 +47,20 @@ class DataGenerator
   private
 
   def fetch_download_urls
-    api_uri  = URI.parse("https://api.github.com/repos/#{username}/#{repository}/releases")
-    response = Net::HTTP.get_response(api_uri)
+    uri = URI.parse("https://api.github.com/repos/#{username}/#{repository}/releases")
+    request = Net::HTTP::Get.new(uri)
+    # TODO: Replace with workflow access token
+    request["Authorization"] = ""
+
+    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+      http.request(request)
+    end
+
+    # if response.code == "403"
+    #   puts "rate limit exceeded"
+    #   return
+    # end
+
     # TODO: In order to get repos with only pre-releases, we have to use the /releases endpoint,
     #       instead of the /releases/latest endpoint. This returns an array of release objects,
     #       instead of a single release. That's what the #first call is for. We might want to
