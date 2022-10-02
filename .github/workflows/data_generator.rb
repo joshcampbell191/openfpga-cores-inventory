@@ -51,7 +51,7 @@ module GitHub
       uri = URI.parse("https://api.github.com/repos/#{username}/#{repository}/releases")
       request = Net::HTTP::Get.new(uri)
       # TODO: Replace with workflow access token
-      # request["Authorization"] = ""
+      # request["Authorization"] = "Bearer YOUR-TOKEN"
 
       response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
         http.request(request)
@@ -80,7 +80,7 @@ module GitHub
         headers = {
           "Accept" => "application/octet-stream",
           # TODO: Replace with workflow access token
-          # "Authorization" => ""
+          # "Authorization" => "Bearer YOUR-TOKEN"
         }
         file << URI.open(url, headers).read
       end
