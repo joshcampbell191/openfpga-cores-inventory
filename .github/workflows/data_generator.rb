@@ -37,8 +37,8 @@ module GitHub
       puts repository
       json = []
 
-      fetch_download_urls.each do |url|
-        @directory = download_asset(url)
+      fetch_download_urls.each do |file_name, url|
+        @directory = download_asset(file_name, url)
         json << build_json
       end
 
@@ -67,18 +67,22 @@ module GitHub
       #       instead of the /releases/latest endpoint. This returns an array of release objects,
       #       instead of a single release. That's what the #first call is for. We might want to
       #       do something about this if we don't want to always get a pre-release version.
-      JSON.parse(response.body).first["assets"].map { |asset| asset["browser_download_url"] }
+      JSON.parse(response.body).first["assets"].map { |asset| [asset["name"], asset["url"]] }
     end
 
-    def download_asset(url)
-      file_name = URI.parse(url).path.split("/").last
+    def download_asset(file_name, url)
       dir_name  = File.basename(file_name, ".zip")
 
       # If the directory already exists, don't download it again.
       return dir_name if Dir.exist?(dir_name)
 
-      open(file_name, "wb") do |file|
-        file << URI.open(url).read
+      File.open(file_name, "wb") do |file|
+        headers = {
+          "Accept" => "application/octet-stream",
+          # TODO: Replace with workflow access token
+          # "Authorization" => ""
+        }
+        file << URI.open(url, headers).read
       end
       system("unzip -q #{file_name} -d #{dir_name}")
       File.delete(file_name)
