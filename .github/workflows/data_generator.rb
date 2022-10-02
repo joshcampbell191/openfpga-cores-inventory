@@ -73,6 +73,7 @@ class DataGenerator
     file_name = URI.parse(url).path.split("/").last
     dir_name  = File.basename(file_name, ".zip")
 
+    # If the directory already exists, don't download it again.
     return dir_name if Dir.exist?(dir_name)
 
     open(file_name, "wb") do |file|
@@ -88,8 +89,8 @@ class DataGenerator
     metadata = parse_json_file(CORE_FILE)&.dig("core", "metadata")
 
     # Some releases include additional assets on top of the core.
-    # If the asset does not include a core.json file, we can safely assume it's
-    # not the core and skip it.
+    # If the asset does not include a core.json file, we can safely
+    # assume it's not the core and skip it.
     return [] unless metadata
 
     platform_id   = metadata["platform_ids"].first # TODO: There can probably be multiple platform_ids
