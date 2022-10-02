@@ -23,36 +23,44 @@ class DataGenerator
   CORE_FILE = "core.json".freeze
   DATA_FILE = "data.json".freeze
 
-  attr_reader :username, :repo, :display_name
+  attr_reader :username, :repository, :display_name
   attr_accessor :directory
 
-  def initialize(username, repo, display_name)
-    @username = username
-    @repo     = repo
+  def initialize(username, repository, display_name)
+    @username     = username
+    @repository   = repository
+    @display_name = display_name
   end
 
   def call
     json = []
 
     fetch_download_urls.each do |url|
-      @directory = download_repo(url)
+      @directory = download_repository(url)
       json << build_json
     end
 
-    json
+    # TODO: How does this behave with GB/GBC
+    json.flatten
   end
 
   private
 
   def fetch_download_urls
-    api_uri  = URI.parse("https://api.github.com/repos/#{username}/#{repo}/releases/latest")
+    api_uri  = URI.parse("https://api.github.com/repos/#{username}/#{repository}/releases")
     response = Net::HTTP.get_response(api_uri)
-    JSON.parse(response.body)["assets"].map { |asset| asset["browser_download_url"] }
+    # TODO: In order to get repos with only pre-releases, we have to use the /releases endpoint,
+    #       instead of the /releases/latest endpoint. This returns an array of release objects,
+    #       instead of a single release. That's what the #first call is for. We might want to
+    #       do something about this if we don't want to always get a pre-release version.
+    JSON.parse(response.body).first["assets"].map { |asset| asset["browser_download_url"] }
   end
 
-  def download_repo(url)
+  def download_repository(url)
     file_name = URI.parse(url).path.split("/").last
     dir_name  = File.basename(file_name, ".zip")
+
+    return dir_name if Dir.exist?(dir_name)
 
     open(file_name, "wb") do |file|
       file << URI.open(url).read
@@ -69,7 +77,7 @@ class DataGenerator
     platform_json = parse_json_file("#{platform_id}.json")["platform"]
 
     {
-      "repository"   => repo,
+      "repository"   => repository,
       "display_name" => display_name,
       "identifier"   => "#{metadata["author"]}.#{metadata["shortname"]}",
       "platform"     => platform_json["name"],
