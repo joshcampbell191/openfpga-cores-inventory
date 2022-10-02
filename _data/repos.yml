@@ -49,13 +49,13 @@
   cores:
   # - display_name: Spiritualized GB
   #   repository: openFPGA-GB-GBC
-  # - display_name: Spiritualized GBC
-  #   repository: openFPGA-GB-GBC
   - display_name: Spiritualized GBA
     repository: openFPGA-GBA
+  # - display_name: Spiritualized GBC
+  #   repository: openFPGA-GB-GBC
   - display_name: Spiritualized Sega Game Gear
     repository: openFPGA-GG
-  - display_name: Spiritualized Sega SG-1000
-    repository: openFPGA-SG1000
   - display_name: Spiritualized Sega Master System
     repository: openFPGA-SMS
+  - display_name: Spiritualized Sega SG-1000
+    repository: openFPGA-SG1000
