@@ -33,14 +33,14 @@ class DataGenerator
   end
 
   def call
+    puts repository
     json = []
 
     fetch_download_urls.each do |url|
-      @directory = download_repository(url)
+      @directory = download_asset(url)
       json << build_json
     end
 
-    # TODO: How does this behave with GB/GBC
     json.flatten
   end
 
@@ -56,10 +56,11 @@ class DataGenerator
       http.request(request)
     end
 
-    # if response.code == "403"
-    #   puts "rate limit exceeded"
-    #   return
-    # end
+    # TODO: Figure out what to do in this case.
+    if response.code == "403"
+      puts "rate limit exceeded"
+      return []
+    end
 
     # TODO: In order to get repos with only pre-releases, we have to use the /releases endpoint,
     #       instead of the /releases/latest endpoint. This returns an array of release objects,
@@ -68,7 +69,7 @@ class DataGenerator
     JSON.parse(response.body).first["assets"].map { |asset| asset["browser_download_url"] }
   end
 
-  def download_repository(url)
+  def download_asset(url)
     file_name = URI.parse(url).path.split("/").last
     dir_name  = File.basename(file_name, ".zip")
 
@@ -84,7 +85,13 @@ class DataGenerator
   end
 
   def build_json
-    metadata      = parse_json_file(CORE_FILE).dig("core", "metadata")
+    metadata = parse_json_file(CORE_FILE)&.dig("core", "metadata")
+
+    # Some releases include additional assets on top of the core.
+    # If the asset does not include a core.json file, we can safely assume it's
+    # not the core and skip it.
+    return [] unless metadata
+
     platform_id   = metadata["platform_ids"].first # TODO: There can probably be multiple platform_ids
     platform_json = parse_json_file("#{platform_id}.json")["platform"]
 
@@ -111,6 +118,10 @@ class DataGenerator
 
   def parse_json_file(file_name)
     file_path = Dir["#{directory}/**/#{file_name}"].first
+
+    # If the file doesn't exist, the directory is not a core.
+    return unless file_path
+
     file = File.read(file_path)
     JSON.parse(file)
   end
@@ -123,8 +134,3 @@ class DataGenerator
     end.select { |_, val| val }
   end
 end
-
-# url = "https://github.com/spiritualized1997/openFPGA-GBA"
-# url = "https://github.com/spiritualized1997/openFPGA-GB-GBC"
-# g = DataGenerator.new(url)
-# pp g.call
