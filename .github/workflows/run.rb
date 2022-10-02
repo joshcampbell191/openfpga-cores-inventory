@@ -19,15 +19,19 @@ data = YAML.load_file("../../_data/repos.yml")
 new_data = []
 
 data.each do |entry|
-  username, repo = URI.parse(entry["url"]).path.split("/").drop(1)
+  cores = []
 
-  cores = DataGenerator.new(
-    username,
-    repo,
-    entry["display_name"]
-  ).call
-
-  new_data << { username: username, cores: cores }
+  entry["cores"].each do |core|
+    cores << DataGenerator.new(
+      entry["username"],
+      core["repository"],
+      core["display_name"]
+    ).call
+  end
+  new_data << { "username" => entry["username"], "cores" => cores.flatten }
 end
 
-pp new_data
+File.open("../../_data/cores.yml", "wb") do |f|
+  f << COMMENT
+  f << new_data.to_yaml
+end
