@@ -1,12 +1,12 @@
 ---
 - username: agg23
   cores:
-  - display_name: arduboy for analogue pocket
+  - display_name: Arduboy for Analogue Pocket
     repository: analogue-arduboy
-  - display_name: atari's 1972 pong
+  - display_name: Atari's 1972 Pong
     repository: analogue-pong
-  - display_name: nes for analogue pocket
-    repository: openfpga-nes
+  - display_name: NES for Analogue Pocket
+    repository: openfpga-NES
   - display_name: SNES for Analogue Pocket
     repository: openfpga-SNES
 - username: ericlewis
