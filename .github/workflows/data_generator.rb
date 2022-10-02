@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 require "json"
-require "yaml"
 require "net/http"
-require "uri"
 require "open-uri"
+require "uri"
 
 class DataGenerator
   # https://www.analogue.co/developer/docs/core-definition-files/data-json#parameters-bitmap
@@ -24,22 +23,20 @@ class DataGenerator
   CORE_FILE = "core.json".freeze
   DATA_FILE = "data.json".freeze
 
-  attr_reader :url, :username, :repo, :json
+  attr_reader :username, :repo, :display_name
   attr_accessor :directory
 
-  def initialize(url)
-    @url = url
-    @username, @repo = URI.parse(url).path.split("/").drop(1)
-    @json = {
-      "username" => username,
-      "cores"    => []
-    }
+  def initialize(username, repo, display_name)
+    @username = username
+    @repo     = repo
   end
 
   def call
-    fetch_download_urls.each do |download_url|
-      @directory = download_repo(download_url)
-      build_json
+    json = []
+
+    fetch_download_urls.each do |url|
+      @directory = download_repo(url)
+      json << build_json
     end
 
     json
@@ -53,12 +50,12 @@ class DataGenerator
     JSON.parse(response.body)["assets"].map { |asset| asset["browser_download_url"] }
   end
 
-  def download_repo(download_url)
-    file_name = URI.parse(download_url).path.split("/").last
+  def download_repo(url)
+    file_name = URI.parse(url).path.split("/").last
     dir_name  = File.basename(file_name, ".zip")
 
     open(file_name, "wb") do |file|
-      file << URI.open(download_url).read
+      file << URI.open(url).read
     end
     system("unzip -q #{file_name} -d #{dir_name}")
     File.delete(file_name)
@@ -71,22 +68,11 @@ class DataGenerator
     platform_id   = metadata["platform_ids"].first # TODO: There can probably be multiple platform_ids
     platform_json = parse_json_file("#{platform_id}.json")["platform"]
 
-    core_json = core_json_template(
-      metadata["author"],
-      metadata["shortname"],
-      platform_json["name"],
-      platform_id
-    )
-
-    json["cores"] << core_json
-  end
-
-  def core_json_template(author, shortname, platform_name, platform_id)
     {
       "repository"   => repo,
-      "display_name" => "TODO",
-      "identifier"   => "#{author}.#{shortname}",
-      "platform"     => platform_name,
+      "display_name" => display_name,
+      "identifier"   => "#{metadata["author"]}.#{metadata["shortname"]}",
+      "platform"     => platform_json["name"],
       "assets"       => build_asset_json(platform_id)
     }
   end
@@ -119,6 +105,6 @@ class DataGenerator
 end
 
 # url = "https://github.com/spiritualized1997/openFPGA-GBA"
-url = "https://github.com/spiritualized1997/openFPGA-GB-GBC"
-g = DataGenerator.new(url)
-pp g.call
+# url = "https://github.com/spiritualized1997/openFPGA-GB-GBC"
+# g = DataGenerator.new(url)
+# pp g.call
