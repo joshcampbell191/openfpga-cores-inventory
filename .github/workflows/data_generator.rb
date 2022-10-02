@@ -123,7 +123,9 @@ module GitHub
     end
 
     def parse_json_file(file_name)
-      file_path = Dir["#{directory}/**/#{file_name}"].first
+      # TODO: The xevious core return TWO files here. Going to have to come up
+      #       with a better method than #last
+      file_path = Dir["#{directory}/**/#{file_name}"].last
 
       # If the file doesn't exist, the directory is not a core.
       return unless file_path
