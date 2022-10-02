@@ -1,47 +1,61 @@
 ---
-- display_name: Arduboy for Analogue Pocket
-  url: https://github.com/agg23/analogue-arduboy
-- display_name: Asteroids for Analogue Pocket
-  url: https://github.com/ericlewis/openfpga-asteroids
-- display_name: Atari's 1972 Pong
-  url: https://github.com/agg23/analogue-pong
-- display_name: Dig Dug
-  url: https://github.com/opengateware/arcade-digdug
-- display_name: Dominos for Analogue Pocket
-  url: https://github.com/ericlewis/openfpga-dominos
-- display_name: Galaga
-  url: https://github.com/opengateware/arcade-galaga
-- display_name: Genesis for Analogue Pocket
-  url: https://github.com/ericlewis/openfpga-genesis
-- display_name: Green Beret
-  url: https://github.com/opengateware/arcade-gberet
-- display_name: Lunar Lander for Analogue Pocket
-  url: https://github.com/ericlewis/openfpga-lunarlander
-- display_name: Neo Geo
-  url: https://github.com/Mazamars312/Analogue_Pocket_Neogeo
-- display_name: NES for Analogue Pocket
-  url: https://github.com/agg23/openfpga-NES
-- display_name: PDP-1
-  url: https://github.com/spacemen3/PDP-1
-- display_name: SNES for Analogue Pocket
-  url: https://github.com/agg23/openfpga-SNES
-- display_name: Space Race for Analogue Pocket
-  url: https://github.com/ericlewis/openfpga-spacerace
-- display_name: Spiritualized GB
-  url: https://github.com/spiritualized1997/openFPGA-GB-GBC
-- display_name: Spiritualized GBA
-  url: https://github.com/spiritualized1997/openFPGA-GBA
-- display_name: Spiritualized GBC
-  url: https://github.com/spiritualized1997/openFPGA-GB-GBC
-- display_name: Spiritualized Sega Game Gear
-  url: https://github.com/spiritualized1997/openFPGA-GG
-- display_name: Spiritualized Sega Master System
-  url: https://github.com/spiritualized1997/openFPGA-SMS
-- display_name: Spiritualized Sega SG-1000
-  url: https://github.com/spiritualized1997/openFPGA-SG1000
-- display_name: Super Breakout for Analogue Pocket
-  url: https://github.com/ericlewis/openfpga-superbreakout
-- display_name: Tecmo
-  url: https://github.com/nullobject/openfpga-tecmo
-- display_name: Xevious
-  url: https://github.com/opengateware/arcade-xevious
+- username: agg23
+  cores:
+    - display_name: Arduboy for Analogue Pocket
+      repository: analogue-arduboy
+    - display_name: Atari's 1972 Pong
+      repository: analogue-pong
+    - display_name: NES for Analogue Pocket
+      repository: openfpga-NES
+    - display_name: SNES for Analogue Pocket
+      repository: openfpga-SNES
+- username: ericlewis
+  cores:
+    - display_name: Asteroids for Analogue Pocket
+      repository: openfpga-asteroids
+    - display_name: Dominos for Analogue Pocket
+      repository: openfpga-dominos
+    - display_name: Genesis for Analogue Pocket
+      repository: openfpga-genesis
+    - display_name: Lunar Lander for Analogue Pocket
+      repository: openfpga-lunarlander
+    - display_name: Space Race for Analogue Pocket
+      repository: openfpga-spacerace
+    - display_name: Super Breakout for Analogue Pocket
+      repository: openfpga-superbreakout
+- username: Mazamars312
+  cores:
+    - display_name: Neo Geo
+      repository: Analogue_Pocket_Neogeo
+- username: nullobject
+  cores:
+    - display_name: Tecmo
+      repository: openfpga-tecmo
+- username: opengateware
+  cores:
+    - display_name: Dig Dug
+      repository: arcade-digdug
+    - display_name: Galaga
+      repository: arcade-galaga
+    - display_name: Green Beret
+      repository: arcade-gberet
+    - display_name: Xevious
+      repository: arcade-xevious
+- username: spacemen3
+  cores:
+    - display_name: PDP-1
+      repository: PDP-1
+- username: spiritualized1997
+  cores:
+    - display_name: Spiritualized GB
+      repository: openFPGA-GB-GBC
+    - display_name: Spiritualized GBC
+      repository: openFPGA-GB-GBC
+    - display_name: Spiritualized GBA
+      repository: openFPGA-GBA
+    - display_name: Spiritualized Sega Game Gear
+      repository: openFPGA-GG
+    - display_name: Spiritualized Sega SG-1000
+      repository: openFPGA-SG1000
+    - display_name: Spiritualized Sega Master System
+      repository: openFPGA-SMS
