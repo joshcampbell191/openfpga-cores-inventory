@@ -20,8 +20,8 @@ class DataGenerator
     # "full_reload"       => 0b100000000
   }.freeze
 
-  CORE_FILE = "core.json".freeze
-  DATA_FILE = "data.json".freeze
+  CORE_FILE = "core.json"
+  DATA_FILE = "data.json"
 
   attr_reader :username, :repository, :display_name
   attr_accessor :directory
