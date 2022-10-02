@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "json"
 require "yaml"
 require_relative "./data_generator"
 
@@ -12,8 +11,8 @@ COMMENT = <<~TXT
   ##    ADD NEW CORE REPOSITORIES TO REPOS.YML   ##
   ##                                             ##
   #################################################
-
 TXT
+CORE_YAML = "../../_data/cores.yml"
 
 data = YAML.load_file("../../_data/repos.yml")
 new_data = []
@@ -28,10 +27,10 @@ data.each do |entry|
       core["display_name"]
     ).call
   end
-  new_data << { "username" => entry["username"], "cores" => cores.flatten }
+  new_data << { "username" => entry["username"], "cores" => cores.flatten } # TODO: Not sure if this #flatten is needed
 end
 
-File.open("../../_data/cores.yml", "wb") do |f|
+File.open(CORE_YAML, "wb") do |f|
   f << COMMENT
   f << new_data.to_yaml
 end
