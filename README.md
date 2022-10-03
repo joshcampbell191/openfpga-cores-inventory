@@ -118,10 +118,9 @@ To add a new core, you will need to edit the `_data/repos.yml` file. You must ad
     repository: openfpga-asteroids
 ```
 
-`username` is the core author's GitHub username. It can be found after the first `/` in the core's URL (e.g. `https://github.com/ericlewis/openfpga-asteroids` -> `ericlewis`)
-The `display_name` is used in the `Name` column of the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
-A good value for this is usually the name used at the top of the core's `README.md` file.
-`repository` is the core's GitHub repository name. It can be found after the last `/` in the core's URL (e.g. `https://github.com/ericlewis/openfpga-asteroids` -> `openfpga-asteroids`).
+- `username` is the core author's GitHub username. It can be found after the first `/` in the core's URL (e.g. `https://github.com/ericlewis/openfpga-asteroids` -> `ericlewis`).
+- `display_name` is used in the `Name` column of the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html). A good value for this is usually the name used at the top of the core's `README.md` file.
+- `repository` is the core's GitHub repository name. It can be found after the last `/` in the core's URL (e.g. `https://github.com/ericlewis/openfpga-asteroids` -> `openfpga-asteroids`).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
