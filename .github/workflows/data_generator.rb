@@ -83,7 +83,6 @@ module GitHub
         file << URI.open(url, headers).read
       end
       system("unzip -q #{file_name} -d #{dir_name}")
-      File.delete(file_name)
 
       dir_name
     end
