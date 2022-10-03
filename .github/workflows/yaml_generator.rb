@@ -13,8 +13,8 @@ class YAMLGenerator
     ##                                             ##
     #################################################
   TXT
-  INPUT_FILE  = "../../_data/repos.yml"
-  OUTPUT_FILE = "../../_data/cores.yml"
+  INPUT_FILE  = "_data/repos.yml"
+  OUTPUT_FILE = "_data/cores.yml"
 
   attr_reader :token, :data_generator, :input_data, :output_data
 
