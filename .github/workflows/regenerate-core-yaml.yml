@@ -18,10 +18,8 @@ jobs:
     steps:
     - name: Check out repository code
       uses: actions/checkout@v3
-      run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1.117.0
-      run: echo "💎 Ruby 3.0 has been installed to the runner."
     - name: Regenerate cores.yml
       run: |
         echo "⚙️ Starting the YAML regeneration script..."
