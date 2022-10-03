@@ -16,8 +16,8 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
       <th>Name</th>
       <th>Platform</th>
       <th>Author</th>
-      <th class="no-sort">Version</th>
-      <th class="no-sort">Date</th>
+      <th>Version</th>
+      <th>Date</th>
     </tr>
   </thead>
   <tbody>
@@ -27,12 +27,14 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
           <td><a href="https://github.com/{{ developer.username }}/{{ core.repository }}">{{ core.display_name }}</a></td>
           <td>{{ core.platform }}</td>
           <td><a href="https://github.com/{{ developer.username }}">{{ developer.username }}</a></td>
-          <td>
+          <td data-order="{{ core.version }}">
             <a href="https://github.com/{{ developer.username }}/{{ core.repository }}/releases/latest">
               <img src="https://img.shields.io/github/v/release/{{ developer.username }}/{{ core.repository }}?include_prereleases&label=" alt="release">
             </a>
           </td>
-          <td><img src="https://img.shields.io/github/release-date-pre/{{ developer.username }}/{{ core.repository }}?label=" alt="GitHub Release Date"></td>
+          <td data-order="{{ core.date_release | date: "%s" }}">
+            <img src="https://img.shields.io/github/release-date-pre/{{ developer.username }}/{{ core.repository }}?label=" alt="GitHub Release Date">
+          </td>
         </tr>
       {% endfor -%}
     {% endfor -%}
