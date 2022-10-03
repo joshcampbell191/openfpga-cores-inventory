@@ -3,12 +3,12 @@ run-name: ${{ github.actor }} is generating a new cores.yml file 🎮
 on:
   pull_request:
     paths:
-      - _data/repos.yml
+      - '_data/repos.yml'
   push:
     branches:
       - master
     paths:
-      - _data/repos.yml
+      - '_data/repos.yml'
   # schedule:
   #   # Run hourly
   #   - cron:  '0 * * * *'
