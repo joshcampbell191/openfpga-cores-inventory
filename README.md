@@ -114,8 +114,8 @@ To add a new core, you will need to edit the `_data/repos.yml` file. You must ad
 ```yaml
 - username: ericlewis
   cores:
-  - display_name: Asteroids for Analogue Pocket
-    repository: openfpga-asteroids
+    - display_name: Asteroids for Analogue Pocket
+      repository: openfpga-asteroids
 ```
 
 - `username` is the core author's GitHub username. It can be found after the first `/` in the core's URL (e.g. `https://github.com/ericlewis/openfpga-asteroids` -> `ericlewis`).
