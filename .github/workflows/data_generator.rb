@@ -35,14 +35,11 @@ module GitHub
 
     def call
       puts repository
-      json = []
 
-      fetch_download_urls.each do |file_name, url|
+      fetch_download_urls.each.with_object([]) do |(file_name, url), arr|
         @directory = download_asset(file_name, url)
-        json << build_json
-      end
-
-      json.flatten
+        arr << build_json
+      end.flatten
     end
 
     private
@@ -67,11 +64,13 @@ module GitHub
       #       instead of the /releases/latest endpoint. This returns an array of release objects,
       #       instead of a single release. That's what the #first call is for. We might want to
       #       do something about this if we don't want to always get a pre-release version.
-      JSON.parse(response.body).first["assets"].map { |asset| [asset["name"], asset["url"]] }
+      JSON.parse(response.body).first["assets"].map do |asset|
+        [asset["name"], asset["url"]]
+      end
     end
 
     def download_asset(file_name, url)
-      dir_name  = File.basename(file_name, ".zip")
+      dir_name = File.basename(file_name, ".zip")
 
       # If the directory already exists, don't download it again.
       return dir_name if Dir.exist?(dir_name)

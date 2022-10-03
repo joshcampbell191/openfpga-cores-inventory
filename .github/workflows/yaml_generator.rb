@@ -18,9 +18,10 @@ class YAMLGenerator
 
   attr_reader :data_generator, :input_data, :output_data
 
+  # TODO: Not sure it makes sense to pass in the generator
   def initialize(data_generator: GitHub::DataGenerator)
     @data_generator = data_generator
-    @output_data = []
+    @output_data    = []
   end
 
   def call
@@ -37,10 +38,8 @@ class YAMLGenerator
 
   def generate_data
     input_data.each do |entry|
-      cores = []
-
-      entry["cores"].each do |core|
-        cores << data_generator.new(
+      entry["cores"].each.with_object([]) do |core, arr|
+        arr << data_generator.new(
           entry["username"],
           core["repository"],
           core["display_name"]
@@ -58,5 +57,3 @@ class YAMLGenerator
     end
   end
 end
-
-YAMLGenerator.new.call
