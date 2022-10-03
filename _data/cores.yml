@@ -12,6 +12,8 @@
     display_name: Arduboy for Analogue Pocket
     identifier: agg23.Arduboy
     platform: Arduboy
+    version: 0.9.0
+    date_release: '2022-09-03'
     assets:
     - platform: arduboy
       extensions:
@@ -20,11 +22,15 @@
     display_name: Atari's 1972 Pong
     identifier: agg23.Pong
     platform: Pong
+    version: 1.2.0
+    date_release: '2022-09-08'
     assets: []
   - repository: openfpga-NES
     display_name: NES for Analogue Pocket
     identifier: agg23.NES
     platform: NES
+    version: 0.1.1
+    date_release: '2022-09-26'
     assets:
     - platform: nes
       extensions:
@@ -33,6 +39,8 @@
     display_name: SNES for Analogue Pocket
     identifier: agg23.SNES
     platform: SNES
+    version: 0.3.1
+    date_release: '2022-09-28'
     assets:
     - platform: snes
       extensions:
@@ -44,6 +52,8 @@
     display_name: Asteroids for Analogue Pocket
     identifier: ericlewis.Asteroids
     platform: Asteroids
+    version: 0.9.1
+    date_release: '2022-09-09'
     assets:
     - platform: asteroids
       filename: asteroid.rom
@@ -52,6 +62,8 @@
     display_name: Dominos for Analogue Pocket
     identifier: ericlewis.Dominos
     platform: Dominos
+    version: 0.0.1
+    date_release: '2022-09-16'
     assets:
     - platform: dominos
       filename: dominos.rom
@@ -59,6 +71,8 @@
     display_name: Genesis for Analogue Pocket
     identifier: ericlewis.Genesis
     platform: Genesis
+    version: 0.1.0
+    date_release: '2022-09-22'
     assets:
     - platform: genesis
       extensions:
@@ -70,6 +84,8 @@
     display_name: Lunar Lander for Analogue Pocket
     identifier: ericlewis.LunarLander
     platform: Lunar Lander
+    version: 0.9.1
+    date_release: '2022-09-12'
     assets:
     - platform: lunarlander
       filename: llander.rom
@@ -78,11 +94,15 @@
     display_name: Space Race for Analogue Pocket
     identifier: ericlewis.SpaceRace
     platform: Space Race
+    version: 1.0.0
+    date_release: '2022-09-09'
     assets: []
   - repository: openfpga-superbreakout
     display_name: Super Breakout for Analogue Pocket
     identifier: ericlewis.SuperBreakout
     platform: Super Breakout
+    version: 0.0.1
+    date_release: '2022-09-14'
     assets:
     - platform: superbreakout
       filename: sbrkout.rom
@@ -92,6 +112,8 @@
     display_name: Neo Geo
     identifier: Mazamars312.NeoGeo
     platform: Neo Geo
+    version: Alpha 0.7.5
+    date_release: '2022-09-19'
     assets:
     - platform: ng
       extensions:
@@ -133,6 +155,8 @@
     display_name: Tecmo
     identifier: nullobject.tecmo
     platform: Tecmo
+    version: '2.0'
+    date_release: '2022-08-26'
     assets:
     - platform: tecmo
       extensions:
@@ -143,6 +167,8 @@
     display_name: Dig Dug
     identifier: boogermann.digdug
     platform: Dig Dug
+    version: 0.1.0
+    date_release: '2022-09-20'
     assets:
     - platform: digdug
       extensions:
@@ -151,6 +177,8 @@
     display_name: Galaga
     identifier: boogermann.galaga
     platform: Galaga
+    version: 0.1.0
+    date_release: '2022-09-03'
     assets:
     - platform: galaga
       extensions:
@@ -159,6 +187,8 @@
     display_name: Green Beret
     identifier: boogermann.gberet
     platform: Green Beret
+    version: 0.1.1
+    date_release: '2022-10-03'
     assets:
     - platform: gberet
       extensions:
@@ -167,6 +197,8 @@
     display_name: Xevious
     identifier: boogermann.xevious
     platform: Xevious
+    version: 0.1.0
+    date_release: '2022-09-10'
     assets:
     - platform: xevious
       extensions:
@@ -177,6 +209,8 @@
     display_name: PDP-1
     identifier: Spacemen3.PDP1
     platform: 'PDP-1: Spacewar!'
+    version: v3.1 - Sep. 24, 1962
+    date_release: '2022-08-19'
     assets:
     - platform: pdp1
       filename: spacewar3.1.bin
@@ -192,6 +226,8 @@
     display_name: Spiritualized GBA
     identifier: Spiritualized.GBA
     platform: Game Boy Advance
+    version: 1.2.0
+    date_release: '2022-08-25'
     assets:
     - platform: gba
       extensions:
@@ -205,6 +241,8 @@
     display_name: Spiritualized Sega Game Gear
     identifier: Spiritualized.GG
     platform: Game Gear
+    version: 1.2.0
+    date_release: '2022-08-25'
     assets:
     - platform: gg
       extensions:
@@ -213,6 +251,8 @@
     display_name: Spiritualized Sega Master System
     identifier: Spiritualized.SMS
     platform: Master System
+    version: 1.2.0
+    date_release: '2022-08-25'
     assets:
     - platform: sms
       extensions:
@@ -221,6 +261,8 @@
     display_name: Spiritualized Sega SG-1000
     identifier: Spiritualized.SG-1000
     platform: SG-1000
+    version: 1.2.0
+    date_release: '2022-08-25'
     assets:
     - platform: sg1000
       extensions:
