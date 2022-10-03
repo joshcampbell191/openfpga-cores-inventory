@@ -25,8 +25,12 @@ jobs:
         echo "⚙️ Starting the YAML regeneration script..."
         ruby .github/workflows/runner.rb ${{ secrets.GITHUB_TOKEN }}
         echo "🎉 YAML regeneration complete!"
+    - name: Lint YAML
+      run: |
+        yarn add eslint eslint-plugin-yml
+        ./node_modules/.bin/eslint --ext .yml _data/*.yml --fix
     - name: Commit cores.yml changes
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Update cores.yml
-        file_pattern: '_data/cores.yml'
+        file_pattern: '_data/*.yml'
