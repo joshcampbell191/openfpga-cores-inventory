@@ -98,8 +98,9 @@ module GitHub
       # assume it's not the core and skip it.
       return [] unless metadata
 
-      platform_id   = metadata["platform_ids"].first # TODO: There can probably be multiple platform_ids
-      platform_json = parse_json_file("#{platform_id}.json")["platform"]
+      # TODO: There can probably be multiple platform_ids
+      platform_id   = metadata["platform_ids"].first
+      platform_json = parse_json_file("#{platform_id}.json", "Platforms")["platform"]
 
       {
         "repository"   => repository,
@@ -122,10 +123,8 @@ module GitHub
       end
     end
 
-    def parse_json_file(file_name)
-      # TODO: The xevious core return TWO files here. Going to have to come up
-      #       with a better method than #last
-      file_path = Dir["#{directory}/**/#{file_name}"].last
+    def parse_json_file(file_name, subdirectory = "Cores")
+      file_path = Dir.glob("#{directory}/#{subdirectory}/**/#{file_name}").first
 
       # If the file doesn't exist, the directory is not a core.
       return unless file_path
