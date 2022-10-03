@@ -47,7 +47,6 @@ class YAMLGenerator
         ).call
       end
 
-      # TODO: Not sure if this #flatten is needed
       output_data << { "username" => entry["username"], "cores" => cores.flatten }
     end
   end

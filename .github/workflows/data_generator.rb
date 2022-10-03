@@ -119,8 +119,7 @@ module GitHub
           hash["extensions"] = slot["extensions"] if slot["extensions"]
           hash["filename"]   = slot["filename"]   if slot["filename"]
         end.merge(extract_parameters(slot["parameters"]))
-          .reject { |asset| asset["instance_json"] }
-      end
+      end.reject { |asset| asset["instance_json"] }
     end
 
     def parse_json_file(file_name, subdirectory = "Cores")
