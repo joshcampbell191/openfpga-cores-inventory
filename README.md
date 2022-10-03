@@ -52,6 +52,8 @@ Content-Type: application/json; charset=utf-8
     {
       "identifier": "ericlewis.Asteroids",
       "platform": "Asteroids",
+      "version": "0.9.1",
+      "date_release": "2022-09-09",
       "repository": {
         "platform": "github",
         "owner": "ericlewis",
@@ -74,12 +76,14 @@ Content-Type: application/json; charset=utf-8
 
 Where a core object is:
 
-| Field      | Type         | Description                                    |
-| ---------- | ------------ | ---------------------------------------------- |
-| identifier | string       | The core's unique identifier.                  |
-| platform   | string       | The name of the core's game platform.          |
-| repository | object       | An object describing where the core is hosted. |
-| assets     | object array | A list asset objects.                          |
+| Field        | Type         | Description                                    |
+| ------------ | ------------ | ---------------------------------------------- |
+| identifier   | string       | The core's unique identifier.                  |
+| platform     | string       | The name of the core's game platform.          |
+| version      | string       | The core's current version number.             |
+| date_release | string       | The date of the core's latest release.         |
+| repository   | object       | An object describing where the core is hosted. |
+| assets       | object array | A list asset objects.                          |
 
 Where a repository object is:
 
@@ -105,24 +109,19 @@ Possible errors:
 | 403 Forbidden | The GitHub API rate limit has been exceeded. |
 
 ## Adding a new core
-To add a new core, you will need to edit the `_data/cores.yml` file. At a minimum, you must add the fields marked `<required>`:
+To add a new core, you will need to edit the `_data/repos.yml` file. You must add the following fields:
 
 ```yaml
 - username: ericlewis
   cores:
-    - repository: openfpga-asteroids              # <required>
-      display_name: Asteroids for Analogue Pocket # <required>
-      identifier: ericlewis.Asteroids             # <required>
-      platform: Asteroids                         # <required>
-      assets:                                     # <required>
-      - platform: asteroids
-        filename: asteroid.rom
-        extensions:
-        - rom
-        core_specific: true
+  - display_name: Asteroids for Analogue Pocket
+    repository: openfpga-asteroids
 ```
 
-Information on what these fields mean can be found in the [API description](#getting-the-list-of-cores). There is one additional field `display_name` that is used in the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
+`username` is the core author's GitHub username. It can be found after the first `/` in the core's URL (e.g. `https://github.com/ericlewis/openfpga-asteroids` -> `ericlewis`)
+The `display_name` is used in the `Name` column of the [cores table](https://joshcampbell191.github.io/openfpga-cores-inventory/analogue-pocket.html).
+A good value for this is usually the name used at the top of the core's `README.md` file.
+`repository` is the core's GitHub repository name. It can be found after the last `/` in the core's URL (e.g. `https://github.com/ericlewis/openfpga-asteroids` -> `openfpga-asteroids`).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
