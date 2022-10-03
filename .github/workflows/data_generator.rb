@@ -31,7 +31,7 @@ module GitHub
       @username     = username
       @repository   = repository
       @display_name = display_name
-      @token = token
+      @token        = token
     end
 
     def call
@@ -77,7 +77,7 @@ module GitHub
 
       File.open(file_name, "wb") do |file|
         headers = {
-          "Accept"        => "application/octet-stream",
+          "Accept" => "application/octet-stream",
           "Authorization" => "Bearer #{token}"
         }
         file << URI.open(url, headers).read
