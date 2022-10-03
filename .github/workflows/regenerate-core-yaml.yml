@@ -1,0 +1,31 @@
+name: Regenerate Core YAML
+run-name: ${{ github.actor }} is generating a new cores.yml file 🎮
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+  # schedule:
+  #   # Run hourly
+  #   - cron:  '0 * * * *'
+jobs:
+  Regenerate-Core-YAML:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
+    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+    - name: List files in the repository
+      run: |
+        ls ${{ github.workspace }}
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1.117.0
+    - run: echo "💎 Ruby 3.0 has been installed to the runner."
+    - run: echo "⚙️ Starting the YAML regeneration script..."
+    - name: Regenerate cores.yml
+      run: ruby .github/workflows/runner.rb
+    - run: echo "🎉 YAML regeneration complete!"
+    - name: Commit cores.yml changes
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Update cores.yml
