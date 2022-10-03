@@ -2,4 +2,5 @@
 
 require_relative "./yaml_generator.rb"
 
-YAMLGenerator.new.call
+token = ARGV[0]
+YAMLGenerator.new(token: token).call

@@ -16,10 +16,11 @@ class YAMLGenerator
   INPUT_FILE  = "../../_data/repos.yml"
   OUTPUT_FILE = "../../_data/cores.yml"
 
-  attr_reader :data_generator, :input_data, :output_data
+  attr_reader :token, :data_generator, :input_data, :output_data
 
   # TODO: Not sure it makes sense to pass in the generator
-  def initialize(data_generator: GitHub::DataGenerator)
+  def initialize(token:, data_generator: GitHub::DataGenerator)
+    @token = token
     @data_generator = data_generator
     @output_data    = []
   end
@@ -38,15 +39,16 @@ class YAMLGenerator
 
   def generate_data
     input_data.each do |entry|
-      entry["cores"].each.with_object([]) do |core, arr|
+      cores = entry["cores"].each.with_object([]) do |core, arr|
         arr << data_generator.new(
           entry["username"],
           core["repository"],
-          core["display_name"]
+          core["display_name"],
+          token: token
         ).call
-      end
+      end.flatten
 
-      output_data << { "username" => entry["username"], "cores" => cores.flatten }
+      output_data << { "username" => entry["username"], "cores" => cores }
     end
   end
 
