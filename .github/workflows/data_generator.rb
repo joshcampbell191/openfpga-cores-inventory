@@ -106,6 +106,8 @@ module GitHub
         "display_name" => display_name,
         "identifier"   => "#{metadata["author"]}.#{metadata["shortname"]}",
         "platform"     => platform_json["name"],
+        "version"      => metadata["version"],
+        "date_release" => metadata["date_release"],
         "assets"       => build_asset_json(platform_id)
       }
     end
