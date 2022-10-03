@@ -115,8 +115,8 @@ module GitHub
 
       data_slots.select { |slot| slot["required"] }.map do |slot|
         { "platform" => platform }.tap do |hash|
-          hash["extensions"] = slot["extensions"] if slot["extensions"]
           hash["filename"]   = slot["filename"]   if slot["filename"]
+          hash["extensions"] = slot["extensions"] if slot["extensions"]
         end.merge(extract_parameters(slot["parameters"]))
       end.reject { |slot| slot["instance_json"] }
     end
