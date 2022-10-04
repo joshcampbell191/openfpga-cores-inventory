@@ -222,6 +222,20 @@
           core_specific: true
 - username: spiritualized1997
   cores:
+    - repository: openFPGA-GB-GBC
+      display_name: Spiritualized GB
+      identifier: Spiritualized.GB
+      platform: Game Boy
+      version: 1.3.0
+      date_release: 2022-8-25
+      assets:
+        - platform: gb
+          extensions:
+            - gb
+        - platform: gb
+          filename: dmg_bios.bin
+          extensions:
+            - bin
     - repository: openFPGA-GBA
       display_name: Spiritualized GBA
       identifier: Spiritualized.GBA
@@ -235,6 +249,21 @@
             - rom
         - platform: gba
           filename: gba_bios.bin
+          extensions:
+            - bin
+    - repository: openFPGA-GB-GBC
+      display_name: Spiritualized GBC
+      identifier: Spiritualized.GBC
+      platform: Game Boy Color
+      version: 1.3.0
+      date_release: 2022-8-25
+      assets:
+        - platform: gbc
+          extensions:
+            - gb
+            - gbc
+        - platform: gbc
+          filename: gbc_bios.bin
           extensions:
             - bin
     - repository: openFPGA-GG
