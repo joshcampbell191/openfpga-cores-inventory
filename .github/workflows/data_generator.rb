@@ -54,7 +54,6 @@ module GitHub
         http.request(request)
       end
 
-      # TODO: Figure out what to do in this case.
       if response.code == "403"
         puts "rate limit exceeded"
         return []
@@ -64,8 +63,18 @@ module GitHub
       #       instead of the /releases/latest endpoint. This returns an array of release objects,
       #       instead of a single release. That's what the #first call is for. We might want to
       #       do something about this if we don't want to always get a pre-release version.
-      JSON.parse(response.body).first["assets"].map do |asset|
+      JSON.parse(response.body).first["assets"].tap { |arr| skip_asset(arr) }.map do |asset|
         [asset["name"], asset["url"]]
+      end
+    end
+
+    # Hack for the openFPGA-GB-GBC repo that hosts cores for both the GB & GBC.
+    def skip_asset(arr)
+      case display_name
+      when "Spiritualized GB"
+        arr.delete_at(0)
+      when "Spiritualized GBC"
+        arr.delete_at(1)
       end
     end
 
