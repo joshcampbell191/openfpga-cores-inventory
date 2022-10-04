@@ -116,19 +116,19 @@
       date_release: 2022-09-19
       assets:
         - platform: ng
+          filename: uni-bios_1_0.rom
           extensions:
             - rom
             - sp1
             - bin
-          filename: uni-bios_1_0.rom
         - platform: ng
+          filename: 000-lo.lo
           extensions:
             - lo
-          filename: 000-lo.lo
         - platform: ng
+          filename: sfix.sfix
           extensions:
             - sfix
-          filename: sfix.sfix
         - platform: ng
           extensions:
             - srom
@@ -216,9 +216,9 @@
           filename: spacewar3.1.bin
           core_specific: true
         - platform: pdp1
+          filename: Default_LUT.clut
           extensions:
             - clut
-          filename: Default_LUT.clut
           core_specific: true
 - username: spiritualized1997
   cores:
@@ -234,9 +234,9 @@
             - gba
             - rom
         - platform: gba
+          filename: gba_bios.bin
           extensions:
             - bin
-          filename: gba_bios.bin
     - repository: openFPGA-GG
       display_name: Spiritualized Sega Game Gear
       identifier: Spiritualized.GG
