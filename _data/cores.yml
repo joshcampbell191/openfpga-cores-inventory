@@ -71,8 +71,8 @@
       display_name: Genesis for Analogue Pocket
       identifier: ericlewis.Genesis
       platform: Genesis
-      version: 0.1.0
-      date_release: 2022-09-22
+      version: 0.2.0
+      date_release: 2022-10-04
       assets:
         - platform: genesis
           extensions:
@@ -112,7 +112,7 @@
       display_name: Neo Geo
       identifier: Mazamars312.NeoGeo
       platform: Neo Geo
-      version: Alpha 0.7.5
+      version: 0.7.5
       date_release: 2022-09-19
       assets:
         - platform: ng
@@ -209,7 +209,7 @@
       display_name: PDP-1
       identifier: Spacemen3.PDP1
       platform: "PDP-1: Spacewar!"
-      version: v3.1 - Sep. 24, 1962
+      version: "3.1"
       date_release: 2022-08-19
       assets:
         - platform: pdp1
