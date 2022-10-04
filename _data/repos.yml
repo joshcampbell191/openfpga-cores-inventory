@@ -47,12 +47,12 @@
       repository: PDP-1
 - username: spiritualized1997
   cores:
-    # - display_name: Spiritualized GB
-    #   repository: openFPGA-GB-GBC
+    - display_name: Spiritualized GB
+      repository: openFPGA-GB-GBC
     - display_name: Spiritualized GBA
       repository: openFPGA-GBA
-    # - display_name: Spiritualized GBC
-    #   repository: openFPGA-GB-GBC
+    - display_name: Spiritualized GBC
+      repository: openFPGA-GB-GBC
     - display_name: Spiritualized Sega Game Gear
       repository: openFPGA-GG
     - display_name: Spiritualized Sega Master System
