@@ -24,8 +24,7 @@ module GitHub
     CORE_FILE = "core.json"
     DATA_FILE = "data.json"
 
-    attr_reader :username, :repository, :display_name, :token
-    attr_accessor :directory
+    attr_reader :username, :repository, :display_name, :token, :directory
 
     def initialize(username, repository, display_name, token:)
       @username     = username
@@ -124,7 +123,7 @@ module GitHub
     # PDP-1 has: v3.1 - Sep. 24, 1962
     # Convert this to <major>.<minor>.<patch>
     def normalize_version(version)
-      version.match(/\d+\.\d+\.?\d+/).to_s
+      version.match(/\d+\.\d+\.?\d*/).to_s
     end
 
     def build_asset_json(platform)
