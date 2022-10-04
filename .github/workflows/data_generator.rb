@@ -124,7 +124,7 @@ module GitHub
     # PDP-1 has: v3.1 - Sep. 24, 1962
     # Convert this to <major>.<minor>.<patch>
     def normalize_version(version)
-      version.match(/\d\.\d\.?\d?/).to_s
+      version.match(/\d+\.\d+\.?\d+/).to_s
     end
 
     def build_asset_json(platform)
