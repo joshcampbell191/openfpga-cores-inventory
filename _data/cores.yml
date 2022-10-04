@@ -155,7 +155,7 @@
       display_name: Tecmo
       identifier: nullobject.tecmo
       platform: Tecmo
-      version: "2.0"
+      version: ""
       date_release: 2022-08-26
       assets:
         - platform: tecmo
@@ -209,7 +209,7 @@
       display_name: PDP-1
       identifier: Spacemen3.PDP1
       platform: "PDP-1: Spacewar!"
-      version: "3.1"
+      version: ""
       date_release: 2022-08-19
       assets:
         - platform: pdp1
