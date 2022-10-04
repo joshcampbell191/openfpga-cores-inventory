@@ -71,7 +71,7 @@
       display_name: Genesis for Analogue Pocket
       identifier: ericlewis.Genesis
       platform: Genesis
-      version: 0.2.0
+      version: 0.2.1
       date_release: 2022-10-04
       assets:
         - platform: genesis
@@ -155,7 +155,7 @@
       display_name: Tecmo
       identifier: nullobject.tecmo
       platform: Tecmo
-      version: ""
+      version: "2.0"
       date_release: 2022-08-26
       assets:
         - platform: tecmo
@@ -209,7 +209,7 @@
       display_name: PDP-1
       identifier: Spacemen3.PDP1
       platform: "PDP-1: Spacewar!"
-      version: ""
+      version: "3.1"
       date_release: 2022-08-19
       assets:
         - platform: pdp1
