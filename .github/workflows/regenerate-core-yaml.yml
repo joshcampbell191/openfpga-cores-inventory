@@ -9,9 +9,9 @@ on:
       - master
     paths:
       - '_data/repos.yml'
-  # schedule:
-  #   # Run hourly
-  #   - cron:  '0 * * * *'
+  schedule:
+    # Run every 15 minutes
+    - cron:  '*/15 * * * *'
 jobs:
   Regenerate-Core-YAML:
     runs-on: ubuntu-latest
