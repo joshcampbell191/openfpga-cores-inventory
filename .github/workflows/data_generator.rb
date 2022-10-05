@@ -36,9 +36,9 @@ module GitHub
     def call
       puts repository
 
-      fetch_download_urls.each.with_object([]) do |(file_name, url), arr|
-        @directory = download_asset(file_name, url)
-        arr << build_json
+      fetch_download_urls.each.with_object([]) do |metadata, arr|
+        @directory = download_asset(metadata["file_name"], metadata["url"])
+        arr << build_json(metadata)
       end.flatten
     end
 
@@ -55,15 +55,24 @@ module GitHub
 
       unless response.is_a?(Net::HTTPOK)
         puts "Something went wrong while fetching the download URLs."
-        exit 1
+        exit 1 # Signal to GitHub Actions that the workflow run failed.
       end
 
       # TODO: In order to get repos with only pre-releases, we have to use the /releases endpoint,
       #       instead of the /releases/latest endpoint. This returns an array of release objects,
       #       instead of a single release. That's what the #first call is for. We might want to
       #       do something about this if we don't want to always get a pre-release version.
-      JSON.parse(response.body).first["assets"].tap { |arr| skip_asset(arr) }.map do |asset|
-        [asset["name"], asset["url"]]
+      body = JSON.parse(response.body).first
+      # TODO: Add pre_release version if there is one
+      # pre_release = body["prerelease"]
+
+      body["assets"].tap { |arr| skip_asset(arr) }.map do |asset|
+        {
+          "file_name"    => asset["name"],
+          "url"          => asset["url"],
+          "version"      => body["tag_name"],
+          "release_date" => body["published_at"]
+        }
       end
     end
 
@@ -95,35 +104,27 @@ module GitHub
       dir_name
     end
 
-    def build_json
-      metadata = parse_json_file(CORE_FILE)&.dig("core", "metadata")
+    def build_json(repo_metadata)
+      core_metadata = parse_json_file(CORE_FILE)&.dig("core", "metadata")
 
       # Some releases include additional assets on top of the core.
       # If the asset does not include a core.json file, we can safely
       # assume it's not the core and skip it.
-      return [] unless metadata
+      return [] unless core_metadata
 
       # TODO: There can probably be multiple platform_ids
-      platform_id   = metadata["platform_ids"].first
+      platform_id   = core_metadata["platform_ids"].first
       platform_json = parse_json_file("#{platform_id}.json", "Platforms")["platform"]
 
       {
         "repository"   => repository,
         "display_name" => display_name,
-        "identifier"   => "#{metadata["author"]}.#{metadata["shortname"]}",
+        "identifier"   => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
         "platform"     => platform_json["name"],
-        "version"      => normalize_version(metadata["version"]),
-        "date_release" => metadata["date_release"],
+        "version"      => repo_metadata["version"],
+        "date_release" => repo_metadata["release_date"],
         "assets"       => build_asset_json(platform_id)
       }
-    end
-
-    # Some cores have a non-standard version value.
-    # Neo Geo has: Alpha 0.7.5
-    # PDP-1 has: v3.1 - Sep. 24, 1962
-    # Convert this to <major>.<minor>.<patch>
-    def normalize_version(version)
-      version.match(/\d+\.\d+\.?\d*/).to_s
     end
 
     def build_asset_json(platform)
