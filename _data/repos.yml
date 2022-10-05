@@ -57,3 +57,5 @@
       repository: openFPGA-GG
     - display_name: Spiritualized Sega Master System
       repository: openFPGA-SMS
+    - display_name: Spiritualized Sega SG-1000
+      repository: openFPGA-SG1000
