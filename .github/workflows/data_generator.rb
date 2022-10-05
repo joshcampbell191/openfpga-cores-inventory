@@ -40,7 +40,7 @@ module GitHub
         @directory = download_asset(file_name, url)
         arr << build_json
       end.flatten
-    rescue HTTPError
+    rescue Net::HTTPError
       puts "Something went wrong while fetching the download URLs"
     end
 
