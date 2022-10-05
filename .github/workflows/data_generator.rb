@@ -94,9 +94,9 @@ module GitHub
 
     def cached_data
       @cached_data ||= YAML.load_file(LOCAL_DATA)
-                          .detect { |author| author["username"] == username }
-                          &.dig("cores")
-                          &.detect { |core| core["repository"] == repository }
+                           .detect { |author| author["username"] == username }
+                           &.dig("cores")
+                           &.detect { |core| core["repository"] == repository }
     end
 
     def version_changed?(new_version)
