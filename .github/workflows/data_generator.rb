@@ -90,7 +90,7 @@ module GitHub
         }
         file << URI.open(url, headers).read
       end
-      system("unzip -q #{file_name} -d #{dir_name}")
+      system("unzip", "-q", file_name, "-d", dir_name)
 
       dir_name
     end
