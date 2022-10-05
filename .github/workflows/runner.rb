@@ -4,5 +4,5 @@
 
 require_relative "yaml_generator"
 
-token = ARGV[0]
-YAMLGenerator.new(token: token).call
+$token = ARGV[0]
+YAMLGenerator.new.call

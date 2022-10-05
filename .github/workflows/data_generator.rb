@@ -22,17 +22,16 @@ module GitHub
       # "full_reload"       => 0b100000000
     }.freeze
 
-    LOCAL_DATA = "_data/cores.yml"
     CORE_FILE  = "core.json"
     DATA_FILE  = "data.json"
+    LOCAL_DATA = "_data/cores.yml"
 
-    attr_reader :username, :repository, :display_name, :token, :directory
+    attr_reader :username, :repository, :display_name
 
-    def initialize(username, repository, display_name, token:)
+    def initialize(username, repository, display_name)
       @username     = username
       @repository   = repository
       @display_name = display_name
-      @token        = token
     end
 
     def call
@@ -54,7 +53,7 @@ module GitHub
     def fetch_download_urls
       uri = URI.parse("https://api.github.com/repos/#{username}/#{repository}/releases")
       request = Net::HTTP::Get.new(uri)
-      request["Authorization"] = "Bearer #{token}"
+      request["Authorization"] = "Bearer #{$token}"
 
       response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
         http.request(request)
@@ -115,7 +114,7 @@ module GitHub
       File.open(file_name, "wb") do |file|
         headers = {
           "Accept" => "application/octet-stream",
-          "Authorization" => "Bearer #{token}"
+          "Authorization" => "Bearer #{$token}"
         }
         file << URI.open(url, headers).read
       end
@@ -159,7 +158,7 @@ module GitHub
     end
 
     def parse_json_file(file_name, subdirectory = "Cores")
-      file_path = Dir.glob("#{directory}/#{subdirectory}/**/#{file_name}").first
+      file_path = Dir.glob("#{@directory}/#{subdirectory}/**/#{file_name}").first
 
       # If the file doesn't exist, the directory is not a core.
       return unless file_path

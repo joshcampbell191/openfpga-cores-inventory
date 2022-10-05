@@ -16,10 +16,9 @@ class YAMLGenerator
   INPUT_FILE  = "_data/repos.yml"
   OUTPUT_FILE = "_data/cores.yml"
 
-  attr_reader :token, :input_data, :output_data
+  attr_reader :input_data, :output_data
 
-  def initialize(token:)
-    @token = token
+  def initialize
     @output_data = []
   end
 
@@ -41,8 +40,7 @@ class YAMLGenerator
         arr << GitHub::DataGenerator.new(
           entry["username"],
           core["repository"],
-          core["display_name"],
-          token: token
+          core["display_name"]
         ).call
       end.flatten
 
