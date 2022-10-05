@@ -76,7 +76,7 @@ module GitHub
         {
           "file_name"    => asset["name"],
           "url"          => asset["url"],
-          "version"      => body["tag_name"],
+          "version"      => body["tag_name"].delete_prefix("v"),
           "release_date" => body["published_at"]
         }
       end
