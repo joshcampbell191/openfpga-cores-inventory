@@ -293,3 +293,13 @@
         - platform: sms
           extensions:
             - sms
+    - repository: openFPGA-SG1000
+      display_name: Spiritualized Sega SG-1000
+      identifier: Spiritualized.SG-1000
+      platform: SG-1000
+      version: v1.2.0
+      date_release: "2022-08-27T02:59:17Z"
+      assets:
+        - platform: sg1000
+          extensions:
+            - sg
