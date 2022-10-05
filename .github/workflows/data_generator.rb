@@ -40,8 +40,6 @@ module GitHub
         @directory = download_asset(file_name, url)
         arr << build_json
       end.flatten
-    rescue Net::HTTPError
-      puts "Something went wrong while fetching the download URLs"
     end
 
     private
@@ -55,7 +53,10 @@ module GitHub
         http.request(request)
       end
 
-      raise Net::HTTPError unless response.is_a?(Net::HTTPOK)
+      unless response.is_a?(Net::HTTPOK)
+        puts "Something went wrong while fetching the download URLs."
+        exit 1
+      end
 
       # TODO: In order to get repos with only pre-releases, we have to use the /releases endpoint,
       #       instead of the /releases/latest endpoint. This returns an array of release objects,
