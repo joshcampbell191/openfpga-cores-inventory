@@ -43,7 +43,7 @@ module GitHub
                  build_json(metadata)
                else
                  puts "#{repository} is already up-to-date."
-                 stale_data
+                 cached_data
                end
       end.flatten
     end
@@ -92,15 +92,15 @@ module GitHub
       end
     end
 
-    def stale_data
-      @stale_data ||= YAML.load_file(LOCAL_DATA)
+    def cached_data
+      @cached_data ||= YAML.load_file(LOCAL_DATA)
                           .detect { |author| author["username"] == username }
                           &.dig("cores")
                           &.detect { |core| core["repository"] == repository }
     end
 
     def version_changed?(new_version)
-      new_version != stale_data&.dig("version")
+      new_version != cached_data&.dig("version")
     end
 
     def download_asset(file_name, url)
