@@ -22,9 +22,9 @@ module GitHub
       # "full_reload"       => 0b100000000
     }.freeze
 
-    CORE_FILE  = "core.json"
-    DATA_FILE  = "data.json"
-    LOCAL_DATA = "_data/cores.yml"
+    CORE_FILE   = "core.json"
+    DATA_FILE   = "data.json"
+    CACHED_DATA = "_data/cores.yml"
 
     attr_reader :username, :repository, :display_name
 
@@ -40,7 +40,7 @@ module GitHub
                  puts "Updating data for #{repository}."
                  @directory = download_asset(metadata["file_name"], metadata["url"])
                  json = build_json(metadata)
-                 return json if json.any?
+                 return json unless json.nil?
                else
                  puts "#{repository} is already up-to-date."
                  return cached_data
@@ -53,7 +53,7 @@ module GitHub
     def fetch_download_urls
       uri = URI.parse("https://api.github.com/repos/#{username}/#{repository}/releases")
       request = Net::HTTP::Get.new(uri)
-      request["Authorization"] = "Bearer #{$token}"
+      request["Authorization"] = "Bearer #{$github_token}"
 
       response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
         http.request(request)
@@ -93,7 +93,7 @@ module GitHub
     end
 
     def cached_data
-      @cached_data ||= YAML.load_file(LOCAL_DATA)
+      @cached_data ||= YAML.load_file(CACHED_DATA)
                            &.detect { |author| author["username"] == username }
                            &.dig("cores")
                            &.detect { |core| core["repository"] == repository }
@@ -114,7 +114,7 @@ module GitHub
       File.open(file_name, "wb") do |file|
         headers = {
           "Accept" => "application/octet-stream",
-          "Authorization" => "Bearer #{$token}"
+          "Authorization" => "Bearer #{$github_token}"
         }
         file << URI.open(url, headers).read
       end
@@ -129,7 +129,7 @@ module GitHub
       # Some releases include additional assets on top of the core.
       # If the asset does not include a core.json file, we can safely
       # assume it's not the core and skip it.
-      return {} unless core_metadata
+      return nil unless core_metadata
 
       # TODO: There can probably be multiple platform_ids
       platform_id   = core_metadata["platform_ids"].first

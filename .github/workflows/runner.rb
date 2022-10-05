@@ -4,5 +4,5 @@
 
 require_relative "yaml_generator"
 
-$token = ARGV[0]
+$github_token = ARGV[0]
 YAMLGenerator.new.call
