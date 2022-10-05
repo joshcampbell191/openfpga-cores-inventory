@@ -40,10 +40,11 @@ module GitHub
         arr << if version_changed?(metadata["version"])
                  puts "Updating data for #{repository}."
                  @directory = download_asset(metadata["file_name"], metadata["url"])
-                 build_json(metadata)
+                 json = build_json(metadata)
+                 return json if json.any?
                else
                  puts "#{repository} is already up-to-date."
-                 cached_data
+                 return cached_data
                end
       end.flatten
     end
@@ -129,7 +130,7 @@ module GitHub
       # Some releases include additional assets on top of the core.
       # If the asset does not include a core.json file, we can safely
       # assume it's not the core and skip it.
-      return [] unless core_metadata
+      return {} unless core_metadata
 
       # TODO: There can probably be multiple platform_ids
       platform_id   = core_metadata["platform_ids"].first
