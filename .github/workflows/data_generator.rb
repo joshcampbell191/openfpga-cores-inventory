@@ -93,7 +93,7 @@ module GitHub
     end
 
     def cached_data
-      @cached_data ||= YAML.load_file(LOCAL_DATA)
+      @cached_data ||= YAML.load_file(LOCAL_DATA, permitted_classes: [Date])
                            .detect { |author| author["username"] == username }
                            &.dig("cores")
                            &.detect { |core| core["repository"] == repository }
