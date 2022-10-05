@@ -4,6 +4,7 @@ require "json"
 require "net/http"
 require "open-uri"
 require "uri"
+require "yaml"
 
 module GitHub
   class DataGenerator
@@ -21,8 +22,9 @@ module GitHub
       # "full_reload"       => 0b100000000
     }.freeze
 
-    CORE_FILE = "core.json"
-    DATA_FILE = "data.json"
+    LOCAL_DATA = "_data/cores.yml"
+    CORE_FILE  = "core.json"
+    DATA_FILE  = "data.json"
 
     attr_reader :username, :repository, :display_name, :token, :directory
 
@@ -34,11 +36,15 @@ module GitHub
     end
 
     def call
-      puts repository
-
       fetch_download_urls.each.with_object([]) do |metadata, arr|
-        @directory = download_asset(metadata["file_name"], metadata["url"])
-        arr << build_json(metadata)
+        arr << if version_changed?(metadata["version"])
+                 puts "Updating data for #{repository}."
+                 @directory = download_asset(metadata["file_name"], metadata["url"])
+                 build_json(metadata)
+               else
+                 puts "#{repository} is already up-to-date."
+                 stale_data
+               end
       end.flatten
     end
 
@@ -54,7 +60,7 @@ module GitHub
       end
 
       unless response.is_a?(Net::HTTPOK)
-        puts "Something went wrong while fetching the download URLs."
+        puts "Something went wrong while fetching the download URLs for #{repository}."
         exit 1 # Signal to GitHub Actions that the workflow run failed.
       end
 
@@ -84,6 +90,17 @@ module GitHub
       when "Spiritualized GBC"
         arr.delete_at(1)
       end
+    end
+
+    def stale_data
+      @stale_data ||= YAML.load_file(LOCAL_DATA)
+                          .detect { |author| author["username"] == username }
+                          &.dig("cores")
+                          &.detect { |core| core["repository"] == repository }
+    end
+
+    def version_changed?(new_version)
+      new_version != stale_data&.dig("version")
     end
 
     def download_asset(file_name, url)
