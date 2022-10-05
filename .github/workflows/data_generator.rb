@@ -40,6 +40,8 @@ module GitHub
         @directory = download_asset(file_name, url)
         arr << build_json
       end.flatten
+    rescue HTTPError
+      puts "Something went wrong while fetching the download URLs"
     end
 
     private
@@ -53,10 +55,7 @@ module GitHub
         http.request(request)
       end
 
-      if response.code == "403"
-        puts "rate limit exceeded"
-        return []
-      end
+      raise Net::HTTPError unless response.is_a?(Net::HTTPOK)
 
       # TODO: In order to get repos with only pre-releases, we have to use the /releases endpoint,
       #       instead of the /releases/latest endpoint. This returns an array of release objects,
