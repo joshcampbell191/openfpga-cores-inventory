@@ -53,7 +53,7 @@ Content-Type: application/json; charset=utf-8
       "identifier": "ericlewis.Asteroids",
       "platform": "Asteroids",
       "version": "0.9.1",
-      "date_release": "2022-09-09",
+      "release_date": "2022-09-09",
       "repository": {
         "platform": "github",
         "owner": "ericlewis",
@@ -81,7 +81,7 @@ Where a core object is:
 | identifier   | string       | The core's unique identifier.                  |
 | platform     | string       | The name of the core's game platform.          |
 | version      | string       | The core's current version number.             |
-| date_release | string       | The date of the core's latest release.         |
+| release_date | string       | The date of the core's latest release.         |
 | repository   | object       | An object describing where the core is hosted. |
 | assets       | object array | A list asset objects.                          |
 

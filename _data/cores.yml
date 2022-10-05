@@ -8,298 +8,291 @@
 ---
 - username: agg23
   cores:
-    - repository: analogue-arduboy
-      display_name: Arduboy for Analogue Pocket
-      identifier: agg23.Arduboy
-      platform: Arduboy
-      version: 0.9.0
-      date_release: 2022-09-03
-      assets:
-        - platform: arduboy
-          extensions:
-            - hex
-    - repository: analogue-pong
-      display_name: Atari's 1972 Pong
-      identifier: agg23.Pong
-      platform: Pong
-      version: 1.2.0
-      date_release: 2022-09-08
-      assets: []
-    - repository: openfpga-NES
-      display_name: NES for Analogue Pocket
-      identifier: agg23.NES
-      platform: NES
-      version: 0.1.1
-      date_release: 2022-09-26
-      assets:
-        - platform: nes
-          extensions:
-            - nes
-    - repository: openfpga-SNES
-      display_name: SNES for Analogue Pocket
-      identifier: agg23.SNES
-      platform: SNES
-      version: 0.3.1
-      date_release: 2022-09-28
-      assets:
-        - platform: snes
-          extensions:
-            - smc
-            - sfc
+  - repository: analogue-arduboy
+    display_name: Arduboy for Analogue Pocket
+    identifier: agg23.Arduboy
+    platform: Arduboy
+    version: 0.9.0
+    release_date: '2022-09-03T20:45:09Z'
+    assets:
+    - platform: arduboy
+      extensions:
+      - hex
+  - repository: analogue-pong
+    display_name: Atari's 1972 Pong
+    identifier: agg23.Pong
+    platform: Pong
+    version: 1.2.0
+    release_date: '2022-09-09T01:56:30Z'
+    assets: []
+  - repository: openfpga-NES
+    display_name: NES for Analogue Pocket
+    identifier: agg23.NES
+    platform: NES
+    version: 0.1.1
+    release_date: '2022-09-26T21:18:54Z'
+    assets:
+    - platform: nes
+      extensions:
+      - nes
+  - repository: openfpga-SNES
+    display_name: SNES for Analogue Pocket
+    identifier: agg23.SNES
+    platform: SNES
+    version: 0.3.1
+    release_date: '2022-09-28T20:03:35Z'
+    assets:
+    - platform: snes
+      extensions:
+      - smc
+      - sfc
 - username: ericlewis
   cores:
-    - repository: openfpga-asteroids
-      display_name: Asteroids for Analogue Pocket
-      identifier: ericlewis.Asteroids
-      platform: Asteroids
-      version: 0.9.1
-      date_release: 2022-09-09
-      assets:
-        - platform: asteroids
-          filename: asteroid.rom
-          core_specific: true
-    - repository: openfpga-dominos
-      display_name: Dominos for Analogue Pocket
-      identifier: ericlewis.Dominos
-      platform: Dominos
-      version: 0.0.1
-      date_release: 2022-09-16
-      assets:
-        - platform: dominos
-          filename: dominos.rom
-    - repository: openfpga-genesis
-      display_name: Genesis for Analogue Pocket
-      identifier: ericlewis.Genesis
-      platform: Genesis
-      version: 0.3.1
-      date_release: 2022-10-04
-      assets:
-        - platform: genesis
-          extensions:
-            - md
-            - bin
-            - gen
-            - smd
-    - repository: openfpga-lunarlander
-      display_name: Lunar Lander for Analogue Pocket
-      identifier: ericlewis.LunarLander
-      platform: Lunar Lander
-      version: 0.9.1
-      date_release: 2022-09-12
-      assets:
-        - platform: lunarlander
-          filename: llander.rom
-          core_specific: true
-    - repository: openfpga-spacerace
-      display_name: Space Race for Analogue Pocket
-      identifier: ericlewis.SpaceRace
-      platform: Space Race
-      version: 1.0.0
-      date_release: 2022-09-09
-      assets: []
-    - repository: openfpga-superbreakout
-      display_name: Super Breakout for Analogue Pocket
-      identifier: ericlewis.SuperBreakout
-      platform: Super Breakout
-      version: 0.0.1
-      date_release: 2022-09-14
-      assets:
-        - platform: superbreakout
-          filename: sbrkout.rom
+  - repository: openfpga-asteroids
+    display_name: Asteroids for Analogue Pocket
+    identifier: ericlewis.Asteroids
+    platform: Asteroids
+    version: 0.9.1
+    release_date: '2022-09-13T17:57:14Z'
+    assets:
+    - platform: asteroids
+      filename: asteroid.rom
+      core_specific: true
+  - repository: openfpga-dominos
+    display_name: Dominos for Analogue Pocket
+    identifier: ericlewis.Dominos
+    platform: Dominos
+    version: 0.0.1
+    release_date: '2022-09-17T13:59:02Z'
+    assets:
+    - platform: dominos
+      filename: dominos.rom
+  - repository: openfpga-genesis
+    display_name: Genesis for Analogue Pocket
+    identifier: ericlewis.Genesis
+    platform: Genesis
+    version: 0.3.1
+    release_date: '2022-10-04T23:39:37Z'
+    assets:
+    - platform: genesis
+      extensions:
+      - md
+      - bin
+      - gen
+      - smd
+  - repository: openfpga-lunarlander
+    display_name: Lunar Lander for Analogue Pocket
+    identifier: ericlewis.LunarLander
+    platform: Lunar Lander
+    version: 0.9.1
+    release_date: '2022-09-13T17:58:18Z'
+    assets:
+    - platform: lunarlander
+      filename: llander.rom
+      core_specific: true
+  - repository: openfpga-spacerace
+    display_name: Space Race for Analogue Pocket
+    identifier: ericlewis.SpaceRace
+    platform: Space Race
+    version: 1.0.0
+    release_date: '2022-09-16T15:09:55Z'
+    assets: []
+  - repository: openfpga-superbreakout
+    display_name: Super Breakout for Analogue Pocket
+    identifier: ericlewis.SuperBreakout
+    platform: Super Breakout
+    version: 0.0.1
+    release_date: '2022-09-14T17:52:28Z'
+    assets:
+    - platform: superbreakout
+      filename: sbrkout.rom
 - username: Mazamars312
   cores:
-    - repository: Analogue_Pocket_Neogeo
-      display_name: Neo Geo
-      identifier: Mazamars312.NeoGeo
-      platform: Neo Geo
-      version: Alpha_0.7.5_2022-19-09
-      date_release: "2022-09-18T23:23:22Z"
-      assets:
-        - platform: ng
-          filename: uni-bios_1_0.rom
-          extensions:
-            - rom
-            - sp1
-            - bin
-        - platform: ng
-          filename: 000-lo.lo
-          extensions:
-            - lo
-        - platform: ng
-          filename: sfix.sfix
-          extensions:
-            - sfix
-        - platform: ng
-          extensions:
-            - srom
-        - platform: ng
-          extensions:
-            - bin
-            - pbin
-            - prom
-        - platform: ng
-          extensions:
-            - cbin
-            - crom0
-        - platform: ng
-          extensions:
-            - mbin
-            - m1rom
-        - platform: ng
-          extensions:
-            - vbin
-            - vroma0
+  - repository: Analogue_Pocket_Neogeo
+    display_name: Neo Geo
+    identifier: Mazamars312.NeoGeo
+    platform: Neo Geo
+    version: Alpha_0.7.5_2022-19-09
+    release_date: '2022-09-18T23:23:22Z'
+    assets:
+    - platform: ng
+      filename: uni-bios_1_0.rom
+      extensions:
+      - rom
+      - sp1
+      - bin
+    - platform: ng
+      filename: 000-lo.lo
+      extensions:
+      - lo
+    - platform: ng
+      filename: sfix.sfix
+      extensions:
+      - sfix
+    - platform: ng
+      extensions:
+      - srom
+    - platform: ng
+      extensions:
+      - bin
+      - pbin
+      - prom
+    - platform: ng
+      extensions:
+      - cbin
+      - crom0
+    - platform: ng
+      extensions:
+      - mbin
+      - m1rom
+    - platform: ng
+      extensions:
+      - vbin
+      - vroma0
 - username: nullobject
   cores:
-    - repository: openfpga-tecmo
-      display_name: Tecmo
-      identifier: nullobject.tecmo
-      platform: Tecmo
-      version: v2.0
-      date_release: "2022-09-10T06:27:20Z"
-      assets:
-        - platform: tecmo
-          extensions:
-            - rom
+  - repository: openfpga-tecmo
+    display_name: Tecmo
+    identifier: nullobject.tecmo
+    platform: Tecmo
+    version: v2.0
+    release_date: '2022-09-10T06:27:20Z'
+    assets:
+    - platform: tecmo
+      extensions:
+      - rom
 - username: opengateware
   cores:
-    - &1
-        repository: arcade-digdug
-        display_name: Dig Dug
-        identifier: boogermann.digdug
-        platform: Dig Dug
-        version: 0.1.0
-        date_release: 2022-09-20
-        assets:
-          - platform: digdug
-            extensions:
-              - rom
-    - *1
-    - &2
-        repository: arcade-galaga
-        display_name: Galaga
-        identifier: boogermann.galaga
-        platform: Galaga
-        version: v0.1.0
-        date_release: "2022-09-15T22:04:09Z"
-        assets:
-          - platform: galaga
-            extensions:
-              - rom
-    - *2
-    - &3
-        repository: arcade-gberet
-        display_name: Green Beret
-        identifier: boogermann.gberet
-        platform: Green Beret
-        version: 0.1.1
-        date_release: 2022-10-03
-        assets:
-          - platform: gberet
-            extensions:
-              - rom
-    - *3
-    - &4
-        repository: arcade-xevious
-        display_name: Xevious
-        identifier: boogermann.xevious
-        platform: Xevious
-        version: 0.1.0
-        date_release: 2022-09-10
-        assets:
-          - platform: xevious
-            extensions:
-              - rom
-    - *4
+  - repository: arcade-digdug
+    display_name: Dig Dug
+    identifier: boogermann.digdug
+    platform: Dig Dug
+    version: 0.1.0
+    release_date: '2022-09-20T06:04:48Z'
+    assets:
+    - platform: digdug
+      extensions:
+      - rom
+  - repository: arcade-galaga
+    display_name: Galaga
+    identifier: boogermann.galaga
+    platform: Galaga
+    version: v0.1.0
+    release_date: '2022-09-15T22:04:09Z'
+    assets:
+    - platform: galaga
+      extensions:
+      - rom
+  - repository: arcade-gberet
+    display_name: Green Beret
+    identifier: boogermann.gberet
+    platform: Green Beret
+    version: 0.1.1
+    release_date: '2022-10-03T12:20:39Z'
+    assets:
+    - platform: gberet
+      extensions:
+      - rom
+  - repository: arcade-xevious
+    display_name: Xevious
+    identifier: boogermann.xevious
+    platform: Xevious
+    version: 0.1.0
+    release_date: '2022-09-25T04:12:14Z'
+    assets:
+    - platform: xevious
+      extensions:
+      - rom
 - username: spacemen3
   cores:
-    - repository: PDP-1
-      display_name: PDP-1
-      identifier: Spacemen3.PDP1
-      platform: "PDP-1: Spacewar!"
-      version: v1.1.0
-      date_release: "2022-08-23T15:16:15Z"
-      assets:
-        - platform: pdp1
-          filename: spacewar3.1.bin
-          core_specific: true
-        - platform: pdp1
-          filename: Default_LUT.clut
-          extensions:
-            - clut
-          core_specific: true
+  - repository: PDP-1
+    display_name: PDP-1
+    identifier: Spacemen3.PDP1
+    platform: 'PDP-1: Spacewar!'
+    version: v1.1.0
+    release_date: '2022-08-23T15:16:15Z'
+    assets:
+    - platform: pdp1
+      filename: spacewar3.1.bin
+      core_specific: true
+    - platform: pdp1
+      filename: Default_LUT.clut
+      extensions:
+      - clut
+      core_specific: true
 - username: spiritualized1997
   cores:
-    - repository: openFPGA-GB-GBC
-      display_name: Spiritualized GB
-      identifier: Spiritualized.GB
-      platform: Game Boy
-      version: v1.3.0
-      date_release: "2022-08-27T02:55:22Z"
-      assets:
-        - platform: gb
-          extensions:
-            - gb
-        - platform: gb
-          filename: dmg_bios.bin
-          extensions:
-            - bin
-    - repository: openFPGA-GBA
-      display_name: Spiritualized GBA
-      identifier: Spiritualized.GBA
-      platform: Game Boy Advance
-      version: v1.2.0
-      date_release: "2022-08-27T02:56:30Z"
-      assets:
-        - platform: gba
-          extensions:
-            - gba
-            - rom
-        - platform: gba
-          filename: gba_bios.bin
-          extensions:
-            - bin
-    - repository: openFPGA-GB-GBC
-      display_name: Spiritualized GB
-      identifier: Spiritualized.GB
-      platform: Game Boy
-      version: v1.3.0
-      date_release: "2022-08-27T02:55:22Z"
-      assets:
-        - platform: gb
-          extensions:
-            - gb
-        - platform: gb
-          filename: dmg_bios.bin
-          extensions:
-            - bin
-    - repository: openFPGA-GG
-      display_name: Spiritualized Sega Game Gear
-      identifier: Spiritualized.GG
-      platform: Game Gear
-      version: v1.3.0
-      date_release: "2022-08-27T02:57:43Z"
-      assets:
-        - platform: gg
-          extensions:
-            - gg
-    - repository: openFPGA-SMS
-      display_name: Spiritualized Sega Master System
-      identifier: Spiritualized.SMS
-      platform: Master System
-      version: v1.2.0
-      date_release: "2022-08-27T02:58:28Z"
-      assets:
-        - platform: sms
-          extensions:
-            - sms
-    - repository: openFPGA-SG1000
-      display_name: Spiritualized Sega SG-1000
-      identifier: Spiritualized.SG-1000
-      platform: SG-1000
-      version: v1.2.0
-      date_release: "2022-08-27T02:59:17Z"
-      assets:
-        - platform: sg1000
-          extensions:
-            - sg
+  - repository: openFPGA-GB-GBC
+    display_name: Spiritualized GB
+    identifier: Spiritualized.GB
+    platform: Game Boy
+    version: v1.3.0
+    release_date: '2022-08-27T02:55:22Z'
+    assets:
+    - platform: gb
+      extensions:
+      - gb
+    - platform: gb
+      filename: dmg_bios.bin
+      extensions:
+      - bin
+  - repository: openFPGA-GBA
+    display_name: Spiritualized GBA
+    identifier: Spiritualized.GBA
+    platform: Game Boy Advance
+    version: v1.2.0
+    release_date: '2022-08-27T02:56:30Z'
+    assets:
+    - platform: gba
+      extensions:
+      - gba
+      - rom
+    - platform: gba
+      filename: gba_bios.bin
+      extensions:
+      - bin
+  - repository: openFPGA-GB-GBC
+    display_name: Spiritualized GBC
+    identifier: Spiritualized.GBC
+    platform: Game Boy Color
+    version: v1.3.0
+    release_date: '2022-08-27T02:55:22Z'
+    assets:
+    - platform: gbc
+      extensions:
+      - gb
+      - gbc
+    - platform: gbc
+      filename: gbc_bios.bin
+      extensions:
+      - bin
+  - repository: openFPGA-GG
+    display_name: Spiritualized Sega Game Gear
+    identifier: Spiritualized.GG
+    platform: Game Gear
+    version: v1.3.0
+    release_date: '2022-08-27T02:57:43Z'
+    assets:
+    - platform: gg
+      extensions:
+      - gg
+  - repository: openFPGA-SMS
+    display_name: Spiritualized Sega Master System
+    identifier: Spiritualized.SMS
+    platform: Master System
+    version: v1.2.0
+    release_date: '2022-08-27T02:58:28Z'
+    assets:
+    - platform: sms
+      extensions:
+      - sms
+  - repository: openFPGA-SG1000
+    display_name: Spiritualized Sega SG-1000
+    identifier: Spiritualized.SG-1000
+    platform: SG-1000
+    version: v1.2.0
+    release_date: '2022-08-27T02:59:17Z'
+    assets:
+    - platform: sg1000
+      extensions:
+      - sg

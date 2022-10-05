@@ -93,12 +93,14 @@ module GitHub
     end
 
     def cached_data
-      @cached_data ||= YAML.unsafe_load_file(LOCAL_DATA)
-                           .detect { |author| author["username"] == username }
+      @cached_data ||= YAML.load_file(LOCAL_DATA)
+                           &.detect { |author| author["username"] == username }
                            &.dig("cores")
                            &.detect { |core| core["repository"] == repository }
     end
 
+    # TODO: This should probably be #core_changed? or something.
+    #       Assets could be updated or something without a version change.
     def version_changed?(new_version)
       new_version != cached_data&.dig("version")
     end
@@ -139,7 +141,7 @@ module GitHub
         "identifier"   => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
         "platform"     => platform_json["name"],
         "version"      => repo_metadata["version"],
-        "date_release" => repo_metadata["release_date"],
+        "release_date" => repo_metadata["release_date"],
         "assets"       => build_asset_json(platform_id)
       }
     end
