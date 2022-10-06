@@ -95,7 +95,6 @@ module GitHub
                            &.detect { |core| core["repository"] == repository }
     end
 
-    # TODO: Do we want to check if the published_at changed instead?
     def version_changed?(version)
       version != cached_data&.dig("version")
     end
@@ -126,7 +125,7 @@ module GitHub
       # assume it's not the core and skip it.
       return nil unless core_metadata
 
-      # TODO: There can probably be multiple platform_ids
+      # TODO: Handle multiple platform_ids. No cores currently do this.
       platform_id   = core_metadata["platform_ids"].first
       platform_json = parse_json_file("#{platform_id}.json", "Platforms")["platform"]
 
