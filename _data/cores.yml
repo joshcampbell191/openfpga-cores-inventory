@@ -12,10 +12,9 @@
       display_name: Arduboy for Analogue Pocket
       identifier: agg23.Arduboy
       platform: Arduboy
-      versions:
-        - version_number: 0.9.0
-          release_date: "2022-09-03T20:45:09Z"
-          prerelease: false
+      version: 0.9.0
+      release_date: "2022-09-03T20:45:09Z"
+      prerelease: false
       assets:
         - platform: arduboy
           extensions:
@@ -24,28 +23,17 @@
       display_name: Atari's 1972 Pong
       identifier: agg23.Pong
       platform: Pong
-      versions:
-        - version_number: 1.2.0
-          release_date: "2022-09-09T01:56:30Z"
-          prerelease: false
-        - version_number: 1.1.0
-          release_date: "2022-08-23T22:30:55Z"
-          prerelease: false
-        - version_number: "1.0"
-          release_date: "2022-08-19T18:56:24Z"
-          prerelease: false
+      version: 1.2.0
+      release_date: "2022-09-09T01:56:30Z"
+      prerelease: false
       assets: []
     - repository: openfpga-NES
       display_name: NES for Analogue Pocket
       identifier: agg23.NES
       platform: NES
-      versions:
-        - version_number: 0.1.1
-          release_date: "2022-09-26T21:18:54Z"
-          prerelease: false
-        - version_number: 0.1.0
-          release_date: "2022-09-26T16:11:59Z"
-          prerelease: false
+      version: 0.1.1
+      release_date: "2022-09-26T21:18:54Z"
+      prerelease: false
       assets:
         - platform: nes
           extensions:
@@ -54,19 +42,9 @@
       display_name: SNES for Analogue Pocket
       identifier: agg23.SNES
       platform: SNES
-      versions:
-        - version_number: 0.3.1
-          release_date: "2022-09-28T20:03:35Z"
-          prerelease: false
-        - version_number: 0.3.0
-          release_date: "2022-09-28T17:59:03Z"
-          prerelease: false
-        - version_number: 0.2.0
-          release_date: "2022-09-20T02:23:28Z"
-          prerelease: false
-        - version_number: 0.1.0
-          release_date: "2022-09-16T21:58:00Z"
-          prerelease: false
+      version: 0.3.1
+      release_date: "2022-09-28T20:03:35Z"
+      prerelease: false
       assets:
         - platform: snes
           extensions:
@@ -78,16 +56,9 @@
       display_name: Asteroids for Analogue Pocket
       identifier: ericlewis.Asteroids
       platform: Asteroids
-      versions:
-        - version_number: 0.9.1
-          release_date: "2022-09-13T17:57:14Z"
-          prerelease: true
-        - version_number: 0.9.0
-          release_date: "2022-09-13T16:07:07Z"
-          prerelease: true
-        - version_number: 0.0.1
-          release_date: "2022-09-12T02:32:57Z"
-          prerelease: true
+      version: 0.9.1
+      release_date: "2022-09-13T17:57:14Z"
+      prerelease: true
       assets:
         - platform: asteroids
           filename: asteroid.rom
@@ -96,10 +67,9 @@
       display_name: Dominos for Analogue Pocket
       identifier: ericlewis.Dominos
       platform: Dominos
-      versions:
-        - version_number: 0.0.1
-          release_date: "2022-09-17T13:59:02Z"
-          prerelease: true
+      version: 0.0.1
+      release_date: "2022-09-17T13:59:02Z"
+      prerelease: true
       assets:
         - platform: dominos
           filename: dominos.rom
@@ -107,43 +77,9 @@
       display_name: Genesis for Analogue Pocket
       identifier: ericlewis.Genesis
       platform: Genesis
-      versions:
-        - version_number: 0.3.1
-          release_date: "2022-10-04T23:39:37Z"
-          prerelease: true
-        - version_number: 0.3.0
-          release_date: "2022-10-04T23:24:09Z"
-          prerelease: true
-        - version_number: 0.2.2
-          release_date: "2022-10-04T22:45:18Z"
-          prerelease: true
-        - version_number: 0.2.1
-          release_date: "2022-10-04T20:51:14Z"
-          prerelease: true
-        - version_number: 0.2.0
-          release_date: "2022-10-04T16:41:09Z"
-          prerelease: true
-        - version_number: 0.1.0
-          release_date: "2022-10-03T15:18:04Z"
-          prerelease: true
-        - version_number: 0.0.6
-          release_date: "2022-10-01T10:11:04Z"
-          prerelease: true
-        - version_number: 0.0.5
-          release_date: "2022-09-27T04:03:56Z"
-          prerelease: true
-        - version_number: 0.0.4
-          release_date: "2022-09-26T22:45:04Z"
-          prerelease: true
-        - version_number: 0.0.3
-          release_date: "2022-09-26T03:08:37Z"
-          prerelease: true
-        - version_number: 0.0.2
-          release_date: "2022-09-26T02:38:28Z"
-          prerelease: true
-        - version_number: 0.0.1
-          release_date: "2022-09-23T15:05:44Z"
-          prerelease: true
+      version: 0.3.1
+      release_date: "2022-10-04T23:39:37Z"
+      prerelease: true
       assets:
         - platform: genesis
           extensions:
@@ -155,16 +91,9 @@
       display_name: Lunar Lander for Analogue Pocket
       identifier: ericlewis.LunarLander
       platform: Lunar Lander
-      versions:
-        - version_number: 0.9.1
-          release_date: "2022-09-13T17:58:18Z"
-          prerelease: true
-        - version_number: 0.9.0
-          release_date: "2022-09-13T16:06:04Z"
-          prerelease: true
-        - version_number: 0.0.1
-          release_date: "2022-09-12T17:18:22Z"
-          prerelease: true
+      version: 0.9.1
+      release_date: "2022-09-13T17:58:18Z"
+      prerelease: true
       assets:
         - platform: lunarlander
           filename: llander.rom
@@ -173,31 +102,17 @@
       display_name: Space Race for Analogue Pocket
       identifier: ericlewis.SpaceRace
       platform: Space Race
-      versions:
-        - version_number: 1.0.0
-          release_date: "2022-09-16T15:09:55Z"
-          prerelease: false
-        - version_number: 0.9.0
-          release_date: "2022-09-10T02:32:53Z"
-          prerelease: true
-        - version_number: 0.0.3
-          release_date: "2022-09-10T00:41:41Z"
-          prerelease: true
-        - version_number: 0.0.2
-          release_date: "2022-09-09T21:51:14Z"
-          prerelease: true
-        - version_number: 0.0.1
-          release_date: "2022-09-09T20:52:09Z"
-          prerelease: true
+      version: 1.0.0
+      release_date: "2022-09-16T15:09:55Z"
+      prerelease: false
       assets: []
     - repository: openfpga-superbreakout
       display_name: Super Breakout for Analogue Pocket
       identifier: ericlewis.SuperBreakout
       platform: Super Breakout
-      versions:
-        - version_number: 0.0.1
-          release_date: "2022-09-14T17:52:28Z"
-          prerelease: true
+      version: 0.0.1
+      release_date: "2022-09-14T17:52:28Z"
+      prerelease: true
       assets:
         - platform: superbreakout
           filename: sbrkout.rom
@@ -207,16 +122,9 @@
       display_name: Neo Geo
       identifier: Mazamars312.NeoGeo
       platform: Neo Geo
-      versions:
-        - version_number: Alpha_0.7.5_2022-19-09
-          release_date: "2022-09-18T23:23:22Z"
-          prerelease: false
-        - version_number: Alpha_0.6.0_2022-15-08
-          release_date: "2022-08-14T22:27:01Z"
-          prerelease: false
-        - version_number: Alpha_0.5.0_2022-01-08
-          release_date: "2022-08-01T07:25:04Z"
-          prerelease: true
+      version: Alpha_0.7.5_2022-19-09
+      release_date: "2022-09-18T23:23:22Z"
+      prerelease: false
       assets:
         - platform: ng
           filename: uni-bios_1_0.rom
@@ -258,13 +166,9 @@
       display_name: Tecmo
       identifier: nullobject.tecmo
       platform: Tecmo
-      versions:
-        - version_number: "2.0"
-          release_date: "2022-09-10T06:27:20Z"
-          prerelease: false
-        - version_number: "1.0"
-          release_date: "2022-08-26T02:59:10Z"
-          prerelease: true
+      version: "2.0"
+      release_date: "2022-09-10T06:27:20Z"
+      prerelease: false
       assets:
         - platform: tecmo
           extensions:
@@ -275,10 +179,9 @@
       display_name: Dig Dug
       identifier: boogermann.digdug
       platform: Dig Dug
-      versions:
-        - version_number: 0.1.0
-          release_date: "2022-09-20T06:04:48Z"
-          prerelease: false
+      version: 0.1.0
+      release_date: "2022-09-20T06:04:48Z"
+      prerelease: false
       assets:
         - platform: digdug
           extensions:
@@ -287,10 +190,9 @@
       display_name: Galaga
       identifier: boogermann.galaga
       platform: Galaga
-      versions:
-        - version_number: 0.1.0
-          release_date: "2022-09-15T22:04:09Z"
-          prerelease: false
+      version: 0.1.0
+      release_date: "2022-09-15T22:04:09Z"
+      prerelease: false
       assets:
         - platform: galaga
           extensions:
@@ -299,13 +201,9 @@
       display_name: Green Beret
       identifier: boogermann.gberet
       platform: Green Beret
-      versions:
-        - version_number: 0.1.1
-          release_date: "2022-10-03T12:20:39Z"
-          prerelease: false
-        - version_number: 0.1.0
-          release_date: "2022-10-01T08:40:27Z"
-          prerelease: false
+      version: 0.1.1
+      release_date: "2022-10-03T12:20:39Z"
+      prerelease: false
       assets:
         - platform: gberet
           extensions:
@@ -314,10 +212,9 @@
       display_name: Xevious
       identifier: boogermann.xevious
       platform: Xevious
-      versions:
-        - version_number: 0.1.0
-          release_date: "2022-09-25T04:12:14Z"
-          prerelease: false
+      version: 0.1.0
+      release_date: "2022-09-25T04:12:14Z"
+      prerelease: false
       assets:
         - platform: xevious
           extensions:
@@ -328,13 +225,9 @@
       display_name: PDP-1
       identifier: Spacemen3.PDP1
       platform: "PDP-1: Spacewar!"
-      versions:
-        - version_number: 1.1.0
-          release_date: "2022-08-23T15:16:15Z"
-          prerelease: false
-        - version_number: 1.0.0
-          release_date: "2022-07-29T12:31:22Z"
-          prerelease: false
+      version: 1.1.0
+      release_date: "2022-08-23T15:16:15Z"
+      prerelease: false
       assets:
         - platform: pdp1
           filename: spacewar3.1.bin
@@ -350,13 +243,9 @@
       display_name: Spiritualized GB
       identifier: Spiritualized.GB
       platform: Game Boy
-      versions:
-        - version_number: 1.3.0
-          release_date: "2022-08-27T02:55:22Z"
-          prerelease: false
-        - version_number: 1.0.0
-          release_date: "2022-07-29T18:24:59Z"
-          prerelease: false
+      version: 1.3.0
+      release_date: "2022-08-27T02:55:22Z"
+      prerelease: false
       assets:
         - platform: gb
           extensions:
@@ -369,13 +258,9 @@
       display_name: Spiritualized GBA
       identifier: Spiritualized.GBA
       platform: Game Boy Advance
-      versions:
-        - version_number: 1.2.0
-          release_date: "2022-08-27T02:56:30Z"
-          prerelease: false
-        - version_number: 1.0.0
-          release_date: "2022-07-29T18:23:21Z"
-          prerelease: false
+      version: 1.2.0
+      release_date: "2022-08-27T02:56:30Z"
+      prerelease: false
       assets:
         - platform: gba
           extensions:
@@ -389,13 +274,9 @@
       display_name: Spiritualized GBC
       identifier: Spiritualized.GBC
       platform: Game Boy Color
-      versions:
-        - version_number: 1.3.0
-          release_date: "2022-08-27T02:55:22Z"
-          prerelease: false
-        - version_number: 1.0.0
-          release_date: "2022-07-29T18:24:59Z"
-          prerelease: false
+      version: 1.3.0
+      release_date: "2022-08-27T02:55:22Z"
+      prerelease: false
       assets:
         - platform: gbc
           extensions:
@@ -409,13 +290,9 @@
       display_name: Spiritualized Sega Game Gear
       identifier: Spiritualized.GG
       platform: Game Gear
-      versions:
-        - version_number: 1.3.0
-          release_date: "2022-08-27T02:57:43Z"
-          prerelease: false
-        - version_number: 1.0.0
-          release_date: "2022-08-08T21:08:36Z"
-          prerelease: false
+      version: 1.3.0
+      release_date: "2022-08-27T02:57:43Z"
+      prerelease: false
       assets:
         - platform: gg
           extensions:
@@ -424,13 +301,9 @@
       display_name: Spiritualized Sega Master System
       identifier: Spiritualized.SMS
       platform: Master System
-      versions:
-        - version_number: 1.2.0
-          release_date: "2022-08-27T02:58:28Z"
-          prerelease: false
-        - version_number: 1.0.0
-          release_date: "2022-08-08T21:08:38Z"
-          prerelease: false
+      version: 1.2.0
+      release_date: "2022-08-27T02:58:28Z"
+      prerelease: false
       assets:
         - platform: sms
           extensions:
@@ -439,13 +312,9 @@
       display_name: Spiritualized Sega SG-1000
       identifier: Spiritualized.SG-1000
       platform: SG-1000
-      versions:
-        - version_number: 1.2.0
-          release_date: "2022-08-27T02:59:17Z"
-          prerelease: false
-        - version_number: 1.0.0
-          release_date: "2022-08-08T21:08:40Z"
-          prerelease: false
+      version: 1.2.0
+      release_date: "2022-08-27T02:59:17Z"
+      prerelease: false
       assets:
         - platform: sg1000
           extensions:
