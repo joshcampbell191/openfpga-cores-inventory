@@ -36,15 +36,15 @@ module GitHub
 
     def call
       fetch_download_urls.each.with_object([]) do |metadata, arr|
-        arr << if version_changed?(metadata["version"])
-          puts "Updating data for #{repository}."
-          @directory = download_asset(metadata["file_name"], metadata["url"])
-          json = build_json(metadata)
-          return json unless json.nil?
-        else
-          puts "#{repository} is already up-to-date."
-          return cached_data
-        end
+        arr << if version_changed?(metadata.dig("versions", 0, "version_number"))
+                 puts "Updating data for #{repository}."
+                 @directory = download_asset(metadata["file_name"], metadata["url"])
+                 json = build_json(metadata)
+                 return json unless json.nil?
+               else
+                 puts "#{repository} is already up-to-date."
+                 return cached_data
+               end
       end.flatten
     end
 
@@ -64,20 +64,25 @@ module GitHub
         exit 1 # Signal to GitHub Actions that the workflow run failed.
       end
 
-      # TODO: In order to get repos with only pre-releases, we have to use the /releases endpoint,
-      #       instead of the /releases/latest endpoint. This returns an array of release objects,
-      #       instead of a single release. That's what the #first call is for. We might want to
-      #       do something about this if we don't want to always get a pre-release version.
-      body = JSON.parse(response.body).first
-      # TODO: Add pre_release version if there is one
-      # pre_release = body["prerelease"]
+      body = JSON.parse(response.body)
 
-      body["assets"].tap { |arr| skip_asset(arr) }.map do |asset|
+      # Only get assets for the latest release.
+      body.first["assets"].tap { |arr| skip_asset(arr) }.map do |asset|
         {
           "file_name"    => asset["name"],
           "url"          => asset["url"],
-          "version"      => body["tag_name"].delete_prefix("v"),
-          "release_date" => body["published_at"]
+          "versions"     => versions(body)
+        }
+      end
+    end
+
+    def versions(response_body)
+      response_body.map do |release|
+        {
+          # TODO: Maybe we want to call this tag_name and not delete the "v" prefixes
+          "version_number" => release["tag_name"].delete_prefix("v"),
+          "release_date"   => release["published_at"],
+          "prerelease"     => release["prerelease"]
         }
       end
     end
@@ -102,7 +107,7 @@ module GitHub
     # TODO: This should probably be #core_changed? or something.
     #       Assets could be updated or something without a version change.
     def version_changed?(new_version)
-      new_version != cached_data&.dig("version")
+      new_version != cached_data&.dig("versions", 0, "version_number")
     end
 
     def download_asset(file_name, url)
@@ -140,8 +145,7 @@ module GitHub
         "display_name" => display_name,
         "identifier"   => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
         "platform"     => platform_json["name"],
-        "version"      => repo_metadata["version"],
-        "release_date" => repo_metadata["release_date"],
+        "versions"     => repo_metadata["versions"],
         "assets"       => build_asset_json(platform_id)
       }
     end
