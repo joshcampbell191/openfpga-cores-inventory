@@ -36,7 +36,7 @@ module GitHub
 
     def call
       fetch_download_urls.each.with_object([]) do |metadata, arr|
-        arr << if version_changed?(metadata.dig("versions", 0, "version_number"))
+        arr << if version_changed?(metadata["version"])
                  puts "Updating data for #{repository}."
                  @directory = download_asset(metadata["file_name"], metadata["url"])
                  json = build_json(metadata)
@@ -64,25 +64,15 @@ module GitHub
         exit 1 # Signal to GitHub Actions that the workflow run failed.
       end
 
-      body = JSON.parse(response.body)
+      # We only care about the latest release.
+      release = JSON.parse(response.body).first
 
-      # Only get assets for the latest release.
-      body.first["assets"].tap { |arr| skip_asset(arr) }.map do |asset|
+      release["assets"].tap { |arr| skip_asset(arr) }.map do |asset|
         {
           "file_name"    => asset["name"],
           "url"          => asset["url"],
-          "versions"     => versions(body)
-        }
-      end
-    end
-
-    def versions(response_body)
-      response_body.map do |release|
-        {
-          # TODO: Maybe we want to call this tag_name and not delete the "v" prefixes
-          "version_number" => release["tag_name"].delete_prefix("v"),
-          "release_date"   => release["published_at"],
-          "prerelease"     => release["prerelease"]
+          "version"      => release["tag_name"].delete_prefix("v"),
+          "release_date" => release["published_at"]
         }
       end
     end
@@ -104,10 +94,9 @@ module GitHub
                            &.detect { |core| core["repository"] == repository }
     end
 
-    # TODO: This should probably be #core_changed? or something.
-    #       Assets could be updated or something without a version change.
-    def version_changed?(new_version)
-      new_version != cached_data&.dig("versions", 0, "version_number")
+    # TODO: Do we want to check if the published_at changed instead?
+    def version_changed?(version)
+      version != cached_data&.dig("version")
     end
 
     def download_asset(file_name, url)
