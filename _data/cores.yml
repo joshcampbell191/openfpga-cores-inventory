@@ -257,18 +257,17 @@
           extensions:
             - bin
     - repository: openFPGA-GB-GBC
-      display_name: Spiritualized GBC
-      identifier: Spiritualized.GBC
-      platform: Game Boy Color
+      display_name: Spiritualized GB
+      identifier: Spiritualized.GB
+      platform: Game Boy
       version: 1.3.0
       release_date: "2022-08-27T02:55:22Z"
       assets:
-        - platform: gbc
+        - platform: gb
           extensions:
             - gb
-            - gbc
-        - platform: gbc
-          filename: gbc_bios.bin
+        - platform: gb
+          filename: dmg_bios.bin
           extensions:
             - bin
     - repository: openFPGA-GG
