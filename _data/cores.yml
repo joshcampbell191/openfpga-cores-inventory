@@ -73,8 +73,8 @@
       display_name: Genesis for Analogue Pocket
       identifier: ericlewis.Genesis
       platform: Genesis
-      version: 0.3.1
-      release_date: "2022-10-04T23:39:37Z"
+      version: 0.4.1
+      release_date: "2022-10-06T15:43:09Z"
       assets:
         - platform: genesis
           extensions:
@@ -196,16 +196,6 @@
       release_date: "2022-10-03T12:20:39Z"
       assets:
         - platform: gberet
-          extensions:
-            - rom
-    - repository: arcade-pooyan
-      display_name: Pooyan
-      identifier: boogermann.pooyan
-      platform: Pooyan
-      version: 0.1.0
-      release_date: '2022-10-06T21:34:40Z'
-      assets:
-        - platform: pooyan
           extensions:
             - rom
     - repository: arcade-xevious
