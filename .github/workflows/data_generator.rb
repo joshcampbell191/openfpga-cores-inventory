@@ -37,14 +37,14 @@ module GitHub
     def call
       fetch_download_urls.each.with_object([]) do |metadata, arr|
         arr << if version_changed?(metadata["version"])
-                 puts "Updating data for #{repository}."
-                 @directory = download_asset(metadata["file_name"], metadata["url"])
-                 json = build_json(metadata)
-                 return json unless json.nil?
-               else
-                 puts "#{repository} is already up-to-date."
-                 return cached_data
-               end
+          puts "Updating data for #{repository}."
+          @directory = download_asset(metadata["file_name"], metadata["url"])
+          json = build_json(metadata)
+          return json unless json.nil?
+        else
+          puts "#{repository} is already up-to-date."
+          return cached_data
+        end
       end.flatten
     end
 

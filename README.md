@@ -76,14 +76,15 @@ Content-Type: application/json; charset=utf-8
 
 Where a core object is:
 
-| Field        | Type         | Description                                    |
-| ------------ | ------------ | ---------------------------------------------- |
-| identifier   | string       | The core's unique identifier.                  |
-| platform     | string       | The name of the core's game platform.          |
-| version      | string       | The core's current version number.             |
-| release_date | string       | The date of the core's latest release.         |
-| repository   | object       | An object describing where the core is hosted. |
-| assets       | object array | A list asset objects.                          |
+| Field        | Type         | Description                                         |
+| ------------ | ------------ | --------------------------------------------------- |
+| identifier   | string       | The core's unique identifier.                       |
+| platform     | string       | The name of the core's game platform.               |
+| version      | string       | The core's current version number.                  |
+| release_date | string       | The date of the core's latest release.              |
+| prerelease   | boolean      | Denotes whether the latest version is a prerelease. |
+| repository   | object       | An object describing where the core is hosted.      |
+| assets       | object array | A list asset objects.                               |
 
 Where a repository object is:
 

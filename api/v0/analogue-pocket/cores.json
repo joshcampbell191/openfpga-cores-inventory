@@ -10,6 +10,7 @@ layout: none
       "platform": {{ core.platform | jsonify }},
       "version": {{ core.version | jsonify }},
       "release_date": {{ core.date_release | jsonify }},
+      "prerelease": {{ core.prerelease | jsonify }},
       "repository": {
         "platform": "github",
         "owner": {{ developer.username | jsonify }},
