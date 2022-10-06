@@ -198,6 +198,16 @@
         - platform: gberet
           extensions:
             - rom
+    - repository: arcade-pooyan
+      display_name: Pooyan
+      identifier: boogermann.pooyan
+      platform: Pooyan
+      version: 0.1.0
+      release_date: "2022-10-06T21:34:40Z"
+      assets:
+        - platform: pooyan
+          extensions:
+            - rom
     - repository: arcade-xevious
       display_name: Xevious
       identifier: boogermann.xevious
