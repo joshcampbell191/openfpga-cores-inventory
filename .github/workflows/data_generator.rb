@@ -137,9 +137,8 @@ module GitHub
         "platform"     => platform_json["name"],
         "version"      => repo_metadata["version"],
         "release_date" => repo_metadata["release_date"],
-        "prerelease"   => repo_metadata["prerelease"],
         "assets"       => build_asset_json(platform_id)
-      }
+      }.tap { |hash| hash["prerelease"] = true if repo_metadata["prerelease"] }
     end
 
     def build_asset_json(platform)
