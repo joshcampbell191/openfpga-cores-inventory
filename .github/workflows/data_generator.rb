@@ -72,7 +72,8 @@ module GitHub
           "file_name"    => asset["name"],
           "url"          => asset["url"],
           "version"      => release["tag_name"].delete_prefix("v"),
-          "release_date" => release["published_at"]
+          "release_date" => release["published_at"],
+          "prerelease"   => release["prerelease"]
         }
       end
     end
@@ -134,7 +135,9 @@ module GitHub
         "display_name" => display_name,
         "identifier"   => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
         "platform"     => platform_json["name"],
-        "versions"     => repo_metadata["versions"],
+        "version"      => repo_metadata["version"],
+        "release_date" => repo_metadata["release_date"],
+        "prerelease"   => repo_metadata["prerelease"],
         "assets"       => build_asset_json(platform_id)
       }
     end
