@@ -39,6 +39,8 @@
       repository: arcade-galaga
     - display_name: Green Beret
       repository: arcade-gberet
+    - display_name: Pooyan
+      repository: arcade-pooyan
     - display_name: Xevious
       repository: arcade-xevious
 - username: spacemen3
