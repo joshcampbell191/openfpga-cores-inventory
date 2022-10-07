@@ -5,18 +5,21 @@ layout: none
   "data": [
     {%- for developer in site.data.cores %}
     {%- for core in developer.cores %}
+    {%- if core.prerelease %}
+      {% assign assets = core.prerelease.assets %}
+    {%- else %}
+      {%- assign assets = core.release.assets %}
+    {%- endif %}
+
     {
       "identifier": {{ core.identifier | jsonify }},
       "platform": {{ core.platform | jsonify }},
-      "version": {{ core.version | jsonify }},
-      "release_date": {{ core.date_release | jsonify }},
-      "prerelease": {{ core.prerelease | jsonify }},
       "repository": {
         "platform": "github",
         "owner": {{ developer.username | jsonify }},
         "name": {{ core.repository | jsonify }}
       },
-      "assets": {{ core.assets | jsonify }}
+      "assets": {{ assets | jsonify }}
     }
     {%- unless forloop.last %},{% endunless %}
     {%- endfor %}
