@@ -64,7 +64,7 @@ module GitHub
         exit 1 # Signal to GitHub Actions that the workflow run failed.
       end
 
-      releases = filter_release(JSON.parse(response.body))
+      releases = filter_releases(JSON.parse(response.body))
 
       releases.each.with_object({}) do |release, hash|
         asset = choose_asset(release["assets"])
