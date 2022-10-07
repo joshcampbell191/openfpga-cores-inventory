@@ -37,7 +37,7 @@ class YAMLGenerator
   def generate_data
     input_data.each do |entry|
       cores = entry["cores"].each.with_object([]) do |core, arr|
-        arr << GitHub::DataGenerator.new(
+        arr << GitHub::CoreDataGenerator.new(
           entry["username"],
           core["repository"],
           core["display_name"]

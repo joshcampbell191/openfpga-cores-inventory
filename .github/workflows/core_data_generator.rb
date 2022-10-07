@@ -7,7 +7,7 @@ require "uri"
 require "yaml"
 
 module GitHub
-  class DataGenerator
+  class CoreDataGenerator
     # https://www.analogue.co/developer/docs/core-definition-files/data-json#parameters-bitmap
     # Uncomment a line to add the parameter to the core's API entry.
     BITMAP = {
