@@ -35,22 +35,22 @@ module GitHub
     end
 
     def call
-      fetch_download_urls.each.with_object([]) do |metadata, arr|
-        arr << if version_changed?(metadata["version"])
-          puts "Updating data for #{repository}."
+      fetch_releases.each do |release_type, metadata|
+        if version_changed?(metadata["tag_name"])
+          puts "Updating #{release_type} data for #{repository} (#{metadata["tag_name"]})."
           @directory = download_asset(metadata["file_name"], metadata["url"])
-          json = build_json(metadata)
+          json = build_json(release_type, metadata)
           return json unless json.nil?
         else
           puts "#{repository} is already up-to-date."
           return cached_data
         end
-      end.flatten
+      end
     end
 
     private
 
-    def fetch_download_urls
+    def fetch_releases
       uri = URI.parse("https://api.github.com/repos/#{username}/#{repository}/releases")
       request = Net::HTTP::Get.new(uri)
       request["Authorization"] = "Bearer #{$github_token}"
@@ -64,16 +64,19 @@ module GitHub
         exit 1 # Signal to GitHub Actions that the workflow run failed.
       end
 
-      # We only care about the latest release.
-      release = JSON.parse(response.body).first
+      releases = JSON.parse(response.body)
+      prerelease = releases.detect { |release| release["prerelease"] }
+      stable = releases.detect { |release| release["prerelease"] == false }
 
-      release["assets"].tap { |arr| skip_asset(arr) }.map do |asset|
-        {
-          "file_name"    => asset["name"],
-          "url"          => asset["url"],
-          "version"      => release["tag_name"].delete_prefix("v"),
-          "release_date" => release["published_at"],
-          "prerelease"   => release["prerelease"]
+      [stable].tap { |arr| arr << prerelease if prerelease&.dig("id").to_i > stable&.dig("id").to_i }.compact.each.with_object({}) do |release, hash|
+        # TODO: Handle GB/GBC
+        asset = release["assets"].first
+        key = release["prerelease"] ? "prerelease" : "release"
+        hash[key] = {
+          "file_name" => asset["name"],
+          "url" => asset["url"],
+          "tag_name" => release["tag_name"],
+          "release_date" => release["published_at"]
         }
       end
     end
@@ -89,10 +92,12 @@ module GitHub
     end
 
     def cached_data
-      @cached_data ||= YAML.load_file(CACHED_DATA)
-                           &.detect { |author| author["username"] == username }
-                           &.dig("cores")
-                           &.detect { |core| core["repository"] == repository }
+      @cached_data ||=
+        YAML
+          .load_file(CACHED_DATA)
+          &.detect { |author| author["username"] == username }
+          &.dig("cores")
+          &.detect { |core| core["repository"] == repository }
     end
 
     def version_changed?(version)
@@ -117,7 +122,7 @@ module GitHub
       dir_name
     end
 
-    def build_json(repo_metadata)
+    def build_json(release_type, repo_metadata)
       core_metadata = parse_json_file(CORE_FILE)&.dig("core", "metadata")
 
       # Some releases include additional assets on top of the core.
@@ -134,10 +139,12 @@ module GitHub
         "display_name" => display_name,
         "identifier"   => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
         "platform"     => platform_json["name"],
-        "version"      => repo_metadata["version"],
-        "release_date" => repo_metadata["release_date"],
-        "assets"       => build_asset_json(platform_id)
-      }.tap { |hash| hash["prerelease"] = true if repo_metadata["prerelease"] }
+        release_type => {
+          "tag_name" => repo_metadata["tag_name"],
+          "release_date" => repo_metadata["release_date"],
+          "assets" => build_asset_json(platform_id)
+        }
+      }
     end
 
     def build_asset_json(platform)
