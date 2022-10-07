@@ -22,9 +22,9 @@ module GitHub
       # "full_reload"       => 0b100000000
     }.freeze
 
+    CACHED_DATA = "_data/cores.yml"
     CORE_FILE   = "core.json"
     DATA_FILE   = "data.json"
-    CACHED_DATA = "_data/cores.yml"
 
     attr_reader :username, :repository, :display_name
 
@@ -64,13 +64,10 @@ module GitHub
         exit 1 # Signal to GitHub Actions that the workflow run failed.
       end
 
-      releases = JSON.parse(response.body)
-      prerelease = releases.detect { |release| release["prerelease"] }
-      stable = releases.detect { |release| release["prerelease"] == false }
+      releases = filter_release(JSON.parse(response.body))
 
-      [stable].tap { |arr| arr << prerelease if prerelease&.dig("id").to_i > stable&.dig("id").to_i }.compact.each.with_object({}) do |release, hash|
-        # TODO: Handle GB/GBC
-        asset = release["assets"].first
+      releases.each.with_object({}) do |release, hash|
+        asset = choose_asset(release["assets"])
         key = release["prerelease"] ? "prerelease" : "release"
         hash[key] = {
           "file_name" => asset["name"],
@@ -81,14 +78,20 @@ module GitHub
       end
     end
 
+    def filter_releases(response_body)
+      prerelease = response_body.detect { |release| release["prerelease"] }
+      stable = response_body.detect { |release| release["prerelease"] == false }
+
+      return [prerelease] unless stable
+      return [stable] unless prerelease
+      return [prerelease, stable] if prerelease["id"] > stable["id"]
+      [stable]
+    end
+
     # Hack for the openFPGA-GB-GBC repo that hosts cores for both the GB & GBC.
-    def skip_asset(arr)
-      case display_name
-      when "Spiritualized GB"
-        arr.delete_at(0)
-      when "Spiritualized GBC"
-        arr.delete_at(1)
-      end
+    def skip_asset(assets)
+      index = display_name == "Spiritualized GB" ? 1 : 0
+      assets[index]
     end
 
     def cached_data
