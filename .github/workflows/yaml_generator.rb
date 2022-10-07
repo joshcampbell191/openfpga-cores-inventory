@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "yaml"
-require_relative "data_generator"
+require_relative "core_data_generator"
 
 class YAMLGenerator
   COMMENT = <<~TXT
