@@ -89,7 +89,7 @@ module GitHub
     end
 
     # Hack for the openFPGA-GB-GBC repo that hosts cores for both the GB & GBC.
-    def skip_asset(assets)
+    def choose_asset(assets)
       index = display_name == "Spiritualized GB" ? 1 : 0
       assets[index]
     end
