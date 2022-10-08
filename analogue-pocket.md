@@ -23,13 +23,18 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
   <tbody>
     {% for developer in site.data.cores -%}
       {% for core in developer.cores -%}
+        {%- if core.prerelease %}
+          {% assign metadata = core.prerelease %}
+        {%- else %}
+          {%- assign metadata = core.release %}
+        {%- endif %}
         <tr>
           <td><a href="https://github.com/{{ developer.username }}/{{ core.repository }}">{{ core.display_name }}</a></td>
           <td>{{ core.platform }}</td>
           <td><a href="https://github.com/{{ developer.username }}">{{ developer.username }}</a></td>
-          <td>{{ core.version }}</td>
+          <td>{{ metadata.tag_name | remove_first: "v" }}</td>
           <td data-order="{{ core.release_date | date: "%s" }}">
-            {{ core.release_date | date: "%B %-d, %Y" }}
+            {{ metadata.release_date | date: "%B %-d, %Y" }}
           </td>
         </tr>
       {% endfor -%}
