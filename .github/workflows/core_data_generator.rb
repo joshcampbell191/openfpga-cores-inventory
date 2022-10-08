@@ -104,7 +104,6 @@ module GitHub
     end
 
     def update_available?(release_type, tag_name)
-      pp cached_data
       tag_name != cached_data&.dig(release_type, "tag_name")
     end
 
