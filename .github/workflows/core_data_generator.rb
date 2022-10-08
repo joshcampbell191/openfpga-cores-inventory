@@ -36,7 +36,7 @@ module GitHub
 
     def call
       fetch_releases.each do |release_type, metadata|
-        if version_changed?(metadata["tag_name"])
+        if update_available?(release_type, metadata["tag_name"])
           puts "Updating #{release_type} data for #{repository} (#{metadata["tag_name"]})."
           @directory = download_asset(metadata["file_name"], metadata["url"])
           json = build_json(release_type, metadata)
@@ -103,8 +103,9 @@ module GitHub
           &.detect { |core| core["repository"] == repository }
     end
 
-    def version_changed?(version)
-      version != cached_data&.dig("version")
+    def update_available?(release_type, tag_name)
+      pp cached_data
+      tag_name != cached_data&.dig(release_type, "tag_name")
     end
 
     def download_asset(file_name, url)
