@@ -26,13 +26,13 @@ openFPGA Cores Inventory provides a read-only API for developers.
 Returns a list of all available cores for the Analogue Pocket.
 
 ```
-GET https://joshcampbell191.github.io/openfpga-cores-inventory/api/v0/analogue-pocket/cores.json
+GET https://joshcampbell191.github.io/openfpga-cores-inventory/api/v1/analogue-pocket/cores.json
 ```
 
 Example request:
 
 ```
-GET /api/v0/analogue-pocket/cores.json HTTP/1.1
+GET /api/v1/analogue-pocket/cores.json HTTP/1.1
 Host: https://joshcampbell191.github.io
 Content-Type: application/json
 Accept: application/json
@@ -52,23 +52,39 @@ Content-Type: application/json; charset=utf-8
     {
       "identifier": "ericlewis.Asteroids",
       "platform": "Asteroids",
-      "version": "0.9.1",
-      "release_date": "2022-09-09",
       "repository": {
         "platform": "github",
         "owner": "ericlewis",
         "name": "openfpga-asteroids"
       },
-      "assets": [
-        {
-          "platform": "asteroids",
-          "filename": "asteroid.rom",
-          "extensions": [
-            "rom"
-          ],
-          "core_specific": true
-        }
-      ]
+      "prerelease": {
+        "tag_name": "0.9.1",
+        "release_date": "2022-09-13T17:57:14Z",
+        "assets": [
+          {
+            "platform": "asteroids",
+            "filename": "asteroid.rom",
+            "extensions": [
+              "rom"
+            ],
+            "core_specific": true
+          }
+        ]
+      },
+      "release": {
+        "tag_name": "0.9.0",
+        "release_date": "2022-09-12T17:57:14Z",
+        "assets": [
+          {
+            "platform": "asteroids",
+            "filename": "asteroid.rom",
+            "extensions": [
+              "rom"
+            ],
+            "core_specific": true
+          }
+        ]
+      }
     }
   ]
 }
@@ -76,32 +92,44 @@ Content-Type: application/json; charset=utf-8
 
 Where a core object is:
 
-| Field        | Type         | Description                                         |
-| ------------ | ------------ | --------------------------------------------------- |
-| identifier   | string       | The core's unique identifier.                       |
-| platform     | string       | The name of the core's game platform.               |
-| version      | string       | The core's current version number.                  |
-| release_date | string       | The date of the core's latest release.              |
-| prerelease   | boolean      | Denotes whether the latest version is a prerelease. |
-| repository   | object       | An object describing where the core is hosted.      |
-| assets       | object array | A list asset objects.                               |
+| Field        | Type   | Required | Description                                               |
+| ------------ | ------ | -------- | --------------------------------------------------------- |
+| identifier   | string | true     | The core's unique identifier.                             |
+| platform     | string | true     | The name of the core's game platform.                     |
+| repository   | object | true     | A release object describing where the core is hosted.     |
+| prerelease   | object | false    | A release object describing the core's latest prerelease. |
+| release      | object | false    | An object describing the core's latest stable release.    |
+
+> **_NOTE:_** A `prerelease` object will be returned only if there is a prerelease version
+> that is newer than the latest stable version or if no stable version is available.
 
 Where a repository object is:
 
-| Field    | Type   | Description                                                                     |
-| -------- | ------ | ------------------------------------------------------------------------------- |
-| platform | enum   | The website where the repo is located. Currently, this always returns `github`. |
-| owner    | string | The core developer's GitHub username.                                           |
-| name     | string | The core's GitHub repository name.                                              |
+| Field    | Type   | Description                           |
+| -------- | ------ | --------------------------------------|
+| platform | enum   | The website where the repo is hosted. |
+| owner    | string | The core developer's GitHub username. |
+| name     | string | The core's GitHub repository name.    |
+
+Where a release object is:
+
+| Field        | Type         | Description                  |
+| ------------ | ------------ | ---------------------------- |
+| tag_name     | string       | The Git tag for the release. |
+| release_date | string       | The date of the release.     |
+| assets       | object array | A list asset objects.        |
 
 Where an asset object is:
 
 | Field         | Type    | Required | Description                                                                                                                                                                               |
-| ------------- | ------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| platform      | string  | true     | The core's platform, specified by its `platform.json` file.                                                                                                                               |
-| filename      | string  | false    | The name of the asset file.                                                                                                                                                               |
-| extensions    | array   | false    | A list of valid file extensions for the asset.                                                                                                                                            |
-| core_specific | boolean | false    | Indicates if an asset is specific to this core only. If so, it should be placed in `Assets/<platform>/<identifier>`. Otherwise, the asset should be placed in `Assets/<platform>/common`. |
+| ------------- | ------- | -------- | ---------------------------------------------------- |
+| platform      | string  | true     | The core's platform.                                 |
+| filename      | string  | false    | The name of the asset file.                          |
+| extensions    | array   | false    | A list of valid file extensions for the asset.       |
+| core_specific | boolean | false    | Indicates if an asset is specific to this core only. |
+
+> **_NOTE:_** If an asset is core_specific, it should be placed in `Assets/<platform>/<identifier>`.
+> Otherwise, it should be placed in `Assets/<platform>/common`.
 
 Possible errors:
 
