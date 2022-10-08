@@ -60,7 +60,7 @@ module GitHub
       end
 
       unless response.is_a?(Net::HTTPOK)
-        puts "Something went wrong while fetching the download URLs for #{repository}."
+        puts "Something went wrong while fetching the releases for #{repository}."
         exit 1 # Signal to GitHub Actions that the workflow run failed.
       end
 
@@ -179,7 +179,7 @@ module GitHub
       int = int.to_i(16) if int.is_a?(String)
 
       BITMAP.map.with_object({}) do |(key, val), hash|
-        hash[key] = (int & val != 0)
+        hash[key] = int & val != 0
       end.select { |_, val| val }
     end
   end
