@@ -69,6 +69,7 @@ module GitHub
       releases.each.with_object({}) do |release, hash|
         asset = choose_asset(release["assets"])
         key = release["prerelease"] ? "prerelease" : "release"
+
         hash[key] = {
           "file_name" => asset["name"],
           "url" => asset["url"],
@@ -141,10 +142,10 @@ module GitHub
       platform_json = parse_json_file("#{platform_id}.json", "Platforms")["platform"]
 
       {
-        "repository"   => repository,
+        "repository" => repository,
         "display_name" => display_name,
-        "identifier"   => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
-        "platform"     => platform_json["name"],
+        "identifier" => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
+        "platform" => platform_json["name"],
         release_type => {
           "tag_name" => repo_metadata["tag_name"],
           "release_date" => repo_metadata["release_date"],
@@ -158,7 +159,7 @@ module GitHub
 
       data_slots.select { |slot| slot["required"] }.map do |slot|
         { "platform" => platform }.tap do |hash|
-          hash["filename"]   = slot["filename"]   if slot["filename"]
+          hash["filename"] = slot["filename"] if slot["filename"]
           hash["extensions"] = slot["extensions"] if slot["extensions"]
         end.merge(extract_parameters(slot["parameters"]))
       end.reject { |slot| slot["instance_json"] }

@@ -42,7 +42,7 @@ class YAMLGenerator
           core["repository"],
           core["display_name"]
         ).call
-      end.flatten
+      end
 
       output_data << { "username" => entry["username"], "cores" => cores }
     end
