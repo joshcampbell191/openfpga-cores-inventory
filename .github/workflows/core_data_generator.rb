@@ -94,13 +94,16 @@ module GitHub
       assets[index]
     end
 
+    # We have to use display_name instead of repository here,
+    # or else the GBC core will be overwritten with the GB core data on
+    # workflow runs where the core has not been updated.
     def cached_data
       @cached_data ||=
         YAML
           .load_file(CACHED_DATA)
           &.detect { |author| author["username"] == username }
           &.dig("cores")
-          &.detect { |core| core["repository"] == repository }
+          &.detect { |core| core["display_name"] == display_name }
     end
 
     def update_available?(release_type, tag_name)
