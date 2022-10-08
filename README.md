@@ -92,15 +92,15 @@ Content-Type: application/json; charset=utf-8
 
 Where a core object is:
 
-| Field        | Type   | Required | Description                                               |
-| ------------ | ------ | -------- | --------------------------------------------------------- |
-| identifier   | string | true     | The core's unique identifier.                             |
-| platform     | string | true     | The name of the core's game platform.                     |
-| repository   | object | true     | A release object describing where the core is hosted.     |
-| prerelease   | object | false    | A release object describing the core's latest prerelease. |
-| release      | object | false    | An object describing the core's latest stable release.    |
+| Field        | Type   | Required | Description                                                   |
+| ------------ | ------ | -------- | ------------------------------------------------------------- |
+| identifier   | string | true     | The core's unique identifier.                                 |
+| platform     | string | true     | The name of the core's game platform.                         |
+| repository   | object | true     | A repository object describing where the core is hosted.      |
+| prerelease   | object | false    | A release object describing the core's latest prerelease.     |
+| release      | object | false    | A release object describing the core's latest stable release. |
 
-> **_NOTE:_** A `prerelease` object will be returned only if there is a prerelease version
+> **_NOTE:_** A `prerelease` object will only be returned if there is a prerelease version
 > that is newer than the latest stable version or if no stable version is available.
 
 Where a repository object is:
@@ -113,11 +113,13 @@ Where a repository object is:
 
 Where a release object is:
 
-| Field        | Type         | Description                  |
-| ------------ | ------------ | ---------------------------- |
-| tag_name     | string       | The Git tag for the release. |
-| release_date | string       | The date of the release.     |
-| assets       | object array | A list asset objects.        |
+| Field        | Type         | Description                              |
+| ------------ | ------------ | ---------------------------------------- |
+| tag_name     | string       | The name of the Git tag for the release. |
+| release_date | string       | The date when the release was published. |
+| assets       | object array | A list asset objects.                    |
+
+> **_NOTE:_** `tag_name` can be used to directly fetch the relevant releaase from the [GitHub API](https://docs.github.com/en/rest/releases/releases#get-a-release-by-tag-name).
 
 Where an asset object is:
 
@@ -128,7 +130,7 @@ Where an asset object is:
 | extensions    | array   | false    | A list of valid file extensions for the asset.       |
 | core_specific | boolean | false    | Indicates if an asset is specific to this core only. |
 
-> **_NOTE:_** If an asset is core_specific, it should be placed in `Assets/<platform>/<identifier>`.
+> **_NOTE:_** If an asset is `core_specific`, it should be placed in `Assets/<platform>/<identifier>`.
 > Otherwise, it should be placed in `Assets/<platform>/common`.
 
 Possible errors:
