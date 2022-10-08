@@ -10,10 +10,12 @@ layout: none
     {%- else %}
       {%- assign assets = core.release.assets %}
     {%- endif %}
-
     {
       "identifier": {{ core.identifier | jsonify }},
       "platform": {{ core.platform | jsonify }},
+      "tag_name": {{ asset.tag_name | jsonify }},
+      "release_date": {{ asset.release_date | jsonify }},
+      "prerelease": {% if core.prerelease %}true{% else %}false{% endif %},
       "repository": {
         "platform": "github",
         "owner": {{ developer.username | jsonify }},
