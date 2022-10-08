@@ -42,7 +42,7 @@ module GitHub
           json = build_json(release_type, metadata)
           return json unless json.nil?
         else
-          puts "#{repository} is already up-to-date."
+          puts "#{repository} (#{metadata["tag_name"]}) is already up-to-date."
           return cached_data
         end
       end
