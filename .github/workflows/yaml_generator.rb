@@ -16,7 +16,7 @@ class YAMLGenerator
   INPUT_FILE  = "_data/repos.yml"
   OUTPUT_FILE = "_data/cores.yml"
 
-  attr_reader :input_data, :output_data
+  attr_reader :output_data
 
   def initialize
     @output_data = []
@@ -35,7 +35,7 @@ class YAMLGenerator
   end
 
   def generate_data
-    input_data.each do |entry|
+    @input_data.each do |entry|
       cores = entry["cores"].each.with_object([]) do |core, arr|
         arr << GitHub::CoreDataGenerator.new(
           entry["username"],
