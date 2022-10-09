@@ -175,6 +175,17 @@
               - rom
 - username: opengateware
   cores:
+    - repository: arcade-bankp
+      display_name: Bank Panic
+      identifier: boogermann.bankpanic
+      platform: Bank Panic
+      release:
+        tag_name: 0.1.0
+        release_date: "2022-10-09T09:38:21Z"
+        assets:
+          - platform: bankpanic
+            extensions:
+              - rom
     - repository: arcade-digdug
       display_name: Dig Dug
       identifier: boogermann.digdug
