@@ -33,6 +33,8 @@
       repository: openfpga-tecmo
 - username: opengateware
   cores:
+    - display_name: Bank Panic
+      repository: arcade-bankp
     - display_name: Dig Dug
       repository: arcade-digdug
     - display_name: Galaga
