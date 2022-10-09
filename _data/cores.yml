@@ -78,8 +78,8 @@
       identifier: ericlewis.Genesis
       platform: Genesis
       prerelease:
-        tag_name: 0.4.1
-        release_date: "2022-10-06T15:43:09Z"
+        tag_name: 0.4.2
+        release_date: "2022-10-09T02:42:54Z"
         assets:
           - platform: genesis
             extensions:
