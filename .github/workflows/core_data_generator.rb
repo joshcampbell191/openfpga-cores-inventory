@@ -37,12 +37,12 @@ module GitHub
     def call
       fetch_releases.each do |release_type, metadata|
         if update_available?(release_type, metadata["tag_name"])
-          puts "Updating #{release_type} data for #{repository} (#{metadata["tag_name"]})."
+          puts "🟢 Updating #{release_type} data for #{repository} (#{metadata["tag_name"]})."
           @directory = download_asset(metadata["file_name"], metadata["url"])
           json = build_json(release_type, metadata)
           return json unless json.nil?
         else
-          puts "#{repository} (#{metadata["tag_name"]}) is already up-to-date."
+          puts "🟡 #{repository} (#{metadata["tag_name"]}) is already up-to-date."
           return cached_data
         end
       end
@@ -60,7 +60,7 @@ module GitHub
       end
 
       unless response.is_a?(Net::HTTPOK)
-        puts "Something went wrong while fetching the releases for #{repository}."
+        puts "🔴 Something went wrong while fetching the releases for #{repository}."
         exit 1 # Signal to GitHub Actions that the workflow run failed.
       end
 
