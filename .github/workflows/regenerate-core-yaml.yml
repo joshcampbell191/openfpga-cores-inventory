@@ -12,6 +12,7 @@ on:
   schedule:
     # Run every 15 minutes
     - cron:  '*/15 * * * *'
+  workflow_dispatch:
 jobs:
   Regenerate-Core-YAML:
     runs-on: ubuntu-latest
