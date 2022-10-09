@@ -16,23 +16,28 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
       <th>Name</th>
       <th>Platform</th>
       <th>Author</th>
-      <th class="no-sort">Version</th>
-      <th class="no-sort">Date</th>
+      <th>Version</th>
+      <th>Date</th>
     </tr>
   </thead>
   <tbody>
     {% for developer in site.data.cores -%}
       {% for core in developer.cores -%}
+        {%- if core.prerelease %}
+          {% assign metadata = core.prerelease %}
+        {%- else %}
+          {%- assign metadata = core.release %}
+        {%- endif %}
         <tr>
           <td><a href="https://github.com/{{ developer.username }}/{{ core.repository }}">{{ core.display_name }}</a></td>
           <td>{{ core.platform }}</td>
           <td><a href="https://github.com/{{ developer.username }}">{{ developer.username }}</a></td>
-          <td>
-            <a href="https://github.com/{{ developer.username }}/{{ core.repository }}/releases/latest">
-              <img src="https://img.shields.io/github/v/release/{{ developer.username }}/{{ core.repository }}?include_prereleases&label=" alt="release">
-            </a>
+          <td data-order="{{ metadata.tag_name | remove_first: "v" }}">            
+            <a href="https://github.com/{{ developer.username }}/{{ core.repository }}/releases/latest">{{ metadata.tag_name }}</a>
           </td>
-          <td><img src="https://img.shields.io/github/release-date-pre/{{ developer.username }}/{{ core.repository }}?label=" alt="GitHub Release Date"></td>
+          <td data-order="{{ metadata.release_date | date: "%s" }}">
+            {{ metadata.release_date | date: "%B %-d, %Y" }}
+          </td>
         </tr>
       {% endfor -%}
     {% endfor -%}
