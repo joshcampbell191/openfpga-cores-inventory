@@ -6,22 +6,22 @@ layout: none
     {%- for developer in site.data.cores %}
     {%- for core in developer.cores %}
     {%- if core.prerelease %}
-      {% assign assets = core.prerelease.assets %}
+      {% assign metadata = core.prerelease %}
     {%- else %}
-      {%- assign assets = core.release.assets %}
+      {%- assign metadata = core.release %}
     {%- endif %}
     {
       "identifier": {{ core.identifier | jsonify }},
       "platform": {{ core.platform | jsonify }},
-      "tag_name": {{ asset.tag_name | jsonify }},
-      "release_date": {{ asset.release_date | jsonify }},
+      "tag_name": {{ metadata.tag_name | jsonify }},
+      "release_date": {{ metadata.release_date | jsonify }},
       "prerelease": {% if core.prerelease %}true{% else %}false{% endif %},
       "repository": {
         "platform": "github",
         "owner": {{ developer.username | jsonify }},
         "name": {{ core.repository | jsonify }}
       },
-      "assets": {{ assets | jsonify }}
+      "assets": {{ metadata.assets | jsonify }}
     }
     {%- unless forloop.last %},{% endunless %}
     {%- endfor %}
