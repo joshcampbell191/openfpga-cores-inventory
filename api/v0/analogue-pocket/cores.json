@@ -13,6 +13,7 @@ layout: none
     {
       "identifier": {{ core.identifier | jsonify }},
       "platform": {{ core.platform | jsonify }},
+      "category": {{ core.category | jsonify }},
       "tag_name": {{ metadata.tag_name | jsonify }},
       "release_date": {{ metadata.release_date | jsonify }},
       "prerelease": {% if core.prerelease %}true{% else %}false{% endif %},
