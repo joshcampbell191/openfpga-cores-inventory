@@ -13,6 +13,7 @@
       identifier: agg23.Arduboy
       platform: Arduboy
       release:
+        category: Handheld
         tag_name: 0.9.0
         release_date: "2022-09-03T20:45:09Z"
         assets:
@@ -24,6 +25,7 @@
       identifier: agg23.Pong
       platform: Pong
       release:
+        category: Arcade
         tag_name: 1.2.0
         release_date: "2022-09-09T01:56:30Z"
         assets: []
@@ -32,6 +34,7 @@
       identifier: agg23.NES
       platform: NES
       release:
+        category: Console
         tag_name: 0.2.0
         release_date: "2022-10-07T18:27:05Z"
         assets:
@@ -43,6 +46,7 @@
       identifier: agg23.SNES
       platform: SNES
       release:
+        category: Console
         tag_name: 0.3.2
         release_date: "2022-10-10T17:41:36Z"
         assets:
@@ -57,6 +61,7 @@
       identifier: ericlewis.Asteroids
       platform: Asteroids
       prerelease:
+        category: Arcade
         tag_name: 0.9.1
         release_date: "2022-09-13T17:57:14Z"
         assets:
@@ -68,6 +73,7 @@
       identifier: ericlewis.Dominos
       platform: Dominos
       prerelease:
+        category: Arcade
         tag_name: 0.0.1
         release_date: "2022-09-17T13:59:02Z"
         assets:
@@ -78,6 +84,7 @@
       identifier: ericlewis.Genesis
       platform: Genesis
       prerelease:
+        category: Console
         tag_name: 0.4.2
         release_date: "2022-10-09T02:42:54Z"
         assets:
@@ -92,6 +99,7 @@
       identifier: ericlewis.LunarLander
       platform: Lunar Lander
       prerelease:
+        category: Arcade
         tag_name: 0.9.1
         release_date: "2022-09-13T17:58:18Z"
         assets:
@@ -103,6 +111,7 @@
       identifier: ericlewis.SpaceRace
       platform: Space Race
       release:
+        category: Arcade
         tag_name: 1.0.0
         release_date: "2022-09-16T15:09:55Z"
         assets: []
@@ -111,6 +120,7 @@
       identifier: ericlewis.SuperBreakout
       platform: Super Breakout
       prerelease:
+        category: Arcade
         tag_name: 0.0.1
         release_date: "2022-09-14T17:52:28Z"
         assets:
@@ -118,48 +128,11 @@
             filename: sbrkout.rom
 - username: Mazamars312
   cores:
-    - repository: Analogue_Pocket_Neogeo
-      display_name: Neo Geo
-      identifier: Mazamars312.NeoGeo
-      platform: Neo Geo
-      release:
+    - release:
+        file_name: Mazamars312.Neogeo_Alpha_0.7.5_2022_19_09.zip
+        url: https://api.github.com/repos/Mazamars312/Analogue_Pocket_Neogeo/releases/assets/78282284
         tag_name: Alpha_0.7.5_2022-19-09
         release_date: "2022-09-18T23:23:22Z"
-        assets:
-          - platform: ng
-            filename: uni-bios_1_0.rom
-            extensions:
-              - rom
-              - sp1
-              - bin
-          - platform: ng
-            filename: 000-lo.lo
-            extensions:
-              - lo
-          - platform: ng
-            filename: sfix.sfix
-            extensions:
-              - sfix
-          - platform: ng
-            extensions:
-              - srom
-          - platform: ng
-            extensions:
-              - bin
-              - pbin
-              - prom
-          - platform: ng
-            extensions:
-              - cbin
-              - crom0
-          - platform: ng
-            extensions:
-              - mbin
-              - m1rom
-          - platform: ng
-            extensions:
-              - vbin
-              - vroma0
 - username: nullobject
   cores:
     - repository: openfpga-tecmo
@@ -167,6 +140,7 @@
       identifier: nullobject.tecmo
       platform: Tecmo
       release:
+        category: Arcade
         tag_name: v2.0
         release_date: "2022-09-10T06:27:20Z"
         assets:
@@ -180,6 +154,7 @@
       identifier: boogermann.bankpanic
       platform: Bank Panic
       release:
+        category: Arcade
         tag_name: 0.1.0
         release_date: "2022-10-09T09:38:21Z"
         assets:
@@ -191,6 +166,7 @@
       identifier: boogermann.digdug
       platform: Dig Dug
       release:
+        category: Arcade
         tag_name: 0.1.0
         release_date: "2022-09-20T06:04:48Z"
         assets:
@@ -202,6 +178,7 @@
       identifier: boogermann.galaga
       platform: Galaga
       release:
+        category: Arcade
         tag_name: v0.1.0
         release_date: "2022-09-15T22:04:09Z"
         assets:
@@ -213,6 +190,7 @@
       identifier: boogermann.gberet
       platform: Green Beret
       release:
+        category: Arcade
         tag_name: 0.1.1
         release_date: "2022-10-03T12:20:39Z"
         assets:
@@ -224,6 +202,7 @@
       identifier: boogermann.pooyan
       platform: Pooyan
       release:
+        category: Arcade
         tag_name: 0.1.0
         release_date: "2022-10-06T21:34:40Z"
         assets:
@@ -235,6 +214,7 @@
       identifier: boogermann.xevious
       platform: Xevious
       release:
+        category: Arcade
         tag_name: 0.1.0
         release_date: "2022-09-25T04:12:14Z"
         assets:
@@ -248,6 +228,7 @@
       identifier: Spacemen3.PDP1
       platform: "PDP-1: Spacewar!"
       release:
+        category: Computer
         tag_name: v1.1.0
         release_date: "2022-08-23T15:16:15Z"
         assets:
@@ -266,6 +247,7 @@
       identifier: Spiritualized.GB
       platform: Game Boy
       release:
+        category: Handheld
         tag_name: v1.3.0
         release_date: "2022-08-27T02:55:22Z"
         assets:
@@ -281,6 +263,7 @@
       identifier: Spiritualized.GBA
       platform: Game Boy Advance
       release:
+        category: Handheld
         tag_name: v1.2.0
         release_date: "2022-08-27T02:56:30Z"
         assets:
@@ -297,6 +280,7 @@
       identifier: Spiritualized.GBC
       platform: Game Boy Color
       release:
+        category: Handheld
         tag_name: v1.3.0
         release_date: "2022-08-27T02:55:22Z"
         assets:
@@ -313,6 +297,7 @@
       identifier: Spiritualized.GG
       platform: Game Gear
       release:
+        category: Handheld
         tag_name: v1.3.0
         release_date: "2022-08-27T02:57:43Z"
         assets:
@@ -324,6 +309,7 @@
       identifier: Spiritualized.SMS
       platform: Master System
       release:
+        category: Console
         tag_name: v1.2.0
         release_date: "2022-08-27T02:58:28Z"
         assets:
@@ -335,6 +321,7 @@
       identifier: Spiritualized.SG-1000
       platform: SG-1000
       release:
+        category: Console
         tag_name: v1.2.0
         release_date: "2022-08-27T02:59:17Z"
         assets:
