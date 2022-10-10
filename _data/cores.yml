@@ -128,11 +128,49 @@
             filename: sbrkout.rom
 - username: Mazamars312
   cores:
-    - release:
-        file_name: Mazamars312.Neogeo_Alpha_0.7.5_2022_19_09.zip
-        url: https://api.github.com/repos/Mazamars312/Analogue_Pocket_Neogeo/releases/assets/78282284
+    - repository: Analogue_Pocket_Neogeo
+      display_name: Neo Geo
+      identifier: Mazamars312.NeoGeo
+      platform: Neo Geo
+      release:
+        category:
         tag_name: Alpha_0.7.5_2022-19-09
         release_date: "2022-09-18T23:23:22Z"
+        assets:
+          - platform: ng
+            filename: uni-bios_1_0.rom
+            extensions:
+              - rom
+              - sp1
+              - bin
+          - platform: ng
+            filename: 000-lo.lo
+            extensions:
+              - lo
+          - platform: ng
+            filename: sfix.sfix
+            extensions:
+              - sfix
+          - platform: ng
+            extensions:
+              - srom
+          - platform: ng
+            extensions:
+              - bin
+              - pbin
+              - prom
+          - platform: ng
+            extensions:
+              - cbin
+              - crom0
+          - platform: ng
+            extensions:
+              - mbin
+              - m1rom
+          - platform: ng
+            extensions:
+              - vbin
+              - vroma0
 - username: nullobject
   cores:
     - repository: openfpga-tecmo
