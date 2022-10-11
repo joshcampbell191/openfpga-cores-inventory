@@ -13,10 +13,16 @@ function initializeDatatables() {
   });
 }
 
-function addFilter(chip, rows) {
-  filters.add(chip.dataset.filterValue)
-  chip.classList.add("active")
-  chip.querySelector(".md-chip-remove").style.display = "flex"
+function applyFilter(chip, rows) {
+  if (chip.classList.contains("active")) {
+    filters.delete(chip.dataset.filterValue)
+    chip.classList.remove("active")
+    chip.querySelector(".md-chip-remove").style.display = "none"
+  } else {
+    filters.add(chip.dataset.filterValue)
+    chip.classList.add("active")
+    chip.querySelector(".md-chip-remove").style.display = "flex"
+  }
 
   rows.forEach(row => {
     if (filters.has(row.dataset.category)) {
@@ -25,22 +31,6 @@ function addFilter(chip, rows) {
       row.style.display = "none";
     }
   })
-}
-
-function removeFilter(chip, rows) {
-  filters.delete(chip.dataset.filterValue)
-  chip.classList.remove("active")
-  chip.querySelector(".md-chip-remove").style.display = "none"
-
-  rows.forEach(row => {
-    if (!filters.has(row.dataset.category)) {
-      row.style.display = "table-row";
-    }
-  })
-}
-
-function applyFilter(chip, rows) {
-  chip.classList.contains("active") ? removeFilter(chip, rows) : addFilter(chip, rows)
 }
 
 document.addEventListener("DOMContentLoaded", () => {
