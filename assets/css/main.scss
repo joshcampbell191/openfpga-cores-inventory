@@ -7,3 +7,15 @@
   overflow: scroll;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 640px) {
+  .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
+    float: right !important;
+    text-align: right !important;
+    margin-top: 0 !important;
+  }
+
+  .filters {
+    max-width: 50%;
+  }
+}

@@ -5,6 +5,7 @@ function initializeDatatables() {
     fixedHeader: true,
     info: false,
     paging: false,
+    scrollX: true,
     language: {
       search: "",
       searchPlaceholder: "Search cores"
@@ -43,16 +44,17 @@ function applyFilter(chip, rows) {
 }
 
 $(document).ready(function() {
+  const table = document.querySelector(".datatable");
+  const rows = table.querySelectorAll("tbody tr");
+  const data = [...rows].filter(row => row.dataset.category !== "").map(row => row.dataset.category).sort()
+  const categories = [...new Set(data)]
+
   initializeDatatables()
 
   const datatable = document.querySelector(".dataTables_wrapper")
   datatable.insertAdjacentHTML("afterbegin", `<div class="filters"></div>`)
 
   const container = document.querySelector(".filters");
-  const table = document.querySelector(".datatable");
-  const rows = table.querySelectorAll("tbody tr");
-  const data = [...rows].filter(row => row.dataset.category !== "").map(row => row.dataset.category).sort()
-  const categories = [...new Set(data)]
 
   categories.forEach(category => {
     container.insertAdjacentHTML("beforeend", `<div class="md-chip md-chip-clickable" data-filter-value="${category}">${category}</div>`)
