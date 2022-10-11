@@ -33,6 +33,17 @@ function applyFilter(chip, rows) {
   })
 }
 
+function chipTemplate(category) {
+  return `
+    <div class="md-chip md-chip-clickable" data-filter-value="${category}">
+      <div class="md-chip-remove" style="display: none;">
+        <img src="assets/images/check.svg">
+      </div>
+      ${category}
+    </div>
+  `
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const table = document.querySelector(".datatable");
   const rows = table.querySelectorAll("tbody tr");
@@ -45,18 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   datatable.insertAdjacentHTML("afterbegin", `<div class="filters"></div>`)
 
   const container = document.querySelector(".filters");
-
-  categories.forEach(category => {
-    let chip = `
-      <div class="md-chip md-chip-clickable" data-filter-value="${category}">
-        <div class="md-chip-remove" style="display: none;">
-          <img src="assets/images/check.svg">
-        </div>
-        ${category}
-      </div>
-    `
-    container.insertAdjacentHTML("beforeend", chip)
-  })
+  categories.forEach(category => container.insertAdjacentHTML("beforeend", chipTemplate(category)))
 
   document.querySelectorAll(".md-chip").forEach(chip => {
     chip.addEventListener("click", () => applyFilter(chip, rows))
