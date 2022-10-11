@@ -103,8 +103,8 @@
       identifier: ericlewis.SpaceRace
       platform: Space Race
       release:
-        tag_name: 1.0.0
-        release_date: "2022-09-16T15:09:55Z"
+        tag_name: 1.0.1
+        release_date: "2022-10-11T20:26:13Z"
         assets: []
     - repository: openfpga-superbreakout
       display_name: Super Breakout for Analogue Pocket
