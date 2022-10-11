@@ -6,6 +6,9 @@ function initializeDatatables() {
     info: false,
     paging: false,
     scrollX: true,
+    columnDefs: [
+      { className: "dt-nowrap", targets: -1 },
+    ],
     language: {
       search: "",
       searchPlaceholder: "Search cores"

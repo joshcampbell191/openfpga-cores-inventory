@@ -36,7 +36,7 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
             <a href="https://github.com/{{ developer.username }}/{{ core.repository }}/releases/latest">{{ metadata.tag_name }}</a>
           </td>
           <td data-order="{{ metadata.release_date | date: "%s" }}">
-            {{ metadata.release_date | date: "%B %-d, %Y" }}
+            {{ metadata.release_date | date: "%b %-d, %Y" }}
           </td>
         </tr>
       {% endfor -%}
