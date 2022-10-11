@@ -308,6 +308,19 @@
             filename: gbc_bios.bin
             extensions:
               - bin
+    - repository: openFPGA-NES
+      display_name: Spiritualized NES
+      identifier: Spiritualized.NES
+      platform: NES
+      release:
+        tag_name: 1.0.0
+        release_date: "2022-10-10T15:32:34Z"
+        assets:
+          - platform: nes
+            extensions:
+              - nes
+              - nsf
+              - fds
     - repository: openFPGA-GG
       display_name: Spiritualized Sega Game Gear
       identifier: Spiritualized.GG
