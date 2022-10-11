@@ -8,6 +8,11 @@
   white-space: nowrap;
 }
 
+.dataTables_filter input {
+  height: 32px;
+}
+
+
 @media screen and (max-width: 640px) {
   .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
     float: right !important;

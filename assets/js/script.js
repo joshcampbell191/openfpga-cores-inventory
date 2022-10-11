@@ -16,7 +16,7 @@ function initializeDatatables() {
 function addFilter(chip, rows) {
   filters.add(chip.dataset.filterValue)
   chip.classList.add("active")
-  chip.insertAdjacentHTML("afterbegin", `<div class="md-chip-remove"><img src="assets/images/check.svg"></div>`)
+  chip.querySelector(".md-chip-remove").style.display = "flex"
 
   rows.forEach(row => {
     if (filters.has(row.dataset.category)) {
@@ -30,7 +30,7 @@ function addFilter(chip, rows) {
 function removeFilter(chip, rows) {
   filters.delete(chip.dataset.filterValue)
   chip.classList.remove("active")
-  chip.querySelector(".md-chip-remove").remove()
+  chip.querySelector(".md-chip-remove").style.display = "none"
 
   rows.forEach(row => {
     if (!filters.has(row.dataset.category)) {
@@ -43,7 +43,7 @@ function applyFilter(chip, rows) {
   chip.classList.contains("active") ? removeFilter(chip, rows) : addFilter(chip, rows)
 }
 
-$(document).ready(function() {
+document.addEventListener("DOMContentLoaded", () => {
   const table = document.querySelector(".datatable");
   const rows = table.querySelectorAll("tbody tr");
   const data = [...rows].filter(row => row.dataset.category !== "").map(row => row.dataset.category).sort()
@@ -57,10 +57,18 @@ $(document).ready(function() {
   const container = document.querySelector(".filters");
 
   categories.forEach(category => {
-    container.insertAdjacentHTML("beforeend", `<div class="md-chip md-chip-clickable" data-filter-value="${category}">${category}</div>`)
+    let chip = `
+      <div class="md-chip md-chip-clickable" data-filter-value="${category}">
+        <div class="md-chip-remove" style="display: none;">
+          <img src="assets/images/check.svg">
+        </div>
+        ${category}
+      </div>
+    `
+    container.insertAdjacentHTML("beforeend", chip)
   })
 
-  document.querySelectorAll(".md-chip-clickable").forEach(chip => {
+  document.querySelectorAll(".md-chip").forEach(chip => {
     chip.addEventListener("click", () => applyFilter(chip, rows))
   })
-});
+})
