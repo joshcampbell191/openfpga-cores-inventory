@@ -57,6 +57,8 @@
       repository: openFPGA-GBA
     - display_name: Spiritualized GBC
       repository: openFPGA-GB-GBC
+    - display_name: Spiritualized NES
+      repository: openFPGA-NES
     - display_name: Spiritualized Sega Game Gear
       repository: openFPGA-GG
     - display_name: Spiritualized Sega Master System
