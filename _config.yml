@@ -29,7 +29,8 @@ github_username: joshcampbell191
 
 # GitHub settings
 markdown: kramdown
-
+sass:
+  style: compact
 # Build settings
 theme: minima
 
