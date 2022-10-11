@@ -1,59 +1,65 @@
-$(document).ready(function() {
-  $('.datatable').DataTable({
+let filters = new Set()
+
+function initializeDatatables() {
+  $(".datatable").DataTable({
     fixedHeader: true,
     info: false,
     paging: false,
-    columnDefs: [
-      { targets: 'no-sort', orderable: false }
-    ]
+    language: {
+      search: "",
+      searchPlaceholder: "Search cores"
+    }
   });
-});
+}
+
+function addFilter(chip, rows) {
+  filters.add(chip.dataset.filterValue)
+  chip.classList.add("active")
+  chip.insertAdjacentHTML("afterbegin", `<div class="md-chip-remove"><img src="assets/images/check.svg"></div>`)
+
+  rows.forEach(row => {
+    if (filters.has(row.dataset.category)) {
+      row.style.display = "table-row";
+    } else {
+      row.style.display = "none";
+    }
+  })
+}
+
+function removeFilter(chip, rows) {
+  filters.delete(chip.dataset.filterValue)
+  chip.classList.remove("active")
+  chip.querySelector(".md-chip-remove").remove()
+
+  rows.forEach(row => {
+    if (!filters.has(row.dataset.category)) {
+      row.style.display = "table-row";
+    }
+  })
+}
+
+function applyFilter(chip, rows) {
+  chip.classList.contains("active") ? removeFilter(chip, rows) : addFilter(chip, rows)
+}
+
 
 $(document).ready(function() {
+  initializeDatatables()
+
   const datatable = document.querySelector(".dataTables_wrapper")
   datatable.insertAdjacentHTML("afterbegin", `<div class="filters"></div>`)
-  let filters = new Set()
+
   const container = document.querySelector(".filters");
   const table = document.querySelector(".datatable");
   const rows = table.querySelectorAll("tbody tr");
-  const data = [...rows].map(row => row.dataset.category);
-  const set = new Set(data)
-  set.delete("")
-  const categories = [...set].sort()
+  const data = [...rows].filter(row => row.dataset.category !== "").map(row => row.dataset.category).sort()
+  const categories = [...new Set(data)]
 
   categories.forEach(category => {
-    container.insertAdjacentHTML("beforeend", `<div class="md-chip md-chip-clickable" data-filter="${category}">${category}</div>`)
+    container.insertAdjacentHTML("beforeend", `<div class="md-chip md-chip-clickable" data-filter-value="${category}">${category}</div>`)
   })
 
-  function applyFilter(chip) {
-    let category = chip.dataset.filter;
-
-    if (chip.classList.contains("active")) {
-      filters.delete(category)
-      chip.classList.remove("active")
-      chip.querySelector(".md-chip-remove").remove()
-
-      rows.forEach(row => {
-        if (!filters.has(row.dataset.category)) {
-          row.style.display = "table-row";
-        }
-      })
-    } else {
-      filters.add(category)
-      chip.classList.add("active")
-      chip.insertAdjacentHTML("beforeend", `<button type="button" class="md-chip-remove">`)
-
-      rows.forEach(row => {
-        if (filters.has(row.dataset.category)) {
-          row.style.display = "table-row";
-        } else {
-          row.style.display = "none";
-        }
-      })
-    }
-  }
-
   document.querySelectorAll(".md-chip-clickable").forEach(chip => {
-    chip.addEventListener("click", () => applyFilter(chip))
+    chip.addEventListener("click", () => applyFilter(chip, rows))
   })
 });

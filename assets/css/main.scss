@@ -1,13 +1,9 @@
 ---
 ---
-$md-chip-height: 32px;
-$md-chip-color: #e0e0e0;
-
 @import "chips";
 
 .filters {
   display: inline-block;
-  // width: 50%;
   overflow: scroll;
   white-space: nowrap;
 }

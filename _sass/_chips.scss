@@ -1,71 +1,42 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+// Modified from: https://codepen.io/bhv/pen/vRmRZR
 .md-chip {
-  margin-right: 8px;
-  display: inline-block;
-  background: $md-chip-color;
-  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
   border-radius: 32px;
+
+  height: 32px;
   font-size: 13px;
-  &.md-chip-hover:hover {
+  margin-right: 8px;
+  padding: 0 12px;
+  user-select: none;
+  &:hover {
     background: #ccc;
   }
   &.active {
     background: #2a7ae2;
     color: #fff;
   }
-}
-
-.md-chip-clickable {
- cursor: pointer;
-}
-
-.md-chip, .md-chip-icon {
-  height: $md-chip-height;
-  line-height: $md-chip-height;
-}
-
-.md-chip-icon {
-  display: block;
-  float: left;
-  background: #009587;
-  width: $md-chip-height;
-  border-radius: 50%;
-  text-align: center;
-  color: white;
-  margin: 0 8px 0 -12px;
+  &-clickable {
+    cursor: pointer;
+  }
 }
 
 .md-chip-remove {
-  display: inline-block;
-  background: #aaa;
-  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
   height: 20px;
   width: 20px;
-  border-radius: 50%;
+  margin: 0 4px 0 -4px;
   padding: 0;
-  margin: 0 -4px 0 4px;
-  cursor: pointer;
-  font: inherit;
-  line-height: 20px;
-  &:after {
-    color: #fff;
-    content: 'x';
-  }
-  &:hover {
-    background: #999;
-  }
   &:active {
     background: #777;
   }
-}
-
-.md-chips {
-  padding: 12px 0;
-  .md-chip {
-    margin: 0 5px 3px 0;
+  img {
+    max-width: 60%;
   }
-}
-
-.md-chip-raised {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
