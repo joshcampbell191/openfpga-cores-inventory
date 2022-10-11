@@ -1,4 +1,4 @@
-let filters = new Set()
+var filters = new Set()
 
 function initializeDatatables() {
   $(".datatable").DataTable({
@@ -41,7 +41,6 @@ function removeFilter(chip, rows) {
 function applyFilter(chip, rows) {
   chip.classList.contains("active") ? removeFilter(chip, rows) : addFilter(chip, rows)
 }
-
 
 $(document).ready(function() {
   initializeDatatables()
