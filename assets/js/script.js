@@ -13,7 +13,7 @@ function initializeDatatables() {
   });
 }
 
-function applyFilter(chip, rows) {
+function applyFilters(chip, rows) {
   if (chip.classList.contains("active")) {
     filters.delete(chip.dataset.filterValue)
     chip.classList.remove("active")
@@ -59,6 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
   categories.forEach(category => container.insertAdjacentHTML("beforeend", chipTemplate(category)))
 
   document.querySelectorAll(".md-chip").forEach(chip => {
-    chip.addEventListener("click", () => applyFilter(chip, rows))
+    chip.addEventListener("click", () => applyFilters(chip, rows))
   })
 })
