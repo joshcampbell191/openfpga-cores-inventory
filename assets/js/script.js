@@ -45,8 +45,7 @@ function chipTemplate(category) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const table = document.querySelector(".datatable");
-  const rows = table.querySelectorAll("tbody tr");
+  const rows = document.querySelectorAll(".datatable tbody tr");
   const data = [...rows].filter(row => row.dataset.category !== "").map(row => row.dataset.category).sort()
   const categories = [...new Set(data)]
 
