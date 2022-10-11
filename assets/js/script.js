@@ -25,7 +25,7 @@ function applyFilter(chip, rows) {
   }
 
   rows.forEach(row => {
-    if (filters.has(row.dataset.category)) {
+    if (filters.size === 0 || filters.has(row.dataset.category)) {
       row.style.display = "table-row";
     } else {
       row.style.display = "none";
