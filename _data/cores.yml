@@ -166,65 +166,13 @@
       display_name: Tecmo
       identifier: nullobject.tecmo
       platform: Tecmo
-      prerelease:
-        tag_name: v1.0
-        release_date: "2022-08-26T02:59:10Z"
+      release:
+        tag_name: v2.0
+        release_date: "2022-09-10T06:27:20Z"
         assets:
           - platform: tecmo
             extensions:
-              - 5p
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
-          - platform: tecmo
-            extensions:
-              - bin
+              - rom
 - username: opengateware
   cores:
     - repository: arcade-bankp
