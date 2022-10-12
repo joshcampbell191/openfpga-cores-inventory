@@ -43,3 +43,5 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
     {% endfor -%}
   </tbody>
 </table>
+
+<script type="text/javascript" src="{{ "/assets/js/script.js" | relative_url }}"></script>
