@@ -61,9 +61,8 @@
       identifier: ericlewis.Asteroids
       platform: Asteroids
       release:
-        category: Arcade
-        tag_name: 1.0.0
-        release_date: "2022-10-11T22:35:05Z"
+        tag_name: 1.0.1
+        release_date: "2022-10-11T23:38:56Z"
         assets:
           - platform: asteroids
             filename: asteroid.rom
