@@ -40,7 +40,7 @@ function chipTemplate(category) {
   return `
     <div class="md-chip md-chip-clickable" data-filter-value="${category}">
       <div class="md-chip-remove" style="display: none;">
-        <img src="assets/images/check.svg">
+        <img class="md-chip-icon" src="assets/images/check.svg">
       </div>
       ${category}
     </div>

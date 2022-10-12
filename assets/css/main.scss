@@ -6,6 +6,10 @@
   display: inline-block;
   overflow: scroll;
   white-space: nowrap;
+  scrollbar-width: none; // Hide scrollbar for Firefox
+  &::-webkit-scrollbar {
+    display: none; // Hide scrollbar for Webkit browsers
+  }
 }
 
 .dataTables_filter input {

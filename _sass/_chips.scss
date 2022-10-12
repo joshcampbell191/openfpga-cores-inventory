@@ -21,6 +21,9 @@
   &-clickable {
     cursor: pointer;
   }
+  &-icon {
+    max-width: 60%;
+  }
 }
 
 .md-chip-remove {
@@ -35,8 +38,5 @@
   padding: 0;
   &:active {
     background: #777;
-  }
-  img {
-    max-width: 60%;
   }
 }
