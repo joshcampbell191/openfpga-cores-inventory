@@ -73,6 +73,16 @@
         assets:
           - platform: dominos
             filename: dominos.rom
+    - repository: openFPGA-DonkeyKong
+      display_name: Donkey Kong
+      identifier: ericlewis.DonkeyKong
+      platform: Donkey Kong
+      prerelease:
+        tag_name: 0.0.1
+        release_date: "2022-10-12T20:44:15Z"
+        assets:
+          - platform: donkeykong
+            filename: dkong.rom
     - repository: openfpga-genesis
       display_name: Genesis for Analogue Pocket
       identifier: ericlewis.Genesis
