@@ -15,6 +15,8 @@
       repository: openfpga-asteroids
     - display_name: Dominos for Analogue Pocket
       repository: openfpga-dominos
+    - display_name: Donkey Kong
+      repository: openFPGA-DonkeyKong
     - display_name: Genesis for Analogue Pocket
       repository: openfpga-genesis
     - display_name: Lunar Lander for Analogue Pocket
