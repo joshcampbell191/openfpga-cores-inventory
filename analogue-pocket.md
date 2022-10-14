@@ -31,7 +31,7 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
         {%- endif %}
         <tr>
           <td><a href="https://github.com/{{ developer.username }}/{{ core.repository }}">{{ core.display_name }}</a></td>
-          <td>{{ core.platform }}</td>
+          <td>{{ metadata.platform.name }}</td>
           <td>{{ metadata.platform.category }}</td>
           <td><a href="https://github.com/{{ developer.username }}">{{ developer.username }}</a></td>
           <td data-order="{{ metadata.tag_name | remove_first: "v" }}">
