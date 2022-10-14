@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   $('.datatable').DataTable({
     fixedHeader: true,
     info: false,
