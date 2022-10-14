@@ -145,10 +145,11 @@ module GitHub
         "repository" => repository,
         "display_name" => display_name,
         "identifier" => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
-        "platform" => platform_json["name"],
+        "platform" => platform_json["name"], # TODO: Remove this in v2
         release_type => {
           "tag_name" => repo_metadata["tag_name"],
           "release_date" => repo_metadata["release_date"],
+          "platform" => platform_json,
           "assets" => build_asset_json(platform_id)
         }
       }

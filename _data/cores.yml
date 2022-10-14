@@ -15,6 +15,11 @@
       release:
         tag_name: 0.9.0
         release_date: "2022-09-03T20:45:09Z"
+        platform:
+          category: Handheld
+          name: Arduboy
+          manufacturer: Arduboy
+          year: 2016
         assets:
           - platform: arduboy
             extensions:
@@ -26,6 +31,11 @@
       release:
         tag_name: 1.2.0
         release_date: "2022-09-09T01:56:30Z"
+        platform:
+          category: Arcade
+          name: Pong
+          manufacturer: Atari
+          year: 1972
         assets: []
     - repository: openfpga-NES
       display_name: NES for Analogue Pocket
@@ -34,6 +44,11 @@
       release:
         tag_name: 0.2.0
         release_date: "2022-10-07T18:27:05Z"
+        platform:
+          category: Console
+          name: NES
+          manufacturer: Nintendo
+          year: 1983
         assets:
           - platform: nes
             extensions:
@@ -45,6 +60,11 @@
       release:
         tag_name: 0.3.2
         release_date: "2022-10-10T17:41:36Z"
+        platform:
+          category: Console
+          name: SNES
+          manufacturer: Nintendo
+          year: 1990
         assets:
           - platform: snes
             extensions:
@@ -59,6 +79,11 @@
       release:
         tag_name: 1.0.1
         release_date: "2022-10-11T23:38:56Z"
+        platform:
+          category: Arcade
+          name: Asteroids
+          year: 1979
+          manufacturer: Atari Corporation
         assets:
           - platform: asteroids
             filename: asteroid.rom
@@ -70,6 +95,11 @@
       prerelease:
         tag_name: 0.0.1
         release_date: "2022-09-17T13:59:02Z"
+        platform:
+          category: Arcade
+          name: Dominos
+          year: 1977
+          manufacturer: Atari
         assets:
           - platform: dominos
             filename: dominos.rom
@@ -80,6 +110,11 @@
       prerelease:
         tag_name: 0.0.1
         release_date: "2022-10-12T20:44:15Z"
+        platform:
+          category: Arcade
+          name: Donkey Kong
+          year: 1981
+          manufacturer: Nintendo
         assets:
           - platform: donkeykong
             filename: dkong.rom
@@ -90,6 +125,11 @@
       prerelease:
         tag_name: 0.4.2
         release_date: "2022-10-09T02:42:54Z"
+        platform:
+          category: Console
+          name: Genesis
+          year: 1988
+          manufacturer: Sega
         assets:
           - platform: genesis
             extensions:
@@ -104,6 +144,11 @@
       prerelease:
         tag_name: 0.9.1
         release_date: "2022-09-13T17:58:18Z"
+        platform:
+          category: Arcade
+          name: Lunar Lander
+          year: 1979
+          manufacturer: Atari
         assets:
           - platform: lunarlander
             filename: llander.rom
@@ -115,6 +160,11 @@
       release:
         tag_name: 1.0.1
         release_date: "2022-10-11T20:26:13Z"
+        platform:
+          category: Arcade
+          name: Space Race
+          year: 1973
+          manufacturer: Atari
         assets: []
     - repository: openfpga-superbreakout
       display_name: Super Breakout for Analogue Pocket
@@ -123,6 +173,11 @@
       prerelease:
         tag_name: 0.0.1
         release_date: "2022-09-14T17:52:28Z"
+        platform:
+          category: Arcade
+          name: Super Breakout
+          year: 1978
+          manufacturer: Atari
         assets:
           - platform: superbreakout
             filename: sbrkout.rom
@@ -135,6 +190,10 @@
       release:
         tag_name: Alpha_0.7.5_2022-19-09
         release_date: "2022-09-18T23:23:22Z"
+        platform:
+          name: Neo Geo
+          year: 1990
+          manufacturer: SNK
         assets:
           - platform: ng
             filename: uni-bios_1_0.rom
@@ -179,6 +238,11 @@
       release:
         tag_name: v2.0
         release_date: "2022-09-10T06:27:20Z"
+        platform:
+          category: Arcade
+          name: Tecmo
+          year: 1986
+          manufacturer: Tecmo
         assets:
           - platform: tecmo
             extensions:
@@ -192,6 +256,11 @@
       release:
         tag_name: 0.1.0
         release_date: "2022-10-09T09:38:21Z"
+        platform:
+          category: Arcade
+          name: Bank Panic
+          manufacturer: Sanritsu / Sega
+          year: 1984
         assets:
           - platform: bankpanic
             extensions:
@@ -203,6 +272,11 @@
       release:
         tag_name: 0.1.0
         release_date: "2022-09-20T06:04:48Z"
+        platform:
+          category: Arcade
+          name: Dig Dug
+          manufacturer: Namco
+          year: 1982
         assets:
           - platform: digdug
             extensions:
@@ -214,6 +288,11 @@
       release:
         tag_name: v0.1.0
         release_date: "2022-09-15T22:04:09Z"
+        platform:
+          category: Arcade
+          name: Galaga
+          year: 1981
+          manufacturer: Namco
         assets:
           - platform: galaga
             extensions:
@@ -225,6 +304,11 @@
       release:
         tag_name: 0.1.1
         release_date: "2022-10-03T12:20:39Z"
+        platform:
+          category: Arcade
+          name: Green Beret
+          manufacturer: Konami
+          year: 1985
         assets:
           - platform: gberet
             extensions:
@@ -236,6 +320,11 @@
       release:
         tag_name: 0.1.0
         release_date: "2022-10-06T21:34:40Z"
+        platform:
+          category: Arcade
+          name: Pooyan
+          manufacturer: Konami
+          year: 1982
         assets:
           - platform: pooyan
             extensions:
@@ -247,6 +336,11 @@
       release:
         tag_name: 0.1.0
         release_date: "2022-09-25T04:12:14Z"
+        platform:
+          category: Arcade
+          name: Xevious
+          manufacturer: Namco
+          year: 1983
         assets:
           - platform: xevious
             extensions:
@@ -260,6 +354,11 @@
       release:
         tag_name: v1.1.0
         release_date: "2022-08-23T15:16:15Z"
+        platform:
+          category: Computer
+          name: "PDP-1: Spacewar!"
+          year: 1959
+          manufacturer: Digital Equipment Corporation
         assets:
           - platform: pdp1
             filename: spacewar3.1.bin
@@ -278,6 +377,11 @@
       release:
         tag_name: v1.3.0
         release_date: "2022-08-27T02:55:22Z"
+        platform:
+          category: Handheld
+          name: Game Boy
+          year: 1989
+          manufacturer: Nintendo
         assets:
           - platform: gb
             extensions:
@@ -293,6 +397,11 @@
       release:
         tag_name: v1.2.0
         release_date: "2022-08-27T02:56:30Z"
+        platform:
+          category: Handheld
+          name: Game Boy Advance
+          year: 2001
+          manufacturer: Nintendo
         assets:
           - platform: gba
             extensions:
@@ -309,6 +418,11 @@
       release:
         tag_name: v1.3.0
         release_date: "2022-08-27T02:55:22Z"
+        platform:
+          category: Handheld
+          name: Game Boy Color
+          year: 1998
+          manufacturer: Nintendo
         assets:
           - platform: gbc
             extensions:
@@ -325,6 +439,11 @@
       release:
         tag_name: 1.0.0
         release_date: "2022-10-10T15:32:34Z"
+        platform:
+          category: Console
+          name: NES
+          year: 1983
+          manufacturer: Nintendo
         assets:
           - platform: nes
             extensions:
@@ -338,6 +457,11 @@
       release:
         tag_name: v1.3.0
         release_date: "2022-08-27T02:57:43Z"
+        platform:
+          category: Handheld
+          name: Game Gear
+          year: 1990
+          manufacturer: Sega
         assets:
           - platform: gg
             extensions:
@@ -349,6 +473,11 @@
       release:
         tag_name: v1.2.0
         release_date: "2022-08-27T02:58:28Z"
+        platform:
+          category: Console
+          name: Master System
+          year: 1985
+          manufacturer: Sega
         assets:
           - platform: sms
             extensions:
@@ -360,6 +489,11 @@
       release:
         tag_name: v1.2.0
         release_date: "2022-08-27T02:59:17Z"
+        platform:
+          category: Console
+          name: SG-1000
+          year: 1983
+          manufacturer: Sega
         assets:
           - platform: sg1000
             extensions:
