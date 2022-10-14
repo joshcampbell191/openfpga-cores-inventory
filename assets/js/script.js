@@ -1,4 +1,4 @@
-var filters = new Set()
+const filters = new Set();
 
 function initializeDatatables() {
   $(".datatable").DataTable({
@@ -8,6 +8,7 @@ function initializeDatatables() {
     scrollX: true,
     columnDefs: [
       { className: "dt-nowrap", targets: -1 },
+      { targets: 2, visible: false }
     ],
     language: {
       search: "",
@@ -16,51 +17,42 @@ function initializeDatatables() {
   });
 }
 
-function applyFilters(chip, rows) {
-  if (chip.classList.contains("active")) {
-    filters.delete(chip.dataset.filterValue)
-    chip.classList.remove("active")
-    chip.querySelector(".md-chip-remove").style.display = "none"
-  } else {
-    filters.add(chip.dataset.filterValue)
-    chip.classList.add("active")
-    chip.querySelector(".md-chip-remove").style.display = "flex"
-  }
+function toggleFilter(chip, category) {
+  filters.has(category) ? filters.delete(category) : filters.add(category);
 
-  rows.forEach(row => {
-    if (filters.size === 0 || filters.has(row.dataset.category)) {
-      row.style.display = "table-row";
-    } else {
-      row.style.display = "none";
-    }
-  })
+  const table = $(".datatable").DataTable({ retrieve: true });
+  const input = filters.size > 0 ? `^(${[...filters].join("|")})$` : "";
+  table.column(2).search(input, true, false).draw();
+
+  $(chip).toggleClass("active");
+  $(".md-chip-remove", chip).toggle();
 }
 
-function chipTemplate(category) {
-  return `
-    <div class="md-chip md-chip-clickable" data-filter-value="${category}">
+function createChip(category) {
+  const template = document.createElement("template");
+  template.innerHTML = `
+    <div class="md-chip md-chip-clickable">
       <div class="md-chip-remove" style="display: none;">
         <img class="md-chip-icon" src="assets/images/check.svg">
       </div>
       ${category}
     </div>
-  `
+  `.trim();
+  return template.content.firstChild;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const rows = document.querySelectorAll(".datatable tbody tr");
-  const data = [...rows].filter(row => row.dataset.category !== "").map(row => row.dataset.category).sort()
-  const categories = [...new Set(data)]
-
   initializeDatatables()
 
-  const datatable = document.querySelector(".dataTables_wrapper")
-  datatable.insertAdjacentHTML("afterbegin", `<div class="filters"></div>`)
+  const table = $(".datatable").DataTable({ retrieve: true });
+  const data = table.column(2).data().filter(category => category !== "").unique().sort().toArray();
+  const categories = [...new Set(data)];
 
-  const container = document.querySelector(".filters");
-  categories.forEach(category => container.insertAdjacentHTML("beforeend", chipTemplate(category)))
-
-  document.querySelectorAll(".md-chip").forEach(chip => {
-    chip.addEventListener("click", () => applyFilters(chip, rows))
-  })
+  const container = $(`<div class="filters"></div>`)
+  categories.forEach(category => {
+    const chip = createChip(category);
+    chip.addEventListener("click", () => toggleFilter(chip, category));
+    container.append(chip);
+  });
+  $(table.table().container()).prepend(container);
 })
