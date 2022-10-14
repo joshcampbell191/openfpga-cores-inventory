@@ -29,16 +29,18 @@ function toggleFilter(chip, category) {
 }
 
 function createChip(category) {
-  const template = document.createElement("template");
-  template.innerHTML = `
-    <div class="md-chip md-chip-clickable">
-      <div class="md-chip-remove" style="display: none;">
-        <img class="md-chip-icon" src="assets/images/check.svg">
-      </div>
-      ${category}
-    </div>
-  `.trim();
-  return template.content.firstChild;
+  return $(
+    $.parseHTML(
+      $.trim(`
+        <div class="md-chip md-chip-clickable">
+          <div class="md-chip-remove" style="display: none;">
+            <img class="md-chip-icon" src="assets/images/check.svg">
+          </div>
+          ${category}
+        </div>
+      `)
+    )
+  );
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -51,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = $(`<div class="filters"></div>`);
   categories.forEach(category => {
     const chip = createChip(category);
-    chip.addEventListener("click", () => toggleFilter(chip, category));
+    chip.click(() => toggleFilter(chip, category));
     container.append(chip);
   });
   $(table.table().container()).prepend(container);
