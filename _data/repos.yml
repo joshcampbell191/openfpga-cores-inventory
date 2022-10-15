@@ -45,6 +45,8 @@
       repository: arcade-gberet
     - display_name: Pooyan
       repository: arcade-pooyan
+    - display_name: Supervision
+      repository: console-supervision
     - display_name: Xevious
       repository: arcade-xevious
 - username: spacemen3
