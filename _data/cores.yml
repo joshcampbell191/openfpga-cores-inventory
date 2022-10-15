@@ -329,6 +329,23 @@
           - platform: pooyan
             extensions:
               - rom
+    - repository: console-supervision
+      display_name: Supervision
+      identifier: boogermann.supervision
+      platform: Supervision
+      release:
+        tag_name: 0.1.1
+        release_date: "2022-10-15T14:18:34Z"
+        platform:
+          category: Handheld
+          name: Supervision
+          manufacturer: Watara
+          year: 1992
+        assets:
+          - platform: supervision
+            extensions:
+              - sv
+              - bin
     - repository: arcade-xevious
       display_name: Xevious
       identifier: boogermann.xevious
