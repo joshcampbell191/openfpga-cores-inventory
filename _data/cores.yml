@@ -181,6 +181,21 @@
         assets:
           - platform: superbreakout
             filename: sbrkout.rom
+    - repository: openfpga-qbert
+      display_name: Q*Bert
+      identifier: ericlewis.QBert
+      platform: Q*Bert
+      release:
+        tag_name: 1.0.0
+        release_date: "2022-10-16T13:04:37Z"
+        platform:
+          category: Arcade
+          name: Q*Bert
+          year: 1982
+          manufacturer: Gottlieb
+        assets:
+          - platform: qbert
+            filename: qbert.rom
 - username: Mazamars312
   cores:
     - repository: Analogue_Pocket_Neogeo
