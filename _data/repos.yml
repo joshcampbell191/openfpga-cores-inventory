@@ -25,6 +25,8 @@
       repository: openfpga-spacerace
     - display_name: Super Breakout for Analogue Pocket
       repository: openfpga-superbreakout
+    - display_name: Q*Bert
+      repository: openfpga-qbert
 - username: Mazamars312
   cores:
     - display_name: Neo Geo
