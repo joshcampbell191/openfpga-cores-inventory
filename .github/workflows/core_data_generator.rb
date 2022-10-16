@@ -89,9 +89,16 @@ module GitHub
       [stable]
     end
 
-    # Hack for the openFPGA-GB-GBC repo that hosts cores for both the GB & GBC.
+    # HACK: for repositories that contain multiple cores.
     def choose_asset(assets)
-      index = display_name == "Spiritualized GB" ? 1 : 0
+      index = case display_name
+              when "Mad Planets"
+                1
+              when "Spiritualized GB"
+                1
+              else
+                0
+              end
       assets[index]
     end
 
