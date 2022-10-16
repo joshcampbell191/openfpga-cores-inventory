@@ -186,8 +186,8 @@
       identifier: ericlewis.QBert
       platform: Q*Bert
       release:
-        tag_name: 1.0.0
-        release_date: "2022-10-16T13:04:37Z"
+        tag_name: 1.0.1
+        release_date: "2022-10-16T16:46:16Z"
         platform:
           category: Arcade
           name: Q*Bert
