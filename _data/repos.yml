@@ -7,6 +7,8 @@
       repository: openfpga-pong
     - display_name: NES for Analogue Pocket
       repository: openfpga-NES
+    - display_name: PC Engine for Analogue Pocket
+      repository: openfpga-pcengine
     - display_name: SNES for Analogue Pocket
       repository: openfpga-SNES
 - username: ericlewis
