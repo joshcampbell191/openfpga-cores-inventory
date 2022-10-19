@@ -53,6 +53,22 @@
           - platform: nes
             extensions:
               - nes
+    - repository: openfpga-pcengine
+      display_name: PC Engine for Analogue Pocket
+      identifier: agg23.PC Engine
+      platform: PC Engine
+      release:
+        tag_name: 0.1.0
+        release_date: "2022-10-19T15:32:44Z"
+        platform:
+          category: Console
+          name: PC Engine
+          year: 1987
+          manufacturer: NEC Home Electronics
+        assets:
+          - platform: pce
+            extensions:
+              - pce
     - repository: openfpga-SNES
       display_name: SNES for Analogue Pocket
       identifier: agg23.SNES
