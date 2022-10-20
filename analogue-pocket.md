@@ -43,6 +43,18 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
         </tr>
       {% endfor -%}
     {% endfor -%}
+    <tr>
+      <td><a href="https://github.com/psomashekar/pram0d-pocket-dist-public">Snow Bros. 2</a></td>
+      <td>Snow Bros. 2</td>
+      <td>Arcade</td>
+      <td><a href="https://github.com/psomashekar">psomashekar</a></td>
+      <td data-order="0.0.1">
+        <a href="https://github.com/psomashekar/pram0d-pocket-dist-public/blob/develop/releases/pram0d.snowbros2_20221019.zip">0.0.1</a>
+      </td>
+      <td data-order="{{ "2022-09-20" | date: "%s" }}">
+        {{ "2022-09-20" | date: "%b %-d, %Y" }}
+      </td>
+    </tr>
   </tbody>
 </table>
 
