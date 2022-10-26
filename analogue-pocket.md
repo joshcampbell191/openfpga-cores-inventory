@@ -43,18 +43,22 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
         </tr>
       {% endfor -%}
     {% endfor -%}
-    <tr>
-      <td><a href="https://github.com/psomashekar/pram0d-pocket-dist-public">Snow Bros. 2</a></td>
-      <td>Snow Bros. 2</td>
-      <td>Arcade</td>
-      <td><a href="https://github.com/psomashekar">psomashekar</a></td>
-      <td data-order="0.0.1">
-        <a href="https://github.com/psomashekar/pram0d-pocket-dist-public/blob/develop/releases/pram0d.snowbros2_20221019.zip">0.0.1</a>
-      </td>
-      <td data-order="{{ "2022-09-20" | date: "%s" }}">
-        {{ "2022-09-20" | date: "%b %-d, %Y" }}
-      </td>
-    </tr>
+    {% for developer in site.data.other -%}
+      {% for core in developer.cores -%}
+        <tr>
+          <td><a href="{{ core.repository_url }}">{{ core.display_name }}</a></td>
+          <td>{{ core.platform }}</td>
+          <td>{{ core.category }}</td>
+          <td><a href="https://github.com/{{ developer.username }}">{{ developer.username }}</a></td>
+          <td data-order="{{ core.version }}">
+            <a href="{{ core.release_url }}">{{ core.version }}</a>
+          </td>
+          <td data-order="{{ core.release_date | date: "%s" }}">
+            {{ core.release_date | date: "%b %-d, %Y" }}
+          </td>
+        </tr>
+      {% endfor -%}
+    {% endfor -%}
   </tbody>
 </table>
 
