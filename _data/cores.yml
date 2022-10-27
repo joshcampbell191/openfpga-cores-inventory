@@ -58,8 +58,8 @@
       identifier: agg23.PC Engine
       platform: PC Engine
       release:
-        tag_name: 0.2.0
-        release_date: "2022-10-27T14:29:26Z"
+        tag_name: 0.2.1
+        release_date: "2022-10-27T15:47:33Z"
         platform:
           category: Console
           name: PC Engine
