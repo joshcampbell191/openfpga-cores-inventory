@@ -169,6 +169,21 @@
           - platform: lunarlander
             filename: llander.rom
             core_specific: true
+    - repository: openFPGA-RadarScope
+      display_name: Radar Scope
+      identifier: ericlewis.RadarScope
+      platform: Radar Scope
+      prerelease:
+        tag_name: 0.0.1
+        release_date: "2022-11-02T16:23:16Z"
+        platform:
+          category: Arcade
+          name: Radar Scope
+          year: 1980
+          manufacturer: Nintendo
+        assets:
+          - platform: radarscope
+            filename: radarscp.rom
     - repository: openfpga-spacerace
       display_name: Space Race for Analogue Pocket
       identifier: ericlewis.SpaceRace
