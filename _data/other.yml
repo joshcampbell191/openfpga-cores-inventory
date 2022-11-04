@@ -5,28 +5,28 @@
     - repository_url: https://www.patreon.com/jotego
       release_url: https://www.patreon.com/jotego
       display_name: jtgng
-      platform: "Ghosts 'n Goblins"
+      platform: jtgng
       category: Arcade compatible
       release_date: 2022-10-04
       version: noversion
     - repository_url: https://www.patreon.com/jotego
       release_url: https://www.patreon.com/jotego
       display_name: jtpang
-      platform: Pang!
+      platform: jtpang
       category: Arcade compatible
       release_date: 2022-10-14
       version: noversion
     - repository_url: https://www.patreon.com/jotego
       release_url: https://www.patreon.com/jotego
       display_name: jtoutrun
-      platform: Out Run
+      platform: jtoutrun
       category: Arcade compatible
       release_date: 2022-11-4
       version: noversion
     - repository_url: https://www.patreon.com/jotego
       release_url: https://www.patreon.com/jotego
       display_name: jtvigil
-      platform: Vigalante
+      platform: jtvigil
       category: Arcade compatible
       release_date: 2022-11-4
       version: noversion
