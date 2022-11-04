@@ -29,6 +29,8 @@
       repository: openfpga-superbreakout
     - display_name: Q*Bert
       repository: openfpga-qbert
+    - display_name: Radar Scope
+      repository: openFPGA-RadarScope
 - username: Mazamars312
   cores:
     - display_name: Neo Geo
