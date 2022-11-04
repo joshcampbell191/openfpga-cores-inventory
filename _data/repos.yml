@@ -23,6 +23,8 @@
       repository: openfpga-genesis
     - display_name: Lunar Lander for Analogue Pocket
       repository: openfpga-lunarlander
+    - display_name: Radar Scope
+      repository: openFPGA-RadarScope
     - display_name: Space Race for Analogue Pocket
       repository: openfpga-spacerace
     - display_name: Super Breakout for Analogue Pocket
