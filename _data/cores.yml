@@ -69,6 +69,22 @@
           - platform: pce
             extensions:
               - pce
+    - repository: openfpga-pokemonmini
+      display_name: Pokemon Mini for Analogue Pocket
+      identifier: agg23.PokemonMini
+      platform: Pokemon Mini
+      release:
+        tag_name: 0.1.0
+        release_date: "2022-11-05T17:23:30Z"
+        platform:
+          category: Handheld
+          name: Pokemon Mini
+          year: 2000
+          manufacturer: Nintendo
+        assets:
+          - platform: poke_mini
+            extensions:
+              - min
     - repository: openfpga-SNES
       display_name: SNES for Analogue Pocket
       identifier: agg23.SNES
