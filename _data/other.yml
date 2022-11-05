@@ -16,6 +16,20 @@
       category: Arcade
       release_date: 2022-10-14
       version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: Outrun
+      platform: Outrun
+      category: Arcade
+      release_date: 2022-11-04
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: Vigilante
+      platform: Vigilante
+      category: Arcade
+      release_date: 2022-11-04
+      version: noversion
 - username: psomashekar
   cores:
     - repository_url: https://github.com/psomashekar/pram0d-pocket-dist-public
