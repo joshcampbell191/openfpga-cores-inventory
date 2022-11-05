@@ -9,6 +9,8 @@
       repository: openfpga-NES
     - display_name: PC Engine for Analogue Pocket
       repository: openfpga-pcengine
+    - display_name: Pokemon Mini for Analogue Pocket
+      repository: openfpga-pokemonmini
     - display_name: SNES for Analogue Pocket
       repository: openfpga-SNES
 - username: ericlewis
