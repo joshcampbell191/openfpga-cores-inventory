@@ -74,12 +74,12 @@
       identifier: agg23.PokemonMini
       platform: Pokemon Mini
       release:
-        tag_name: 0.1.0
-        release_date: "2022-11-05T17:23:30Z"
+        tag_name: 0.1.1
+        release_date: "2022-11-05T21:19:02Z"
         platform:
           category: Handheld
           name: Pokemon Mini
-          year: 2000
+          year: 2001
           manufacturer: Nintendo
         assets:
           - platform: poke_mini
