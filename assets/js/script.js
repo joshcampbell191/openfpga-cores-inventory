@@ -7,8 +7,9 @@ function initializeDatatables() {
     paging: false,
     scrollX: true,
     columnDefs: [
-      { className: "dt-nowrap", targets: -1 },
-      { targets: 2, visible: false }
+      { targets: 'no-sort', orderable: false },
+      { className: "dt-nowrap", targets: 5 },
+      { visible: false, targets: 2 },
     ],
     language: {
       search: "",

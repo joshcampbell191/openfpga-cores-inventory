@@ -16,6 +16,12 @@
   height: 32px;
 }
 
+td.check {
+  color: #008000;
+  text-align: center;
+  font-weight: 900;
+}
+
 @media screen and (max-width: 640px) {
   .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter {
     float: right !important;
