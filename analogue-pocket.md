@@ -19,7 +19,7 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
       <th>Author</th>
       <th>Version</th>
       <th>Date</th>
-      <th class="no-sort">API</th>
+      <th>API</th>
     </tr>
   </thead>
   <tbody>
@@ -41,7 +41,7 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
           <td data-order="{{ metadata.release_date | date: "%s" }}">
             {{ metadata.release_date | date: "%b %-d, %Y" }}
           </td>
-          <td class="check">&#10003;</td>
+          <td class="check" data-order="1">&#10003;</td>
         </tr>
       {% endfor -%}
     {% endfor -%}
@@ -58,7 +58,7 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
           <td data-order="{{ core.release_date | date: "%s" }}">
             {{ core.release_date | date: "%b %-d, %Y" }}
           </td>
-          <td></td>
+          <td data-order="0"></td>
         </tr>
       {% endfor -%}
     {% endfor -%}
