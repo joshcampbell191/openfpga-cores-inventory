@@ -19,7 +19,7 @@ The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-syst
       <th>Author</th>
       <th>Version</th>
       <th>Date</th>
-      <th>API Support</th>
+      <th class="no-sort">API</th>
     </tr>
   </thead>
   <tbody>
