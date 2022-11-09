@@ -140,30 +140,65 @@ module GitHub
       # TODO: Handle multiple platform_ids. No cores currently do this.
       platform_id   = core_metadata["platform_ids"].first
       platform_json = parse_json_file("#{platform_id}.json", "Platforms")["platform"]
+      identifier = "#{core_metadata["author"]}.#{core_metadata["shortname"]}"
 
       {
         "repository" => repository,
         "display_name" => display_name,
-        "identifier" => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
+        "identifier" => identifier,
         "platform" => platform_json["name"], # TODO: Remove this in v2
         release_type => {
           "tag_name" => repo_metadata["tag_name"],
           "release_date" => repo_metadata["release_date"],
           "platform" => platform_json,
-          "assets" => build_asset_json(platform_id)
+          "assets" => build_asset_json(platform_id, identifier)
         }
       }
     end
 
-    def build_asset_json(platform)
+    def build_asset_json(platform, identifier)
       data_slots = parse_json_file(DATA_FILE).dig("data", "data_slots")
 
-      data_slots.select { |slot| slot["required"] }.map do |slot|
+      assets = data_slots.select { |slot| slot["required"] }.map do |slot|
         { "platform" => platform }.tap do |hash|
           hash["filename"] = slot["filename"] if slot["filename"]
           hash["extensions"] = slot["extensions"] if slot["extensions"]
         end.merge(extract_parameters(slot["parameters"]))
       end.reject { |slot| slot["instance_json"] }
+
+      if platform != "ng" #this is a hack, i dont know. because the neogeo core has a json file for every rom
+        assets.concat(get_assets_from_assets_directory(platform, identifier))
+      end
+
+      return assets
+    end
+
+    def get_assets_from_assets_directory(platform, identifier)
+      assets = []
+      Dir.glob("#{@directory}/Assets/#{platform}/#{identifier}/**/*.json").each do|f|
+        assets.concat(build_asset_json_new(platform, f))
+      end
+      return assets
+    end
+
+    def build_asset_instance_json(platform, file_path)
+      json = File.read(file_path)
+      data = JSON.parse(json)
+
+      #not sure if these always have 'instance' instead of 'data'?
+      data_slots = data.dig("instance", "data_slots")
+
+      assets = [];
+
+      data_slots.each do |slot|
+          asset = Hash.new
+          asset["platform"] = platform
+          asset["filename"] = slot["filename"] if slot["filename"]
+          asset["core_specific"] = true
+          assets << asset
+      end
+
+      return assets
     end
 
     def parse_json_file(file_name, subdirectory = "Cores")

@@ -310,6 +310,27 @@
           - platform: tecmo
             extensions:
               - rom
+          - platform: meep
+            filename: geminij.rom
+            core_specific: true
+          - platform: meep
+            filename: gemini.rom
+            core_specific: true
+          - platform: meep
+            filename: rygarj.rom
+            core_specific: true
+          - platform: meep
+            filename: rygar.rom
+            core_specific: true
+          - platform: meep
+            filename: rygar2.rom
+            core_specific: true
+          - platform: meep
+            filename: silkwrmj.rom
+            core_specific: true
+          - platform: meep
+            filename: silkworm.rom
+            core_specific: true
 - username: opengateware
   cores:
     - repository: arcade-bankp
@@ -328,6 +349,12 @@
           - platform: bankpanic
             extensions:
               - rom
+          - platform: meep
+            filename: bankp.rom
+            core_specific: true
+          - platform: meep
+            filename: combh.rom
+            core_specific: true
     - repository: arcade-digdug
       display_name: Dig Dug
       identifier: boogermann.digdug
@@ -344,6 +371,21 @@
           - platform: digdug
             extensions:
               - rom
+          - platform: meep
+            filename: digduat1.rom
+            core_specific: true
+          - platform: meep
+            filename: digdugat.rom
+            core_specific: true
+          - platform: meep
+            filename: digsid.rom
+            core_specific: true
+          - platform: meep
+            filename: digdug1.rom
+            core_specific: true
+          - platform: meep
+            filename: digdug.rom
+            core_specific: true
     - repository: arcade-galaga
       display_name: Galaga
       identifier: boogermann.galaga
@@ -360,6 +402,51 @@
           - platform: galaga
             extensions:
               - rom
+          - platform: meep
+            filename: gatsbee.rom
+            core_specific: true
+          - platform: meep
+            filename: nebulbee.rom
+            core_specific: true
+          - platform: meep
+            filename: galagamf.rom
+            core_specific: true
+          - platform: meep
+            filename: galagamw.rom
+            core_specific: true
+          - platform: meep
+            filename: galagao.rom
+            core_specific: true
+          - platform: meep
+            filename: galaga.rom
+            core_specific: true
+          - platform: meep
+            filename: galagaef.rom
+            core_specific: true
+          - platform: meep
+            filename: galagads.rom
+            core_specific: true
+          - platform: meep
+            filename: galagost.rom
+            core_specific: true
+          - platform: meep
+            filename: galagosb.rom
+            core_specific: true
+          - platform: meep
+            filename: galgaxin.rom
+            core_specific: true
+          - platform: meep
+            filename: galaped.rom
+            core_specific: true
+          - platform: meep
+            filename: vgalagaf.rom
+            core_specific: true
+          - platform: meep
+            filename: vgalagam.rom
+            core_specific: true
+          - platform: meep
+            filename: vgalaga.rom
+            core_specific: true
     - repository: arcade-gberet
       display_name: Green Beret
       identifier: boogermann.gberet
@@ -376,6 +463,15 @@
           - platform: gberet
             extensions:
               - rom
+          - platform: meep
+            filename: gberet.rom
+            core_specific: true
+          - platform: meep
+            filename: mrgoemon.rom
+            core_specific: true
+          - platform: meep
+            filename: rushatck.rom
+            core_specific: true
     - repository: arcade-pooyan
       display_name: Pooyan
       identifier: boogermann.pooyan
@@ -392,6 +488,18 @@
           - platform: pooyan
             extensions:
               - rom
+          - platform: meep
+            filename: pootan.rom
+            core_specific: true
+          - platform: meep
+            filename: pooyans.rom
+            core_specific: true
+          - platform: meep
+            filename: pooyaiag.rom
+            core_specific: true
+          - platform: meep
+            filename: pooyan.rom
+            core_specific: true
     - repository: console-supervision
       display_name: Supervision
       identifier: boogermann.supervision
@@ -425,6 +533,36 @@
           - platform: xevious
             extensions:
               - rom
+          - platform: meep
+            filename: battles2.rom
+            core_specific: true
+          - platform: meep
+            filename: xevios.rom
+            core_specific: true
+          - platform: meep
+            filename: gaous.rom
+            core_specific: true
+          - platform: meep
+            filename: xevioush.rom
+            core_specific: true
+          - platform: meep
+            filename: xevious3.rom
+            core_specific: true
+          - platform: meep
+            filename: xevious4.rom
+            core_specific: true
+          - platform: meep
+            filename: xevious5.rom
+            core_specific: true
+          - platform: meep
+            filename: xeviblk.rom
+            core_specific: true
+          - platform: meep
+            filename: sxevious.rom
+            core_specific: true
+          - platform: meep
+            filename: xevious.rom
+            core_specific: true
 - username: spacemen3
   cores:
     - repository: PDP-1

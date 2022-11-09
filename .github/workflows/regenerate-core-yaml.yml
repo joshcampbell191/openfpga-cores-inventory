@@ -24,7 +24,7 @@ jobs:
     - name: Regenerate cores.yml
       run: |
         echo "⚙️ Starting the YAML regeneration script..."
-        ruby .github/workflows/runner.rb ${{ secrets.GITHUB_TOKEN }}
+        ruby .github/workflows/runner.rb ${{ secrets.TOKEN }}
         echo "🎉 YAML regeneration complete!"
     - name: Lint YAML
       run: |
