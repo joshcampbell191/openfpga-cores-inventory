@@ -176,7 +176,7 @@ module GitHub
     def get_assets_from_assets_directory(platform, identifier)
       assets = []
       Dir.glob("#{@directory}/Assets/#{platform}/#{identifier}/**/*.json").each do|f|
-        assets.concat(build_asset_json_new(platform, f))
+        assets.concat(build_asset_instance_json(platform, f))
       end
       return assets
     end
