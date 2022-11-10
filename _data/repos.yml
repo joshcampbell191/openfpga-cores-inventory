@@ -77,3 +77,37 @@
       repository: openFPGA-SMS
     - display_name: Spiritualized Sega SG-1000
       repository: openFPGA-SG1000
+    - display_name: Spiritualized VideoBrain
+      repository: openFPGA-VideoBrain
+    - display_name: Spiritualized Supervision
+      repository: openFPGA-Supervision
+    - display_name: Spiritualized Super Gameboy
+      repository: openFPGA-Super-GB
+    - display_name: Spiritualized Studio 2
+      repository: openFPGA-Studio-2
+    - display_name: Spiritualized Odyssey 2
+      repository: openFPGA-Odyssey-2
+    - display_name: Spiritualized Intellivision
+      repository: openFPGA-Intellivision
+    - display_name: Spiritualized Megaduck
+      repository: openFPGA-Megaduck
+    - display_name: Spiritualized Genesis
+      repository: openFPGA-Genesis
+    - display_name: Spiritualized Game King
+      repository: openFPGA-Game-King
+    - display_name: Spiritualized Gamate
+      repository: openFPGA-Gamate
+    - display_name: Spiritualized Creativision
+      repository: openFPGA-Creativision
+    - display_name: Spiritualized Coleco
+      repository: openFPGA-Coleco
+    - display_name: Spiritualized Channel F
+      repository: openFPGA-Channel-F
+    - display_name: Spiritualized Atari 7800
+      repository: openFPGA-7800
+    - display_name: Spiritualized Arcadia
+      repository: openFPGA-Arcadia
+    - display_name: Spiritualized Adventure Vision
+      repository: openFPGA-Adventure-Vision
+    - display_name: Spiritualized Atari 2600
+      repository: openFPGA-2600
