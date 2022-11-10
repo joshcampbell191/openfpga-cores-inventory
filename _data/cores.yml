@@ -579,3 +579,295 @@
           - platform: sg1000
             extensions:
               - sg
+    - repository: openFPGA-VideoBrain
+      display_name: Spiritualized VideoBrain
+      identifier: Spiritualized.VideoBrain
+      platform: VideoBrain Family Computer
+      release:
+        tag_name: 1.0.0
+        release_date: "2022-11-08T09:03:06Z"
+        platform:
+          category: Computer
+          name: VideoBrain Family Computer
+          year: 1977
+          manufacturer: Umtech
+        assets:
+          - platform: videobrain
+            extensions:
+              - bin
+    - repository: openFPGA-Supervision
+      display_name: Spiritualized Supervision
+      identifier: Spiritualized.Supervision
+      platform: Supervision
+      release:
+        tag_name: 1.0.0
+        release_date: "2022-11-08T08:57:54Z"
+        platform:
+          category: Handheld
+          name: Supervision
+          year: 1992
+          manufacturer: Watara
+        assets:
+          - platform: supervision
+            extensions:
+              - bin
+              - sv
+    - repository: openFPGA-Super-GB
+      display_name: Spiritualized Super Gameboy
+      identifier: Spiritualized.SuperGB
+      platform: Super Gameboy
+      release:
+        tag_name: 1.0.3
+        release_date: "2022-11-08T08:55:53Z"
+        platform:
+          category: Console
+          name: Super Gameboy
+          year: 1994
+          manufacturer: Nintendo
+        assets:
+          - platform: sgb
+            extensions:
+              - gb
+              - gbc
+              - bin
+    - repository: openFPGA-Studio-2
+      display_name: Spiritualized Studio 2
+      identifier: Spiritualized.Studio2
+      platform: Studio II
+      release:
+        tag_name: 1.0.2
+        release_date: "2022-11-08T08:53:21Z"
+        platform:
+          category: Console
+          name: Studio II
+          year: 1977
+          manufacturer: RCA
+        assets:
+          - platform: studio2
+            extensions:
+              - bin
+          - platform: studio2
+            filename: rca2bios.bin
+            extensions:
+              - bin
+            core_specific: true
+    - repository: openFPGA-Odyssey-2
+      display_name: Spiritualized Odyssey 2
+      identifier: Spiritualized.Odyssey2
+      platform: Odyssey 2
+      release:
+        tag_name: 1.0.2
+        release_date: "2022-11-08T08:46:25Z"
+        platform:
+          category: Console
+          name: Odyssey 2
+          year: 1978
+          manufacturer: Magnavox, Philips
+        assets:
+          - platform: odyssey2
+            extensions:
+              - bin
+    - repository: openFPGA-Intellivision
+      display_name: Spiritualized Intellivision
+      identifier: Spiritualized.Intv
+      platform: Intellivision
+      release:
+        tag_name: 1.0.2
+        release_date: "2022-11-08T08:36:49Z"
+        platform:
+          category: Console
+          name: Intellivision
+          year: 1979
+          manufacturer: Mattel Electronics
+        assets:
+          - platform: intv
+            extensions:
+              - intv
+    - repository: openFPGA-Megaduck
+      display_name: Spiritualized Megaduck
+      identifier: Spiritualized.Megaduck
+      platform: Mega Duck
+      release:
+        tag_name: 1.0.2
+        release_date: "2022-11-08T08:34:51Z"
+        platform:
+          category: Handheld
+          name: Mega Duck
+          year: 1993
+          manufacturer: Welback Holdings
+        assets:
+          - platform: mega_duck
+            extensions:
+              - bin
+              - md1
+              - md2
+    - repository: openFPGA-Genesis
+      display_name: Spiritualized Genesis
+      identifier: Spiritualized.Genesis
+      platform: Genesis
+      release:
+        tag_name: 1.0.8
+        release_date: "2022-11-08T08:26:50Z"
+        platform:
+          category: Console
+          name: Genesis
+          year: 1988
+          manufacturer: Sega
+        assets:
+          - platform: genesis
+            extensions:
+              - md
+              - bin
+    - repository: openFPGA-Game-King
+      display_name: Spiritualized Game King
+      identifier: Spiritualized.Gameking
+      platform: GameKing
+      release:
+        tag_name: 1.0.3
+        release_date: "2022-11-08T08:24:47Z"
+        platform:
+          category: Handheld
+          name: GameKing
+          year: 2003
+          manufacturer: Timetop
+        assets:
+          - platform: game_king
+            extensions:
+              - bin
+              - gk
+    - repository: openFPGA-Gamate
+      display_name: Spiritualized Gamate
+      identifier: Spiritualized.Gamate
+      platform: Gamate
+      release:
+        tag_name: 1.0.2
+        release_date: "2022-11-08T08:23:16Z"
+        platform:
+          category: Handheld
+          name: Gamate
+          year: 1990
+          manufacturer: Bit Corporation, UMC
+        assets:
+          - platform: gamate
+            extensions:
+              - bin
+              - gml
+    - repository: openFPGA-Creativision
+      display_name: Spiritualized Creativision
+      identifier: Spiritualized.Creativision
+      platform: CreatiVision
+      release:
+        tag_name: 1.0.2
+        release_date: "2022-11-08T08:21:09Z"
+        platform:
+          category: Console
+          name: CreatiVision
+          year: 1982
+          manufacturer: VTech
+        assets:
+          - platform: creativision
+            extensions:
+              - bin
+              - rom
+    - repository: openFPGA-Coleco
+      display_name: Spiritualized Coleco
+      identifier: Spiritualized.Coleco
+      platform: ColecoVision
+      release:
+        tag_name: 1.0.2
+        release_date: "2022-11-08T08:16:46Z"
+        platform:
+          category: Console
+          name: ColecoVision
+          year: 1982
+          manufacturer: Coleco
+        assets:
+          - platform: coleco
+            extensions: []
+    - repository: openFPGA-Channel-F
+      display_name: Spiritualized Channel F
+      identifier: Spiritualized.ChannelF
+      platform: Channel F
+      release:
+        tag_name: 1.0.0
+        release_date: "2022-11-08T08:13:46Z"
+        platform:
+          category: Console
+          name: Channel F
+          year: 1976
+          manufacturer: Fairchild Camera and Instrument
+        assets:
+          - platform: channel_f
+            extensions:
+              - bin
+          - platform: channel_f
+            filename: cfbios.bin
+            extensions:
+              - bin
+    - repository: openFPGA-7800
+      display_name: Spiritualized Atari 7800
+      identifier: Spiritualized.7800
+      platform: Atari 7800 ProSystem
+      release:
+        tag_name: 1.0.2
+        release_date: "2022-11-08T08:11:09Z"
+        platform:
+          category: Console
+          name: Atari 7800 ProSystem
+          year: 1986
+          manufacturer: Atari, Inc.
+        assets:
+          - platform: "7800"
+            extensions:
+              - a78
+          - platform: "7800"
+            filename: 7800bios.bin
+            extensions:
+              - bin
+    - repository: openFPGA-Arcadia
+      display_name: Spiritualized Arcadia
+      identifier: Spiritualized.Arcadia
+      platform: Arcadia 2001
+      release:
+        tag_name: 1.0.2
+        release_date: "2022-11-08T08:09:09Z"
+        platform:
+          category: Console
+          name: Arcadia 2001
+          year: 1982
+          manufacturer: Emerson Radio
+        assets:
+          - platform: arcadia
+            extensions:
+              - bin
+    - repository: openFPGA-Adventure-Vision
+      display_name: Spiritualized Adventure Vision
+      identifier: Spiritualized.Adventurevision
+      platform: Adventure Vision
+      release:
+        tag_name: 1.0.2
+        release_date: "2022-11-08T07:55:21Z"
+        platform:
+          category: Handheld
+          name: Adventure Vision
+          year: 1982
+          manufacturer: Entex Industries
+        assets:
+          - platform: avision
+            extensions:
+              - bin
+    - repository: openFPGA-2600
+      display_name: Spiritualized Atari 2600
+      identifier: Spiritualized.2600
+      platform: Atari VCS (2600)
+      release:
+        tag_name: 1.0.0
+        release_date: "2022-11-08T07:48:57Z"
+        platform:
+          category: Console
+          name: Atari VCS (2600)
+          year: 1977
+          manufacturer: Atari, Inc.
+        assets:
+          - platform: "2600"
+            extensions: []
