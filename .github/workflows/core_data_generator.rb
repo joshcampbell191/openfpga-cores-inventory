@@ -195,7 +195,6 @@ module GitHub
           asset["platform"] = platform
           asset["data_path"] = data_path if data_path
           asset["filename"] = slot["filename"] if slot["filename"]
-          asset["core_specific"] = true
           assets << asset
       end
 
