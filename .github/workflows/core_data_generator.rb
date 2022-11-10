@@ -184,7 +184,7 @@ module GitHub
     def build_asset_instance_json(platform, file_path)
       json = File.read(file_path)
       data = JSON.parse(json)
-
+      data_path = data.dig("instance", "data_path")
       #not sure if these always have 'instance' instead of 'data'?
       data_slots = data.dig("instance", "data_slots")
 
@@ -193,6 +193,7 @@ module GitHub
       data_slots.each do |slot|
           asset = Hash.new
           asset["platform"] = platform
+          asset["data_path"] = data_path if data_path
           asset["filename"] = slot["filename"] if slot["filename"]
           asset["core_specific"] = true
           assets << asset
