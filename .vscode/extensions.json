@@ -1,6 +1,8 @@
 {
   "recommendations": [
+    "castwide.solargraph",
     "editorconfig.editorconfig",
-    "ms-vscode-remote.remote-containers"
+    "ms-vscode-remote.remote-containers",
+    "rebornix.Ruby"
   ]
 }
