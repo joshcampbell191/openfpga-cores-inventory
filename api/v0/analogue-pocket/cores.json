@@ -17,7 +17,6 @@ layout: none
       "manufacturer": {{ metadata.platform.manufacturer | jsonify }},
       "year": {{ metadata.platform.year | jsonify }},
       "tag_name": {{ metadata.tag_name | jsonify }},
-      "sponsor": {{ core.sponsor | jsonify }},
       "release_date": {{ metadata.release_date | jsonify }},
       "prerelease": {% if core.prerelease %}true{% else %}false{% endif %},
       "repository": {
@@ -25,6 +24,7 @@ layout: none
         "owner": {{ developer.username | jsonify }},
         "name": {{ core.repository | jsonify }}
       },
+      "sponsor": {{ core.sponsor | jsonify }},
       "assets": {{ metadata.assets | jsonify }}
     }
     {%- unless forloop.last %},{% endunless %}
