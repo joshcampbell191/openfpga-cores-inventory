@@ -49,7 +49,9 @@ module GitHub
         else
           puts "🟡 #{repository} (#{metadata["tag_name"]}) is already up-to-date."
           cached_data = cached_data()
-          cached_data["sponsor"] = build_sponsor_json()
+          sponsor = build_sponsor_json()
+          return cached_data unless sponsor
+          cached_data["sponsor"] = sponsor
           return cached_data
         end
       end
@@ -164,7 +166,7 @@ module GitHub
       platform_id   = core_metadata["platform_ids"].first
       platform_json = parse_json_file("#{platform_id}.json", "Platforms")["platform"]
 
-      {
+      json = {
         "repository" => repository,
         "display_name" => display_name,
         "identifier" => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
@@ -177,6 +179,11 @@ module GitHub
           "assets" => build_asset_json(platform_id)
         }
       }
+
+      sponsor = build_sponsor_json()
+      return json unless sponsor
+      json["sponsor"] = sponsor
+      return json
     end
 
     def build_sponsor_json
