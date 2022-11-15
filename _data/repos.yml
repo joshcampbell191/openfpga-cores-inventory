@@ -45,6 +45,8 @@
   cores:
     - display_name: Bank Panic
       repository: arcade-bankp
+    - display_name: Congo Bongo
+      repository: arcade-congo
     - display_name: Dig Dug
       repository: arcade-digdug
     - display_name: Galaga
