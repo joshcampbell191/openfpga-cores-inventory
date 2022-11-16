@@ -354,6 +354,26 @@
         patreon: https://www.patreon.com/pierco
         custom:
           - https://www.paypal.com/donate/?hosted_button_id=N7HXKEL8VJ9CN
+    - repository: arcade-congo
+      display_name: Congo Bongo
+      identifier: boogermann.congo
+      platform: Congo Bongo
+      release:
+        tag_name: 0.1.1
+        release_date: "2022-11-16T00:00:53Z"
+        platform:
+          category: Arcade
+          name: Congo Bongo
+          manufacturer: Sega/Gremlin
+          year: 1983
+        assets:
+          - platform: congo
+            extensions:
+              - rom
+      sponsor:
+        patreon: https://www.patreon.com/pierco
+        custom:
+          - https://www.paypal.com/donate/?hosted_button_id=N7HXKEL8VJ9CN
     - repository: arcade-digdug
       display_name: Dig Dug
       identifier: boogermann.digdug
