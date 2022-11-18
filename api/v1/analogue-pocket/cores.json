@@ -13,6 +13,7 @@ layout: none
         "owner": {{ developer.username | jsonify }},
         "name": {{ core.repository | jsonify }}
       },
+      "sponsor": {{ core.sponsor | jsonify }},
       {%- if core.prerelease %}
       "prerelease": {{ core.prerelease | jsonify }}{%- if core.release %},{%- endif %}
       {%- endif %}

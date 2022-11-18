@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "base64"
 require "json"
 require "net/http"
 require "open-uri"
@@ -26,6 +27,10 @@ module GitHub
     CORE_FILE   = "core.json"
     DATA_FILE   = "data.json"
 
+    GITHUB_FOLDER = ".github"
+    GITHUB_REPOSITORY = ".github"
+    FUNDING_FILE = "FUNDING.yml"
+
     attr_reader :username, :repository, :display_name
 
     def initialize(username, repository, display_name)
@@ -43,12 +48,32 @@ module GitHub
           return json unless json.nil?
         else
           puts "🟡 #{repository} (#{metadata["tag_name"]}) is already up-to-date."
+          cached_data = cached_data()
+          sponsor = build_sponsor_json()
+          return cached_data unless sponsor
+          cached_data["sponsor"] = sponsor
           return cached_data
         end
       end
     end
 
     private
+
+    def fetch_content(username, repository, path)
+      uri = URI.parse("https://api.github.com/repos/#{username}/#{repository}/contents/#{path}")
+      request = Net::HTTP::Get.new(uri)
+      request["Accept"] = "application/vnd.github+json"
+      request["Authorization"] = "Bearer #{$github_token}"
+
+      response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+        http.request(request)
+      end
+
+      return nil unless response.is_a?(Net::HTTPOK)
+
+      response_body = JSON.parse(response.body)
+      Base64.decode64(response_body["content"])
+    end
 
     def fetch_releases
       uri = URI.parse("https://api.github.com/repos/#{username}/#{repository}/releases")
@@ -141,11 +166,12 @@ module GitHub
       platform_id   = core_metadata["platform_ids"].first
       platform_json = parse_json_file("#{platform_id}.json", "Platforms")["platform"]
 
-      {
+      json = {
         "repository" => repository,
         "display_name" => display_name,
         "identifier" => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
         "platform" => platform_json["name"], # TODO: Remove this in v2
+        "sponsor" => build_sponsor_json(),
         release_type => {
           "tag_name" => repo_metadata["tag_name"],
           "release_date" => repo_metadata["release_date"],
@@ -153,6 +179,51 @@ module GitHub
           "assets" => build_asset_json(platform_id)
         }
       }
+
+      sponsor = build_sponsor_json()
+      return json unless sponsor
+      json["sponsor"] = sponsor
+      return json
+    end
+
+    def build_sponsor_json
+      # Check for the presense of a .github/FUNDING.yml
+      content = fetch_content(username, repository, "#{GITHUB_FOLDER}/#{FUNDING_FILE}")
+
+      # If a FUNDING.yml file doesn't exist, try searching for a community FUNDING.yml
+      content ||= fetch_content(username, GITHUB_REPOSITORY, FUNDING_FILE)
+
+      return nil unless content
+
+      funding_yml = YAML.load(content)
+      funding_yml.each.with_object({}) do |(key, value), hash|
+        next if value.nil?
+
+        case key
+        when "community_bridge"
+          hash[key] = "https://funding.communitybridge.org/projects/#{value}"
+        when "github"
+          users = value.is_a?(String) ? [value] : value;
+          hash[key] = users.map { |user| "https://github.com/sponsors/#{user}" }
+        when "issuehunt"
+          hash[key] = "https://issuehunt.io/r/#{value}"
+        when "ko_fi"
+          hash[key] = "https://ko-fi.com/#{value}"
+        when "liberapay"
+          hash[key] = "https://liberapay.com/#{value}"
+        when "open_collective"
+          hash[key] = "https://opencollective.com/#{value}"
+        when "otechie"
+          hash[key] = "https://otechie.com/#{value}"
+        when "patreon"
+          hash[key] = "https://www.patreon.com/#{value}"
+        when "tidelift"
+          hash[key] = "https://tidelift.com/funding/github/#{value}"
+        when "custom"
+          urls = value.is_a?(String) ? [value] : value;
+          hash[key] = urls
+        end
+      end.select { |_, value| value }
     end
 
     def build_asset_json(platform)

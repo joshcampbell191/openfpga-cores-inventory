@@ -24,6 +24,9 @@
           - platform: arduboy
             extensions:
               - hex
+      sponsor:
+        github:
+          - https://github.com/sponsors/agg23
     - repository: openfpga-pong
       display_name: Atari's 1972 Pong
       identifier: agg23.Pong
@@ -37,6 +40,9 @@
           manufacturer: Atari
           year: 1972
         assets: []
+      sponsor:
+        github:
+          - https://github.com/sponsors/agg23
     - repository: openfpga-NES
       display_name: NES for Analogue Pocket
       identifier: agg23.NES
@@ -53,6 +59,9 @@
           - platform: nes
             extensions:
               - nes
+      sponsor:
+        github:
+          - https://github.com/sponsors/agg23
     - repository: openfpga-pcengine
       display_name: PC Engine for Analogue Pocket
       identifier: agg23.PC Engine
@@ -70,6 +79,9 @@
             extensions:
               - pce
               - sgx
+      sponsor:
+        github:
+          - https://github.com/sponsors/agg23
     - repository: openfpga-pokemonmini
       display_name: Pokemon Mini for Analogue Pocket
       identifier: agg23.PokemonMini
@@ -86,6 +98,9 @@
           - platform: poke_mini
             extensions:
               - min
+      sponsor:
+        github:
+          - https://github.com/sponsors/agg23
     - repository: openfpga-SNES
       display_name: SNES for Analogue Pocket
       identifier: agg23.SNES
@@ -104,6 +119,10 @@
               - smc
               - sfc
               - bs
+      sponsor:
+        github:
+          - https://github.com/sponsors/agg23
+        patreon: https://www.patreon.com/srg320
 - username: ericlewis
   cores:
     - repository: openfpga-asteroids
@@ -311,6 +330,8 @@
           - platform: tecmo
             extensions:
               - rom
+      sponsor:
+        patreon: https://www.patreon.com/nullobject
 - username: opengateware
   cores:
     - repository: arcade-bankp
@@ -329,6 +350,10 @@
           - platform: bankpanic
             extensions:
               - rom
+      sponsor:
+        patreon: https://www.patreon.com/pierco
+        custom:
+          - https://www.paypal.com/donate/?hosted_button_id=N7HXKEL8VJ9CN
     - repository: arcade-congo
       display_name: Congo Bongo
       identifier: boogermann.congo
@@ -345,6 +370,9 @@
           - platform: congo
             extensions:
               - rom
+      sponsor:
+        custom:
+          - https://www.paypal.com/donate/?hosted_button_id=N7HXKEL8VJ9CN
     - repository: arcade-digdug
       display_name: Dig Dug
       identifier: boogermann.digdug
@@ -361,6 +389,9 @@
           - platform: digdug
             extensions:
               - rom
+      sponsor:
+        custom:
+          - https://www.paypal.com/donate/?hosted_button_id=N7HXKEL8VJ9CN
     - repository: arcade-galaga
       display_name: Galaga
       identifier: boogermann.galaga
@@ -377,6 +408,9 @@
           - platform: galaga
             extensions:
               - rom
+      sponsor:
+        custom:
+          - https://www.paypal.com/donate/?hosted_button_id=N7HXKEL8VJ9CN
     - repository: arcade-gberet
       display_name: Green Beret
       identifier: boogermann.gberet
@@ -393,6 +427,9 @@
           - platform: gberet
             extensions:
               - rom
+      sponsor:
+        custom:
+          - https://www.paypal.com/donate/?hosted_button_id=N7HXKEL8VJ9CN
     - repository: arcade-pooyan
       display_name: Pooyan
       identifier: boogermann.pooyan
@@ -409,6 +446,9 @@
           - platform: pooyan
             extensions:
               - rom
+      sponsor:
+        custom:
+          - https://www.paypal.com/donate/?hosted_button_id=N7HXKEL8VJ9CN
     - repository: console-supervision
       display_name: Supervision
       identifier: boogermann.supervision
@@ -426,6 +466,10 @@
             extensions:
               - sv
               - bin
+      sponsor:
+        patreon: https://www.patreon.com/pierco
+        custom:
+          - https://www.paypal.com/donate/?hosted_button_id=N7HXKEL8VJ9CN
     - repository: arcade-xevious
       display_name: Xevious
       identifier: boogermann.xevious
@@ -442,6 +486,9 @@
           - platform: xevious
             extensions:
               - rom
+      sponsor:
+        custom:
+          - https://www.paypal.com/donate/?hosted_button_id=N7HXKEL8VJ9CN
 - username: spacemen3
   cores:
     - repository: PDP-1
