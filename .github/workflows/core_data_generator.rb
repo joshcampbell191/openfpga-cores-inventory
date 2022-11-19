@@ -229,10 +229,11 @@ module GitHub
     def build_asset_json(platform)
       data_slots = parse_json_file(DATA_FILE).dig("data", "data_slots")
 
-      data_slots.select { |slot| slot["required"] }.map do |slot|
+      data_slots.map do |slot|
         { "platform" => platform }.tap do |hash|
           hash["filename"] = slot["filename"] if slot["filename"]
           hash["extensions"] = slot["extensions"] if slot["extensions"]
+          hash["required"] = slot["required"] ? true : false
         end.merge(extract_parameters(slot["parameters"]))
       end.reject { |slot| slot["instance_json"] }
     end
