@@ -299,9 +299,9 @@
       display_name: Tecmo
       identifier: nullobject.tecmo
       platform: Tecmo
-      release:
-        tag_name: v2.0
-        release_date: "2022-09-10T06:27:20Z"
+      prerelease:
+        tag_name: v1.0
+        release_date: "2022-08-26T02:59:10Z"
         platform:
           category: Arcade
           name: Tecmo
@@ -310,21 +310,113 @@
         assets:
           - platform: tecmo
             extensions:
-              - rom
+              - 5p
+              - bin
           - platform: tecmo
-            filename: geminij.rom
+            extensions:
+              - bin
           - platform: tecmo
-            filename: gemini.rom
+            extensions:
+              - bin
           - platform: tecmo
-            filename: rygarj.rom
+            extensions:
+              - bin
           - platform: tecmo
-            filename: rygar.rom
+            extensions:
+              - bin
           - platform: tecmo
-            filename: rygar2.rom
+            extensions:
+              - bin
           - platform: tecmo
-            filename: silkwrmj.rom
+            extensions:
+              - bin
           - platform: tecmo
-            filename: silkworm.rom
+            extensions:
+              - bin
+          - platform: tecmo
+            extensions:
+              - bin
+          - platform: tecmo
+            extensions:
+              - bin
+          - platform: tecmo
+            extensions:
+              - bin
+          - platform: tecmo
+            extensions:
+              - bin
+          - platform: tecmo
+            extensions:
+              - bin
+          - platform: tecmo
+            extensions:
+              - bin
+          - platform: tecmo
+            extensions:
+              - bin
+          - platform: tecmo
+            extensions:
+              - bin
+          - platform: tecmo
+            extensions:
+              - bin
+          - platform: tecmo
+            extensions:
+              - bin
+          - platform: tecmo
+            data_path: rygar
+            filename: 5.5p
+          - platform: tecmo
+            data_path: rygar
+            filename: cpu_5m.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: cpu_5j.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: cpu_8k.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6p.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6o.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6n.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6l.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6f.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6e.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6c.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6b.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6k.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6j.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6h.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: vid_6g.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: cpu_4h.bin
+          - platform: tecmo
+            data_path: rygar
+            filename: cpu_1f.bin
 - username: opengateware
   cores:
     - repository: arcade-bankp
