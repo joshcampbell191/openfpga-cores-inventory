@@ -18,6 +18,7 @@ layout: none
       "year": {{ metadata.platform.year | jsonify }},
       "tag_name": {{ metadata.tag_name | jsonify }},
       "release_date": {{ metadata.release_date | jsonify }},
+      "version": {{ metadata.version | jsonify }}
       "prerelease": {% if core.prerelease %}true{% else %}false{% endif %},
       "repository": {
         "platform": "github",
