@@ -238,7 +238,7 @@ module GitHub
     end
 
     def parse_json_file(file_name, subdirectory = "Cores")
-      file_path = Dir.glob("#{@directory}/#{subdirectory}/**/#{file_name}").first
+      file_path = Dir.glob("#{@directory}/#{subdirectory}/**/#{file_name}", File::FNM_CASEFOLD).first
 
       # If the file doesn't exist, the directory is not a core.
       return unless file_path
