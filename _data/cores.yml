@@ -610,9 +610,9 @@
       identifier: Spiritualized.NES
       platform: NES
       release:
-        tag_name: 1.0.2
-        release_date: "2022-11-08T09:18:44Z"
-        version: 1.0.2
+        tag_name: 1.0.0
+        release_date: "2022-10-10T15:32:34Z"
+        version: 1.0.0
         platform:
           category: Console
           name: NES
