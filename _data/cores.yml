@@ -42,8 +42,8 @@
       identifier: agg23.NES
       platform: NES
       release:
-        tag_name: 0.3.0
-        release_date: "2022-12-07T17:36:16Z"
+        tag_name: 0.3.1
+        release_date: "2022-12-07T19:31:59Z"
         platform:
           category: Console
           name: NES
