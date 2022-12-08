@@ -164,7 +164,7 @@ module GitHub
 
       # TODO: Handle multiple platform_ids. No cores currently do this.
       platform_id   = core_metadata["platform_ids"].first
-      platform_json = parse_json_file("#{platform_id}.json", "Platforms")["platform"]
+      platform_json = parse_json_file("#{platform_id}.json", "[Pp]latforms")["platform"]
 
       json = {
         "repository" => repository,
