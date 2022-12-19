@@ -165,18 +165,19 @@ module GitHub
       # TODO: Handle multiple platform_ids. No cores currently do this.
       platform_id   = core_metadata["platform_ids"].first
       platform_json = parse_json_file("#{platform_id}.json", "[Pp]latforms")["platform"]
+      identifier = "#{core_metadata["author"]}.#{core_metadata["shortname"]}"
 
       json = {
         "repository" => repository,
         "display_name" => display_name,
-        "identifier" => "#{core_metadata["author"]}.#{core_metadata["shortname"]}",
+        "identifier" => identifier,
         "platform" => platform_json["name"], # TODO: Remove this in v2
         release_type => {
           "tag_name" => repo_metadata["tag_name"],
           "release_date" => repo_metadata["release_date"],
           "version" => core_metadata["version"],
           "platform" => platform_json,
-          "assets" => build_asset_json(platform_id)
+          "assets" => build_asset_json(platform_id, identifier)
         }
       }
 
@@ -226,16 +227,50 @@ module GitHub
       end.select { |_, value| value }
     end
 
-    def build_asset_json(platform)
+    def build_asset_json(platform, identifier)
       data_slots = parse_json_file(DATA_FILE).dig("data", "data_slots")
 
-      data_slots.map do |slot|
+      assets = data_slots.map do |slot|
         { "platform" => platform }.tap do |hash|
           hash["filename"] = slot["filename"] if slot["filename"]
           hash["extensions"] = slot["extensions"] if slot["extensions"]
           hash["required"] = slot["required"] ? true : false
         end.merge(extract_parameters(slot["parameters"]))
       end.reject { |slot| slot["instance_json"] }
+
+      # i originally had an if statement here to ignore the neogeo assets
+      # since there's SO many and we won't be auto downloading them
+      # but i think thats up to the updater to decide, so i removed the logic
+      assets.concat(get_instance_assets(platform, identifier))
+
+      return assets
+    end
+
+    def get_instance_assets(platform, identifier)
+      assets = []
+      Dir.glob("#{@directory}/Assets/#{platform}/#{identifier}/**/*.json").each do|f|
+        assets.concat(build_instance_asset_json(platform, f))
+      end
+      return assets
+    end
+
+    def build_instance_asset_json(platform, file_path)
+      json = File.read(file_path)
+      data = JSON.parse(json)
+      data_path = data.dig("instance", "data_path")
+      data_slots = data.dig("instance", "data_slots")
+
+      assets = [];
+
+      data_slots.each do |slot|
+          asset = Hash.new
+          asset["platform"] = platform
+          asset["data_path"] = data_path if data_path
+          asset["filename"] = slot["filename"] if slot["filename"]
+          assets << asset
+      end
+
+      return assets
     end
 
     def parse_json_file(file_name, subdirectory = "Cores")
