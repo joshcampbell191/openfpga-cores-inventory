@@ -4,10 +4,52 @@
   cores:
     - repository_url: https://www.patreon.com/jotego
       release_url: https://www.patreon.com/jotego
+      display_name: Contra
+      platform: Contra
+      category: Arcade
+      release_date: 2022-12-02
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: Double Dragon
+      platform: Double Dragon
+      category: Arcade
+      release_date: 2022-11-28
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: Double Dragon II
+      platform: Double Dragon II
+      category: Arcade
+      release_date: 2022-11-28
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
       display_name: "Ghosts 'n Goblins"
       platform: "Ghosts 'n Goblins"
       category: Arcade
       release_date: 2022-10-04
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: Kicker
+      platform: Kicker
+      category: Arcade
+      release_date: 2022-12-02
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: Mikie
+      platform: Mikie
+      category: Arcade
+      release_date: 2022-12-02
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: Nekketsu Kouha Kunio-kun
+      platform: Nekketsu Kouha Kunio-kun
+      category: Arcade
+      release_date: 2022-11-28
       version: noversion
     - repository_url: https://www.patreon.com/jotego
       release_url: https://www.patreon.com/jotego
@@ -25,10 +67,52 @@
       version: noversion
     - repository_url: https://www.patreon.com/jotego
       release_url: https://www.patreon.com/jotego
+      display_name: Ping-Pong
+      platform: Ping-Pong
+      category: Arcade
+      release_date: 2022-12-02
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: Road Fighter
+      platform: Road Fighter
+      category: Arcade
+      release_date: 2022-12-02
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: "Roc'n Rope"
+      platform: "Roc'n Rope"
+      category: Arcade
+      release_date: 2022-12-02
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: Super Basketball
+      platform: Super Basketball
+      category: Arcade
+      release_date: 2022-12-02
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: Track & Field
+      platform: Track & Field
+      category: Arcade
+      release_date: 2022-12-02
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
       display_name: Vigilante
       platform: Vigilante
       category: Arcade
       release_date: 2022-11-04
+      version: noversion
+    - repository_url: https://www.patreon.com/jotego
+      release_url: https://www.patreon.com/jotego
+      display_name: Yie Ar Kung-Fu
+      platform: Yie Ar Kung-Fu
+      category: Arcade
+      release_date: 2022-12-02
       version: noversion
 - username: psomashekar
   cores:
