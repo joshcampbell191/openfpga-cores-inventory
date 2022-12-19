@@ -33,11 +33,25 @@
 - username: psomashekar
   cores:
     - repository_url: https://github.com/psomashekar/pram0d-pocket-dist-public
+      release_url: https://github.com/psomashekar/pram0d-pocket-dist-public/blob/develop/releases/pram0d.bakraid_20221218.zip
+      display_name: Battle Bakraid
+      platform: Battle Bakraid
+      category: Arcade
+      release_date: 2022-12-18
+      version: 0.0.1
+    - repository_url: https://github.com/psomashekar/pram0d-pocket-dist-public
       release_url: https://github.com/psomashekar/pram0d-pocket-dist-public/blob/develop/releases/pram0d.garegga_20221030.zip
       display_name: Battle Garegga
       platform: Battle Garegga
       category: Arcade
       release_date: 2022-10-30
+      version: 0.0.1
+    - repository_url: https://github.com/psomashekar/pram0d-pocket-dist-public
+      release_url: https://github.com/psomashekar/pram0d-pocket-dist-public/blob/develop/releases/pram0d.batrider_20221218.zip
+      display_name: Batrider
+      platform: Batrider
+      category: Arcade
+      release_date: 2022-12-18
       version: 0.0.1
     - repository_url: https://github.com/psomashekar/pram0d-pocket-dist-public
       release_url: https://github.com/psomashekar/pram0d-pocket-dist-public/blob/develop/releases/pram0d.garegga_20221030.zip
