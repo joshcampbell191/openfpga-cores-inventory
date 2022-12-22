@@ -36,6 +36,12 @@ theme: minima
 
 header_pages:
   - analogue-pocket.md
+  
+plugins:
+  - jekyll-redirect-from
+  
+whitelist:
+  - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default.
