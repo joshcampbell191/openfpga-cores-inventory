@@ -1,3 +1,6 @@
+# !!!! REPOSITORY MOVED !!!!
+Please note that openFPGA Cores Inventory has moved to https://github.com/openfpga-cores-inventory.
+
 # openFPGA Cores Inventory
 openFPGA Cores Inventory is the premier destination for keeping track of cores built with [openFPGA](https://www.analogue.co/developer).
 
