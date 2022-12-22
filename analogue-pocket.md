@@ -4,6 +4,7 @@
 
 layout: page
 title: Analogue Pocket
+redirect_to: https://openfpga-cores-inventory.github.io/analogue-pocket/
 ---
 
 The [Analogue Pocket](https://www.analogue.co/pocket) is a multi-video-game-system portable handheld designed and built by [Analogue](https://www.analogue.co).
