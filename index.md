@@ -4,6 +4,7 @@
 
 layout: page
 title: openFPGA Cores Inventory
+redirect_to: https://openfpga-cores-inventory.github.io/
 ---
 ## Devices
 - [Analogue Pocket](/analogue-pocket.md)

@@ -313,6 +313,7 @@ DEPENDENCIES
   github-pages (~> 227)
   http_parser.rb (~> 0.6.0)
   jekyll-feed (~> 0.15.1)
+  jekyll-redirect-from (~> 0.16.0)
   minima (~> 2.5.1)
   ruby-debug-ide
   solargraph
