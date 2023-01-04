@@ -632,9 +632,9 @@
       identifier: Spiritualized.NES
       platform: NES
       release:
-        tag_name: 1.0.2
-        release_date: "2022-11-08T09:18:44Z"
-        version: 1.0.2
+        tag_name: 1.0.0
+        release_date: "2022-10-10T15:32:34Z"
+        version: 1.0.0
         platform:
           category: Console
           name: NES
@@ -646,6 +646,64 @@
               - nes
               - nsf
               - fds
+            required: true
+          - platform: nes
+            extensions:
+              - sav
+            required: false
+          - platform: nes
+            filename: palram.bin
+            extensions:
+              - bin
+            required: false
+            core_specific: true
+          - platform: nes
+            filename: palettes/ntsc.pal
+            extensions:
+              - pal
+            required: false
+          - platform: nes
+            filename: fds.bios
+            extensions:
+              - bios
+              - bin
+            required: false
+          - platform: nes
+            filename: C2C03.PAL
+            extensions:
+              - pal
+            required: false
+            core_specific: true
+          - platform: nes
+            filename: C2C03B.PAL
+            extensions:
+              - pal
+            required: false
+            core_specific: true
+          - platform: nes
+            filename: P2C04_1.PAL
+            extensions:
+              - pal
+            required: false
+            core_specific: true
+          - platform: nes
+            filename: P2C04_2.PAL
+            extensions:
+              - pal
+            required: false
+            core_specific: true
+          - platform: nes
+            filename: P2C04_3.PAL
+            extensions:
+              - pal
+            required: false
+            core_specific: true
+          - platform: nes
+            filename: P2C04_4.PAL
+            extensions:
+              - pal
+            required: false
+            core_specific: true
     - repository: openFPGA-GG
       display_name: Spiritualized Sega Game Gear
       identifier: Spiritualized.GG
