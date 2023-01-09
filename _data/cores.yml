@@ -499,9 +499,9 @@
       identifier: boogermann.supervision
       platform: Supervision
       release:
-        tag_name: 0.1.1
-        release_date: "2022-10-15T14:18:34Z"
-        version: 0.1.1
+        tag_name: 0.1.0
+        release_date: "2022-10-15T12:31:14Z"
+        version: 0.1.0
         platform:
           category: Handheld
           name: Supervision
@@ -512,6 +512,13 @@
             extensions:
               - sv
               - bin
+            required: true
+          - platform: supervision
+            extensions:
+              - gbp
+              - sgb
+            required: false
+            core_specific: true
       sponsor:
         patreon: https://www.patreon.com/pierco
         custom:
