@@ -378,10 +378,10 @@
       display_name: Tecmo
       identifier: nullobject.tecmo
       platform: Tecmo
-      prerelease:
-        tag_name: v1.0
-        release_date: "2022-08-26T02:59:10Z"
-        version: "1.0"
+      release:
+        tag_name: v2.0
+        release_date: "2022-09-10T06:27:20Z"
+        version: "2.0"
         platform:
           category: Arcade
           name: Tecmo
@@ -390,76 +390,7 @@
         assets:
           - platform: tecmo
             extensions:
-              - 5p
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
-            required: true
-          - platform: tecmo
-            extensions:
-              - bin
+              - rom
             required: true
       sponsor:
         patreon: https://www.patreon.com/nullobject
