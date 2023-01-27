@@ -574,22 +574,25 @@
       identifier: Spacemen3.PDP1
       platform: "PDP-1: Spacewar!"
       release:
-        tag_name: v1.1.0
-        release_date: "2022-08-23T15:16:15Z"
+        tag_name: v1.0.0
+        release_date: "2022-07-29T12:31:22Z"
         version: v3.1 - Sep. 24, 1962
         platform:
-          category: Computer
           name: "PDP-1: Spacewar!"
-          year: 1959
           manufacturer: Digital Equipment Corporation
+          year: 1959
         assets:
           - platform: pdp1
             filename: spacewar3.1.bin
+            required: true
             core_specific: true
           - platform: pdp1
-            filename: Default_LUT.clut
-            extensions:
-              - clut
+            filename: Colour_LUT.clut
+            required: true
+            core_specific: true
+          - platform: pdp1
+            filename: config.cfg
+            required: true
             core_specific: true
 - username: spiritualized1997
   cores:
