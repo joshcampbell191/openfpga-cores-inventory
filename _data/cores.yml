@@ -185,9 +185,9 @@
       identifier: ericlewis.LunarLander
       platform: Lunar Lander
       prerelease:
-        tag_name: 0.9.1
-        release_date: "2022-09-13T17:58:18Z"
-        version: 0.9.1
+        tag_name: 0.9.0
+        release_date: "2022-09-13T16:06:04Z"
+        version: 0.9.0
         platform:
           category: Arcade
           name: Lunar Lander
@@ -196,6 +196,7 @@
         assets:
           - platform: lunarlander
             filename: llander.rom
+            required: true
             core_specific: true
     - repository: openFPGA-RadarScope
       display_name: Radar Scope
